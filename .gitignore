@@ -1,6 +1,6 @@
-# Mac OS X Finder and whatnot
+# Mac OS X Finder
 .DS_Store
 .Trashes
 
-#JetBrains AppCode
+#JetBrains
 .idea/
