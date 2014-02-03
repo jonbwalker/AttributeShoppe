@@ -32,19 +32,23 @@ require_once(TEMPLATES_PATH . "/header.php");
 ?>
 
 <div class="container">
-
     <div class="row">
         <div class="box">
             <?php
-            // include categories template
+            // include header navigation bar
             require_once(TEMPLATES_PATH . "/categories.php");
             ?>
             <div class="col-lg-12">
                 <hr>
-                <h2 class="intro-text text-center">Enhancements <strong>attribute shoppe</strong>
+                <h2 class="intro-text text-center">Courage<strong>attribute shoppe</strong>
                 </h2>
                 <hr>
                 <div class="clearfix"></div>
+                <img alt="courage" itemprop="image"
+                     src="../resources/library/img/Courage1.jpg">
+                <p>Item: Courage</p>
+                <p>Price: $2,249.00</p>
+                <p>Description: Infuse your soul with <strong>Courage</strong></p>
             </div>
         </div>
     </div>

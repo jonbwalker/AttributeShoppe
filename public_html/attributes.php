@@ -36,18 +36,63 @@ require_once(TEMPLATES_PATH . "/header.php");
     <div class="row">
 
         <div class="box">
+            <?php
+            // include categories template
+            require_once(TEMPLATES_PATH . "/categories.php");
+            ?>
             <div class="col-lg-12">
                 <hr>
                 <h2 class="intro-text text-center">Attributes <strong>attribute shoppe</strong>
                 </h2>
                 <hr>
+
+                <div class="col col-lg-4 col-sm-6">
+                    <div class="thumbnail" itemscope itemtype="http://schema.org/Product">
+                        <a href="strength.php" title="strength">
+                            <img alt="strength" itemprop="image"
+                                 src="../resources/library/img/strength.jpg">
+                        </a>
+
+                        <div class="caption">
+                            <h5 class="ellipsis">
+                                <a href="strength.php" itemprop="url"
+                                   title="Courage">
+                                    <span itemprop="brand">Strength</span>
+                                    <span itemprop="name"></span>
+                                </a>
+                            </h5>
+
+                            <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                                <span class="label label-danger" itemprop="price">$5,249.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col col-lg-4 col-sm-6">
+                    <div class="thumbnail" itemscope itemtype="http://schema.org/Product">
+                        <a href="wisdom.php" title="wisdom">
+                            <img alt="integrity" itemprop="image"
+                                 src="../resources/library/img/wisdom.jpg">
+                            <!--src="http://michelewoodward.com/wp-content/uploads/2011/04/Integrity.jpg">-->
+                        </a>
+                        <div class="caption">
+                            <h5 class="ellipsis">
+                                <a href="wisdom.php" itemprop="url"
+                                   title="wisdom">
+                                    <span itemprop="brand">Wisdom</span>
+                                    <span itemprop="name"></span>
+                                </a>
+                            </h5>
+                            <div itemprop="offers" itemscope itemtype="http://schema.org/Offer">
+                                <span class="label label-danger" itemprop="price">$3,000.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="clearfix"></div>
             </div>
         </div>
-        <?php
-        // include header navigation bar
-        require_once(TEMPLATES_PATH . "/categories.php");
-        ?>
     </div>
 </div>
 <!-- /.container -->

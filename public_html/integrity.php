@@ -32,19 +32,23 @@ require_once(TEMPLATES_PATH . "/header.php");
 ?>
 
 <div class="container">
-
     <div class="row">
         <div class="box">
             <?php
-            // include categories template
+            // include header navigation bar
             require_once(TEMPLATES_PATH . "/categories.php");
             ?>
             <div class="col-lg-12">
                 <hr>
-                <h2 class="intro-text text-center">Enhancements <strong>attribute shoppe</strong>
+                <h2 class="intro-text text-center">Integrity <strong>attribute shoppe</strong>
                 </h2>
                 <hr>
                 <div class="clearfix"></div>
+                <img alt="integrity" itemprop="image"
+                    src="../resources/library/img/Integrity.jpg">
+                <p>Item: integrity</p>
+                <p>Price: $2,599.00</p>
+                <p>Description: Infuse your spirit with <strong>Integrity</strong></p>
             </div>
         </div>
     </div>
