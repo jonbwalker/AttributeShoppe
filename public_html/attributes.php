@@ -38,12 +38,12 @@ require_once(TEMPLATES_PATH . "/header.php");
         <div class="box">
             <div class="col-lg-12">
                 <hr>
-                <h2 class="intro-text text-center">Products <strong>attribute shoppe</strong>
+                <h2 class="intro-text text-center">Attributes <strong>attribute shoppe</strong>
                 </h2>
                 <hr>
-            <div class="clearfix"></div>
+                <div class="clearfix"></div>
+            </div>
         </div>
-    </div>
         <?php
         // include header navigation bar
         require_once(TEMPLATES_PATH . "/categories.php");
