@@ -14,6 +14,13 @@
 
     <!-- Add custom CSS here -->
     <link href="../resources/library/css/main.css" rel="stylesheet">
+
+    <!-- Google web fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Revalia' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet' type='text/css'
+    <link href='http://fonts.googleapis.com/css?family=Duru+Sans' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Offside' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
@@ -35,10 +42,14 @@ require_once(TEMPLATES_PATH . "/header.php");
                 <hr>
             </div>
             <div class="col-md-6">
-                <img class="img-responsive img-border-left" src="../resources/library/img/slide-2.jpg" alt="">
+                <img class="img-responsive img-border-left" src="../resources/library/img/Attributes900x350.png" alt="">
             </div>
             <div class="col-md-6">
-                <p>This is a great place to introduce your company or project and describe what you do.</p>
+                <p>The Attribute Shoppe project is a prototype that sells units of attributes that will
+                directly enhance you in areas such as <strong>Honor</strong>, <strong>Strength</strong>,
+                    <strong>Integrity</strong>, <strong>Focus</strong>and many more.
+                    Take a look for yourself.
+                </p>
 
                 <p>Lid est laborum dolo rumes fugats untras. Etharums ser quidem rerum facilis dolores nemis omnis
                     fugats vitaes nemo minima rerums unsers sadips amets.</p>
@@ -87,15 +98,10 @@ require_once(TEMPLATES_PATH . "/header.php");
 </div>
 <!-- /.container -->
 
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <p>Copyright &copy; Company 2013</p>
-            </div>
-        </div>
-    </div>
-</footer>
+<?php
+// include header navigation bar
+require_once(TEMPLATES_PATH . "/footer.php");
+?>
 
 <!-- JavaScript -->
 <script src="../resources/library/js/jquery-1.10.2.js"></script>

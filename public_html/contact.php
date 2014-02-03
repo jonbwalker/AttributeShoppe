@@ -14,6 +14,13 @@
 
     <!-- main CSS -->
     <link href="../resources/library/css/main.css" rel="stylesheet">
+
+    <!-- Google web fonts -->
+    <link href='http://fonts.googleapis.com/css?family=Revalia' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet' type='text/css'
+    <link href='http://fonts.googleapis.com/css?family=Duru+Sans' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Offside' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
@@ -37,7 +44,8 @@ require_once(TEMPLATES_PATH . "/header.php");
             <div class="col-md-8">
                 <!-- Embedded Google Map using an iframe - to select your location find it on Google maps and paste the link as the iframe src. If you want to use the Google Maps API instead then have at it! -->
                 <iframe width="100%" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"
-                        src="http://maps.google.com/maps?hl=en&amp;ie=UTF8&amp;ll=37.0625,-95.677068&amp;spn=56.506174,79.013672&amp;t=m&amp;z=4&amp;output=embed"></iframe>
+                           src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5647.752409623302!2d-93.09455150000002!3d44.946184500000015!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87f7d54c4e1ece4f%3A0x3ffa55d5cba7927e!2sDowntown+St+Paul%2C+St+Paul%2C+MN!5e0!3m2!1sen!2sus!4v1391389616890"></iframe>
+<!--                           src="http://maps.google.com/maps?hl=en&amp;ie=UTF8&amp;ll=37.0625,-95.677068&amp;spn=56.506174,79.013672&amp;t=m&amp;z=4&amp;output=embed"></iframe>-->
             </div>
             <div class="col-md-4">
                 <p>Phone: <strong>651.999.9999</strong>
@@ -95,15 +103,10 @@ require_once(TEMPLATES_PATH . "/header.php");
 </div>
 <!-- /.container -->
 
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-12 text-center">
-                <p>Copyright &copy; Company 2013</p>
-            </div>
-        </div>
-    </div>
-</footer>
+<?php
+// include header navigation bar
+require_once(TEMPLATES_PATH . "/footer.php");
+?>
 
 <!-- JavaScript -->
 <script src="../resources/library/js/jquery-1.10.2.js"></script>
