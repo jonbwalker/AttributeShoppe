@@ -43,6 +43,8 @@ require_once(TEMPLATES_PATH . "/header.php");
                 <h2 class="intro-text text-center">Virtues <strong>attribute shoppe</strong>
                 </h2>
                 <hr>
+
+                <!-- product -->
                 <div class="row">
                     <div class="col col-lg-4 col-sm-6">
                         <div class="thumbnail" itemscope itemtype="http://schema.org/Product">
@@ -50,7 +52,6 @@ require_once(TEMPLATES_PATH . "/header.php");
                                 <img alt="courage" itemprop="image"
                                      src="../resources/library/img/Courage1.jpg">
                             </a>
-
                             <div class="caption">
                                 <h5 class="ellipsis">
                                     <a href="courage.php" itemprop="url"
@@ -66,6 +67,9 @@ require_once(TEMPLATES_PATH . "/header.php");
                             </div>
                         </div>
                     </div>
+                    <!-- end product -->
+
+                    <!-- product -->
                     <div class="col col-lg-4 col-sm-6">
                         <div class="thumbnail" itemscope itemtype="http://schema.org/Product">
                             <a href="integrity.php" title="Integrity">
@@ -87,6 +91,8 @@ require_once(TEMPLATES_PATH . "/header.php");
                             </div>
                         </div>
                     </div>
+                    <!-- end product -->
+
                     <div class="clearfix"></div>
                 </div>
             </div>
