@@ -50,7 +50,7 @@ require_once(TEMPLATES_PATH . "/header.php");
                         <div class="thumbnail" itemscope itemtype="http://schema.org/Product">
                             <a href="courage.php" title="courage">
                                 <img alt="courage" itemprop="image"
-                                     src="../resources/library/img/Courage1.jpg">
+                                     src="../resources/library/img/COURAGE.png">
                             </a>
                             <div class="caption">
                                 <h5 class="ellipsis">

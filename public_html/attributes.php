@@ -50,7 +50,7 @@ require_once(TEMPLATES_PATH . "/header.php");
                     <div class="thumbnail" itemscope itemtype="http://schema.org/Product">
                         <a href="strength.php" title="strength">
                             <img alt="strength" itemprop="image"
-                                 src="../resources/library/img/strength.jpg">
+                                 src="../resources/library/img/STRENGTH.png">
                         </a>
 
                         <div class="caption">
@@ -72,7 +72,7 @@ require_once(TEMPLATES_PATH . "/header.php");
                     <div class="thumbnail" itemscope itemtype="http://schema.org/Product">
                         <a href="wisdom.php" title="wisdom">
                             <img alt="integrity" itemprop="image"
-                                 src="../resources/library/img/wisdom.jpg">
+                                 src="../resources/library/img/WISDOM.png">
                             <!--src="http://michelewoodward.com/wp-content/uploads/2011/04/Integrity.jpg">-->
                         </a>
                         <div class="caption">

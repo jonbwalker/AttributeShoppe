@@ -45,7 +45,7 @@ require_once(TEMPLATES_PATH . "/header.php");
                 <hr>
                 <div class="clearfix"></div>
                 <img alt="strength" itemprop="image"
-                    src="../resources/library/img/strength.jpg">
+                    src="../resources/library/img/STRENGTH.png">
                 <p>Item: Strength</p>
                 <p>Price: $5,249.00</p>
                 <p>Description: Infuse your body with <strong>Strength</strong></p>
