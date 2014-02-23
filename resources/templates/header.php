@@ -15,8 +15,9 @@
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
-            <a href="products.php"> <input id="login" type="button" value="Login"></a>
-            <input id="register" type="button" value="Register"/>
+            <a href="login.php"> <input id="login" type="button" value="Login"></a>
+            <a href="registration.php"> <input id="register" type="button" value="Register"></a>
+<!--            <input id="register" type="button" value="Register"/>-->
             <ul class="nav navbar-nav">
                 <li><a href="index.php">Home</a>
                 </li>
