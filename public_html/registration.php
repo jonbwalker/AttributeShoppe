@@ -40,7 +40,7 @@ require_once(TEMPLATES_PATH . "/header.php");
                 <h2 class="intro-text text-center">Registration <strong>form</strong>
                 </h2>
                 <hr>
-                <p>Register</p>
+                <p>Personal Info</p>
 
                 <form role="form">
                     <div class="row">
@@ -60,11 +60,45 @@ require_once(TEMPLATES_PATH . "/header.php");
                             <label>Phone Number</label>
                             <input type="tel" class="form-control">
                         </div>
-
                         <div class="form-group col-lg-4" id="dp3" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
                             <label>DOB</label>
-                            <input id="dp1" class="form-control" size="16" type="text" value="1-5-1980">
+                            <input id="dp1" class="form-control" size="16" type="text" value="01-01-1980">
                             <span class="add-on"><i class="icon-th"></i></span>
+                        </div>
+                        <!--                        <div class="form-group col-lg-4">-->
+                        <!--                            <label>Sex</label><br>-->
+                        <!--                            <input type="radio" name="sex" value="male"> Male<br>-->
+                        <!--                            <input type="radio" name="sex" value="female"> Female-->
+                        <!--                        </div>-->
+
+                        <div class="form-group col-lg-4">
+                            <div class="btn-group">
+                                <lable>Sex</lable><br>
+                                <button type="button" class="btn btn-default" name="sex" value="male" >Male</button>
+                                <button type="button" class="btn btn-default" name="sex" value="female" >Female</button>
+                            </div>
+                        </div>
+
+                        <div class="clearfix"></div>
+
+                        <p>Login Info</p>
+                        <div class="form-group col-lg-4">
+                            <label>UserName</label>
+                            <input type="text" class="form-control">
+                        </div>
+                        <div class="form-group col-lg-4">
+                            <label>Password</label>
+                            <input type="password" class="form-control">
+                        </div>
+
+                        <div class="clearfix"></div>
+                        <p>Misc</p>
+                        <div class="form-group col-lg-4">
+                            <label>Pirate OR Ninja</label>
+                            <select class="form-control">
+                                <option label="pirate">Pirate</option>
+                                <option label="ninja">Ninja</option>
+                            </select>
                         </div>
 
                         <div class="clearfix"></div>
@@ -73,9 +107,11 @@ require_once(TEMPLATES_PATH . "/header.php");
                             <textarea class="form-control" rows="6"></textarea>
                         </div>
                         <div class="form-group col-lg-12">
-                            <input type="hidden" name="save" value="contact">
+                            <input type="hidden" name="save" value="login">
                             <button type="submit" class="btn btn-default">Submit</button>
                         </div>
+
+
                     </div>
                 </form>
             </div>
