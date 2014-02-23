@@ -24,7 +24,7 @@ $(document).ready(function () {
                 date:true,
                 required: true
             },
-            sex: {
+            gender: {
                 required: true
             },
             username: {

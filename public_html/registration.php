@@ -1,3 +1,77 @@
+<?php
+// define variables and initialize with empty values
+$firstNameErr = $lastNameErr = $emailErr = $phoneErr = $dobErr = $genderErr =  $usernameErr = $passwordErr = "";
+$firstName = $lastName = $email = $phone = $dob = $gender = $username = $password =  "";
+$favFruit = array();
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    if (empty($_POST["firstName"])) {
+        $firstNameErr = "Please enter your first name";
+    }
+    else {
+        $firstName = sanitize($_POST["firstName"]);
+    }
+
+    if (empty($_POST["lastName"])) {
+        $lastNameErr = "Please enter your last name";
+    }
+    else {
+        $lastName = sanitize($_POST["lastName"]);
+    }
+
+    if (empty($_POST["email"]))  {
+        $emailErr = "Please enter a valid email";
+    }
+    else {
+        $email = sanitize($_POST["email"]);
+    }
+
+    if (empty($_POST["phone"])) {
+        $phoneErr = "Please enter a valid Us phone number";
+    }
+    else {
+        $phone = sanitize($_POST["phone"]);
+    }
+
+    if (empty($_POST["dob"])) {
+        $dobErr = "Please enter a valid date";
+    }
+    else {
+        $dob = sanitize($_POST["dob"]);
+    }
+
+    if (!isset($_POST["gender"])) {
+        $genderErr = "Please select a gender";
+    }
+    else {
+        $gender = $_POST["gender"];
+    }
+
+    if (empty($_POST["username"])) {
+        $usernameErr = "Please enter a username";
+    }
+    else {
+        $username = sanitize($_POST["username"]);
+    }
+
+
+    if (empty($_POST["password"])) {
+        $passwordErr = "Please enter a password";
+    }
+    else {
+        $password = sanitize($_POST["password"]);
+    }
+}
+
+function sanitize($input)
+{
+    $input = trim($input);
+    $input = stripslashes($input);
+    $input = htmlspecialchars($input);
+    return $input;
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -44,37 +118,43 @@ require_once(TEMPLATES_PATH . "/header.php");
                 <div class="form-group">
                     (*) = Required Fields
                 </div>
-                <form role="form" id="registration-form" method="POST" action="registration-form-submission.php">
+                <form role="form" id="registration-form" method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
                     <div class="row">
                         <div class="form-group col-lg-4">
                             <label>First Name</label>*
-                            <input type="text" class="form-control" name="firstName" id="firstName" placeholder="First Name">
+                            <input type="text" class="form-control" name="firstName" id="firstName" value="<?php echo $firstName;?>" placeholder="First Name">
+                            <span class="error"><?php echo $firstNameErr;?></span>
                         </div>
                         <div class="form-group col-lg-4">
                             <label>Last Name</label>*
-                            <input type="text" class="form-control" name="lastName" id="lastName" placeholder="Last Name">
+                            <input type="text" class="form-control" name="lastName" id="lastName" value="<?php echo $lastName;?>" placeholder="Last Name">
+                            <span class="error"><?php echo $lastNameErr;?></span>
                         </div>
                         <div class="form-group col-lg-4">
                             <label>Email Address</label>*
-                            <input type="email" class="form-control" name="email" id="email" placeholder="yourname@domain.com">
+                            <input type="email" class="form-control" name="email" id="email" value="<?php echo $email;?>" placeholder="yourname@domain.com">
+                            <span class="error"><?php echo $emailErr;?></span>
                         </div>
                         <div class="form-group col-lg-4">
                             <label>Phone Number</label>*
-                            <input type="tel" class="form-control" name="phone" data-name="phone" placeholder="xxx-xxx-xxxxx">
+                            <input type="tel" class="form-control" name="phone" data-name="phone" value="<?php echo $phone;?>" placeholder="xxx-xxx-xxxxx">
+                            <span class="error"><?php echo $phoneErr;?></span>
                         </div>
                         <div class="form-group col-lg-4" id="dp3" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
                             <label>DOB</label>*
-                            <input name="dob" id="dp1" class="form-control" size="16" type="text" value="01-01-1980">
+                            <input name="dob" id="dp1" class="form-control" size="16" type="text" value="<?php echo $dob;?>">
                             <span class="add-on"><i class="icon-th"></i></span>
+                            <span class="error"><?php echo $dobErr;?></span>
                         </div>
 
                         <div class="form-group col-lg-4">
-                            <label>Sex</label><br>
+                            <label>Gender</label><br>
                             <fieldset>
-                                <input type="radio" name="sex" value="male"> Male<br>
-                                <input type="radio" name="sex" value="female"> Female
+                                <input type="radio" name="gender" value="<?php echo $gender;?>"> Male<br>
+                                <input type="radio" name="gender" value="<?php echo $gender;?>"> Female
                             </fieldset>
-                            <label  for="sex" class="error"></label>
+                            <span class="error"><?php echo $genderErr;?></span>
+                            <label  for="gender" class="error"></label>
                         </div>
 
 <!--                        <div class="form-group col-lg-4">-->
@@ -91,10 +171,12 @@ require_once(TEMPLATES_PATH . "/header.php");
                         <div class="form-group col-lg-4">
                             <label>UserName</label>*
                             <input type="text" class="form-control" id="username" name="username" placeholder="User Name">
+                            <span class="error"><?php echo $usernameErr;?></span>
                         </div>
                         <div class="form-group col-lg-4">
                             <label>Password</label>*
                             <input type="password" class="form-control" id="password" name="password" placeholder="Password">
+                            <span class="error"><?php echo $passwordErr;?></span>
                         </div>
 
                         <div class="clearfix"></div>
@@ -102,6 +184,7 @@ require_once(TEMPLATES_PATH . "/header.php");
                         <div class="form-group col-lg-4">
                             <label>Pirate OR Ninja</label>
                             <select class="form-control">
+                                <option label="select">Select</option>
                                 <option label="pirate">Pirate</option>
                                 <option label="ninja">Ninja</option>
                             </select>
@@ -110,6 +193,7 @@ require_once(TEMPLATES_PATH . "/header.php");
                         <div class="form-group col-lg-4">
                             <div class="btn-group">
                                 <lable>Race</lable><br>
+                                <button type="button" class="btn btn-default" name="race" value="timelord" >Human</button>
                                 <button type="button" class="btn btn-default" name="race" value="timelord" >Time Lord</button>
                                 <button type="button" class="btn btn-default" name="race" value="dalek" >Dalek</button>
                                 <button type="button" class="btn btn-default" name="race" value="shadow" >The Shadow</button>
