@@ -46,19 +46,19 @@ require_once(TEMPLATES_PATH . "/header.php");
                     <div class="row">
                         <div class="form-group col-lg-4">
                             <label>First Name</label>
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" placeholder="First Name">
                         </div>
                         <div class="form-group col-lg-4">
                             <label>Last Name</label>
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" placeholder="Last Name">
                         </div>
                         <div class="form-group col-lg-4">
                             <label>Email Address</label>
-                            <input type="email" class="form-control">
+                            <input type="email" class="form-control" placeholder="Email">
                         </div>
                         <div class="form-group col-lg-4">
                             <label>Phone Number</label>
-                            <input type="tel" class="form-control">
+                            <input type="tel" class="form-control" placeholder="Phone Number">
                         </div>
                         <div class="form-group col-lg-4" id="dp3" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
                             <label>DOB</label>
@@ -84,11 +84,11 @@ require_once(TEMPLATES_PATH . "/header.php");
                         <p>Login Info</p>
                         <div class="form-group col-lg-4">
                             <label>UserName</label>
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" placeholder="User Name">
                         </div>
                         <div class="form-group col-lg-4">
                             <label>Password</label>
-                            <input type="password" class="form-control">
+                            <input type="password" class="form-control" placeholder="Password">
                         </div>
 
                         <div class="clearfix"></div>
@@ -99,6 +99,22 @@ require_once(TEMPLATES_PATH . "/header.php");
                                 <option label="pirate">Pirate</option>
                                 <option label="ninja">Ninja</option>
                             </select>
+                        </div>
+
+                        <div class="form-group col-lg-4">
+                            <div class="btn-group">
+                                <lable>Race</lable><br>
+                                <button type="button" class="btn btn-default" name="race" value="timelord" >Time Lord</button>
+                                <button type="button" class="btn btn-default" name="race" value="dalek" >Dalek</button>
+                                <button type="button" class="btn btn-default" name="race" value="shadow" >The Shadow</button>
+                                <button type="button" class="btn btn-default" name="race" value="sycorax" >Sycorax</button>
+                                <button type="button" class="btn btn-default" name="race" value="catkind" >Catkind</button>
+                                <button type="button" class="btn btn-default" name="race" value="cyberman" >Cyberman</button>
+                                <button type="button" class="btn btn-default" name="race" value="ood" >Ood</button>
+                                <button type="button" class="btn btn-default" name="race" value="blood" >Family of Blood</button>
+                                <button type="button" class="btn btn-default" name="race" value="nerada" >Vashta Nerada</button>
+                                <button type="button" class="btn btn-default" name="race" value="sontaran" >Sontaran</button>
+                            </div>
                         </div>
 
                         <div class="clearfix"></div>
