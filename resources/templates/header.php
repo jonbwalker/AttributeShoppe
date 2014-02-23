@@ -17,7 +17,6 @@
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <a href="login.php"> <input id="login" type="button" value="Login"></a>
             <a href="registration.php"> <input id="register" type="button" value="Register"></a>
-<!--            <input id="register" type="button" value="Register"/>-->
             <ul class="nav navbar-nav">
                 <li><a href="index.php">Home</a>
                 </li>

@@ -178,6 +178,8 @@ footer p {
     height: 50px;
     width: 100px;
     margin-top:20px;
+    z-index: 10;
+    position: relative;
 }
 
 #register{
@@ -185,4 +187,6 @@ footer p {
     height: 50px;
     width: 100px;
     margin-top: 20px;
+    z-index: 10;
+    position: relative;
 }

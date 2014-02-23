@@ -11,6 +11,7 @@
 
     <!-- Bootstrap core CSS -->
     <link href="../resources/library/css/bootstrap.css" rel="stylesheet">
+    <link href="../resources/library/css/datepicker.css" rel="stylesheet">
 
     <!-- Add custom CSS here -->
     <link href="../resources/library/css/main.css" rel="stylesheet">
@@ -59,6 +60,13 @@ require_once(TEMPLATES_PATH . "/header.php");
                             <label>Phone Number</label>
                             <input type="tel" class="form-control">
                         </div>
+
+                        <div class="form-group col-lg-4" id="dp3" data-date="12-02-2012" data-date-format="dd-mm-yyyy">
+                            <label>DOB</label>
+                            <input id="dp1" class="form-control" size="16" type="text" value="1-5-1980">
+                            <span class="add-on"><i class="icon-th"></i></span>
+                        </div>
+
                         <div class="clearfix"></div>
                         <div class="form-group col-lg-12">
                             <label>Message</label>
@@ -85,7 +93,12 @@ require_once(TEMPLATES_PATH . "/footer.php");
 <!-- JavaScript -->
 <script src="../resources/library/js/jquery-1.10.2.js"></script>
 <script src="../resources/library/js/bootstrap.js"></script>
-
+<script src="../resources/library/js/bootstrap-datepicker.js"></script>
+<script>
+    $('#dp1').datepicker({
+        format: 'mm-dd-yyyy'
+    });
+</script>
 </body>
 
 </html>
