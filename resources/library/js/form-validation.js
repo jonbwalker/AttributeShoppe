@@ -2,11 +2,11 @@ $(document).ready(function () {
 
     $('#registration-form').validate({
         rules: {
-            firstName: {
+            firstname: {
                 minlength: 2,
                 required: true
             },
-            lastName: {
+            lastname: {
                 minlength: 2,
                 required: true
             },

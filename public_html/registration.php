@@ -1,22 +1,22 @@
 <?php
 // define variables and initialize with empty values
-$firstNameErr = $lastNameErr = $emailErr = $phoneErr = $dobErr = $genderErr =  $usernameErr = $passwordErr = "";
-$firstName = $lastName = $email = $phone = $dob = $gender = $username = $password =  "";
+$firstnameErr = $lastnameErr = $emailErr = $phoneErr = $dobErr = $genderErr =  $usernameErr = $passwordErr = "";
+$firstname = $lastname = $email = $phone = $dob = $gender = $username = $password =  "";
 $favFruit = array();
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (empty($_POST["firstName"])) {
-        $firstNameErr = "Please enter your first name";
+    if (empty($_POST["firstname"])) {
+        $firstnameErr = "Please enter your first name";
     }
     else {
-        $firstName = sanitize($_POST["firstName"]);
+        $firstname = sanitize($_POST["firstname"]);
     }
 
-    if (empty($_POST["lastName"])) {
-        $lastNameErr = "Please enter your last name";
+    if (empty($_POST["lastname"])) {
+        $lastnameErr = "Please enter your last name";
     }
     else {
-        $lastName = sanitize($_POST["lastName"]);
+        $lastname = sanitize($_POST["lastname"]);
     }
 
     if (empty($_POST["email"]))  {
@@ -54,12 +54,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $username = sanitize($_POST["username"]);
     }
 
-
     if (empty($_POST["password"])) {
         $passwordErr = "Please enter a password";
     }
     else {
         $password = sanitize($_POST["password"]);
+    }
+
+    if(isset($_POST['firstname']) && isset($_POST['lastname'])) {
+        $data = $_POST['firstname'] . '-' . $_POST['lastname'] . "\n";
+        $ret = file_put_contents('/Users/jon/Desktop /registration.txt', $data, FILE_APPEND | LOCK_EX);
+        if($ret === false) {
+            die('There was an error writing this file');
+        }
+        else {
+            echo "$ret bytes written to file";
+        }
+    }
+    else {
+        die('no post data to process');
     }
 }
 
@@ -70,6 +83,7 @@ function sanitize($input)
     $input = htmlspecialchars($input);
     return $input;
 }
+
 ?>
 
 <!DOCTYPE html>
@@ -122,13 +136,13 @@ require_once(TEMPLATES_PATH . "/header.php");
                     <div class="row">
                         <div class="form-group col-lg-4">
                             <label>First Name</label>*
-                            <input type="text" class="form-control" name="firstName" id="firstName" value="<?php echo $firstName;?>" placeholder="First Name">
-                            <span class="error"><?php echo $firstNameErr;?></span>
+                            <input type="text" class="form-control" name="firstname" id="firstname" value="<?php echo $firstname;?>" placeholder="First Name">
+                            <span class="error"><?php echo $firstnameErr;?></span>
                         </div>
                         <div class="form-group col-lg-4">
                             <label>Last Name</label>*
-                            <input type="text" class="form-control" name="lastName" id="lastName" value="<?php echo $lastName;?>" placeholder="Last Name">
-                            <span class="error"><?php echo $lastNameErr;?></span>
+                            <input type="text" class="form-control" name="lastname" id="lastname" value="<?php echo $lastname;?>" placeholder="Last Name">
+                            <span class="error"><?php echo $lastnameErr;?></span>
                         </div>
                         <div class="form-group col-lg-4">
                             <label>Email Address</label>*
