@@ -44,7 +44,7 @@ require_once(TEMPLATES_PATH . "/header.php");
                 </h2>
                 <hr>
                 <div class="clearfix"></div>
-                <img alt="integrity" itemprop="image"
+                <img class="img-responsive img-full" alt="integrity" itemprop="image"
                     src="../resources/library/img/Integrity.jpg">
                 <p>Item: integrity</p>
                 <p>Price: $2,599.00</p>

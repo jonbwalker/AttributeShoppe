@@ -172,3 +172,17 @@ footer p {
         clear: both;
     }
 }
+
+#login{
+    float: right;
+    height: 50px;
+    width: 100px;
+    margin-top:20px;
+}
+
+#register{
+    float: right;
+    height: 50px;
+    width: 100px;
+    margin-top: 20px;
+}

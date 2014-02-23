@@ -12,7 +12,7 @@
     <!-- Bootstrap core CSS -->
     <link href="../resources/library/css/bootstrap.css" rel="stylesheet">
 
-    <!-- Add custom CSS here -->
+    <!-- custom CSS  -->
     <link href="../resources/library/css/main.css" rel="stylesheet">
 
     <!-- Google web fonts -->
