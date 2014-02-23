@@ -153,7 +153,7 @@ require_once(TEMPLATES_PATH . "/footer.php");
 <script src="../resources/library/js/jquery-1.10.2.js"></script>
 <script src="../resources/library/js/bootstrap.js"></script>
 <script src="../resources/library/js/bootstrap-datepicker.js"></script>
-<script src="../resources/library/js/main.js"></script>
+<script src="../resources/library/js/form-validation.js"></script>
 <script src="../resources/library/js/jquery.validate.js"></script>
 <script src="../resources/library/js/additional-methods.js"></script>
 <script>
