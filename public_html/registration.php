@@ -85,7 +85,7 @@ function sanitize($input)
 }
 
 function write(){
-    $data = $_POST['firstname'] . ' '
+    $data = 'User: ' . $_POST['firstname'] . ' '
         . $_POST['lastname'] . ' '
         . $_POST['email'] . ' '
         . $_POST['phone'] . ' '
