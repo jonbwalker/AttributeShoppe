@@ -138,7 +138,7 @@ require_once("../resources/config.php");
 require_once(TEMPLATES_PATH . "/header.php");
 ?>
 
-<div class="container">
+<div class="container" ng-app="">
     <div class="row">
         <div class="box">
             <div class="col-lg-12">
@@ -147,6 +147,7 @@ require_once(TEMPLATES_PATH . "/header.php");
                 </h2>
                 <hr>
                 <p>Personal Info</p>
+                <p>User: {{first}} {{last}}</p>
                 <div class="form-group">
                     (*) = Required Fields
                 </div>
@@ -154,12 +155,13 @@ require_once(TEMPLATES_PATH . "/header.php");
                     <div class="row">
                         <div class="form-group col-lg-4">
                             <label>First Name</label>*
-                            <input type="text" class="form-control" name="firstname" id="firstname" value="<?php echo $firstname;?>" placeholder="First Name">
+                            <input type="text" class="form-control" name="firstname" id="firstname" value="<?php echo $firstname;?>" placeholder="First Name" ng-model="first">
                             <span class="error"><?php echo $firstnameErr;?></span>
+
                         </div>
                         <div class="form-group col-lg-4">
                             <label>Last Name</label>*
-                            <input type="text" class="form-control" name="lastname" id="lastname" value="<?php echo $lastname;?>" placeholder="Last Name">
+                            <input type="text" class="form-control" name="lastname" id="lastname" value="<?php echo $lastname;?>" placeholder="Last Name" ng-model="last">
                             <span class="error"><?php echo $lastnameErr;?></span>
                         </div>
                         <div class="form-group col-lg-4">
@@ -272,6 +274,7 @@ require_once(TEMPLATES_PATH . "/footer.php");
 <script src="../resources/library/js/form-validation.js"></script>
 <script src="../resources/library/js/jquery.validate.js"></script>
 <script src="../resources/library/js/additional-methods.js"></script>
+<script src="../resources/library/js/angular.js"></script>
 <script>
     $('#dp1').datepicker({
         format: 'mm-dd-yyyy'
