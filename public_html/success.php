@@ -34,11 +34,10 @@ require_once(TEMPLATES_PATH . "/header.php");
     <div class="row">
         <div class="box">
             <div class="col-lg-12">
-                <hr>
-                <h1 class="intro-text text-center">Success!<br>
-                Now Start <a href="products.php"> Shopping</a>
-                </h1>
-                <hr>
+                <h1 class="text-center">Registration Success!<br></h1>
+                <div class="text-center">
+                    <h3> Now Browse <a href="products.php"> Products</a></h3>
+                </div>
             </div>
         </div>
     </div>
