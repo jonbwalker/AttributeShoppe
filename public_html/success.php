@@ -35,18 +35,10 @@ require_once(TEMPLATES_PATH . "/header.php");
         <div class="box">
             <div class="col-lg-12">
                 <hr>
-                <h2 class="intro-text text-center">Users
-                </h2>
+                <h1 class="intro-text text-center">Success!<br>
+                Now Start <a href="products.php"> Shopping</a>
+                </h1>
                 <hr>
-                <?php
-                $file = fopen('/Users/jon/Desktop/registration.txt', "r") or exit("Unable to open file!");
-                //Output a line of the file until the end is reached
-                while (!feof($file)) {
-                    echo fgets($file) .  "<br>";
-                }
-                fclose($file);
-
-                ?>
             </div>
         </div>
     </div>

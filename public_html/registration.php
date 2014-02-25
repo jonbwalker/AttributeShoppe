@@ -71,6 +71,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if(empty($error)) {
      write();
+        header("Location: success.php");
     }else{
         $formError = "Errors in form";
     }
