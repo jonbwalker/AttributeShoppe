@@ -10,10 +10,10 @@
     <title>Products | Attribute Shoppe</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../resources/library/css/bootstrap.css" rel="stylesheet">
+    <link href="../../resources/library/css/bootstrap.css" rel="stylesheet">
 
     <!-- Add custom CSS here -->
-    <link href="../resources/library/css/main.css" rel="stylesheet">
+    <link href="../../resources/library/css/main.css" rel="stylesheet">
 
     <!-- Google web fonts -->
     <link href='http://fonts.googleapis.com/css?family=Revalia' rel='stylesheet' type='text/css'>
@@ -21,20 +21,20 @@
     <link href='http://fonts.googleapis.com/css?family=Duru+Sans' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Offside' rel='stylesheet' type='text/css'>
-</head>
+    <?php
+    // load config file
+    include_once("../../resources/config.php");
+    // include header navigation bar
+    require_once(TEMPLATES_PATH . "/header.php");
+    ?>
 
+    <!--set base url-->
+    <base href="<?php echo BASE_URL ?>"/>
+</head>
 <body>
-<?php
-// load config file
-require_once("../resources/config.php");
-// include header navigation bar
-require_once(TEMPLATES_PATH . "/header.php");
-?>
 
 <div class="container">
-
     <div class="row">
-
         <div class="box">
             <?php
             // include categories template
@@ -48,14 +48,14 @@ require_once(TEMPLATES_PATH . "/header.php");
 
                 <div class="col col-lg-4 col-sm-6">
                     <div class="thumbnail" itemscope itemtype="http://schema.org/Product">
-                        <a href="strength.php" title="strength">
+                        <a href="public_html/strength.php" title="strength">
                             <img alt="strength" itemprop="image"
-                                 src="../resources/library/img/STRENGTH.png">
+                                 src="resources/library/img/STRENGTH.png">
                         </a>
 
                         <div class="caption">
                             <h5 class="ellipsis">
-                                <a href="strength.php" itemprop="url"
+                                <a href="public_html/strength.php" itemprop="url"
                                    title="Courage">
                                     <span itemprop="brand">Strength</span>
                                     <span itemprop="name"></span>
@@ -70,14 +70,14 @@ require_once(TEMPLATES_PATH . "/header.php");
                 </div>
                 <div class="col col-lg-4 col-sm-6">
                     <div class="thumbnail" itemscope itemtype="http://schema.org/Product">
-                        <a href="wisdom.php" title="wisdom">
+                        <a href="public_html/wisdom.php" title="wisdom">
                             <img alt="integrity" itemprop="image"
-                                 src="../resources/library/img/WISDOM.png">
+                                 src="resources/library/img/WISDOM.png">
                             <!--src="http://michelewoodward.com/wp-content/uploads/2011/04/Integrity.jpg">-->
                         </a>
                         <div class="caption">
                             <h5 class="ellipsis">
-                                <a href="wisdom.php" itemprop="url"
+                                <a href="public_html/wisdom.php" itemprop="url"
                                    title="wisdom">
                                     <span itemprop="brand">Wisdom</span>
                                     <span itemprop="name"></span>
@@ -103,8 +103,8 @@ require_once(TEMPLATES_PATH . "/footer.php");
 ?>
 
 <!-- JavaScript -->
-<script src="../resources/library/js/jquery-1.10.2.js"></script>
-<script src="../resources/library/js/bootstrap.js"></script>
+<script src="../../resources/library/js/jquery-1.10.2.js"></script>
+<script src="../../resources/library/js/bootstrap.js"></script>
 
 </body>
 

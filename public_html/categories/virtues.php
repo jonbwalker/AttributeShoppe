@@ -10,10 +10,10 @@
     <title>Products | Attribute Shoppe</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../resources/library/css/bootstrap.css" rel="stylesheet">
+    <link href="../../resources/library/css/bootstrap.css" rel="stylesheet">
 
     <!-- custom CSS  -->
-    <link href="../resources/library/css/main.css" rel="stylesheet">
+    <link href="../../resources/library/css/main.css" rel="stylesheet">
 
     <!-- Google web fonts -->
     <link href='http://fonts.googleapis.com/css?family=Revalia' rel='stylesheet' type='text/css'>
@@ -21,15 +21,16 @@
     <link href='http://fonts.googleapis.com/css?family=Duru+Sans' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Offside' rel='stylesheet' type='text/css'>
+    <?php
+    // load config file
+    require_once("../../resources/config.php");
+    // include header navigation bar
+    require_once(TEMPLATES_PATH . "/header.php");
+    ?>
+    <base href="<?php echo BASE_URL ?>"/>
 </head>
 
 <body>
-<?php
-// load config file
-require_once("../resources/config.php");
-// include header navigation bar
-require_once(TEMPLATES_PATH . "/header.php");
-?>
 
 <div class="container">
     <div class="row">
@@ -48,13 +49,13 @@ require_once(TEMPLATES_PATH . "/header.php");
                 <div class="row">
                     <div class="col col-lg-4 col-sm-6">
                         <div class="thumbnail" itemscope itemtype="http://schema.org/Product">
-                            <a href="courage.php" title="courage">
+                            <a href="public_html/courage.php" title="courage">
                                 <img alt="courage" itemprop="image"
-                                     src="../resources/library/img/COURAGE.png">
+                                     src="resources/library/img/COURAGE.png">
                             </a>
                             <div class="caption">
                                 <h5 class="ellipsis">
-                                    <a href="courage.php" itemprop="url"
+                                    <a href="public_html/courage.php" itemprop="url"
                                        title="Courage">
                                         <span itemprop="brand">Courage</span>
                                         <span itemprop="name"></span>
@@ -72,14 +73,13 @@ require_once(TEMPLATES_PATH . "/header.php");
                     <!-- product -->
                     <div class="col col-lg-4 col-sm-6">
                         <div class="thumbnail" itemscope itemtype="http://schema.org/Product">
-                            <a href="integrity.php" title="Integrity">
+                            <a href="public_html/integrity.php" title="Integrity">
                                 <img alt="integrity" itemprop="image"
-                                     src="../resources/library/img/Integrity.jpg">
-                                <!--src="http://michelewoodward.com/wp-content/uploads/2011/04/Integrity.jpg">-->
+                                     src="resources/library/img/Integrity.jpg">
                             </a>
                             <div class="caption">
                                 <h5 class="ellipsis">
-                                    <a href="integrity.php" itemprop="url"
+                                    <a href="public_html/integrity.php" itemprop="url"
                                        title="Integrity">
                                         <span itemprop="brand">Integrity</span>
                                         <span itemprop="name"></span>
@@ -106,8 +106,8 @@ require_once(TEMPLATES_PATH . "/header.php");
     ?>
 
     <!-- JavaScript -->
-    <script src="../resources/library/js/jquery-1.10.2.js"></script>
-    <script src="../resources/library/js/bootstrap.js"></script>
+    <script src="../../resources/library/js/jquery-1.10.2.js"></script>
+    <script src="../../resources/library/js/bootstrap.js"></script>
 
 </body>
 

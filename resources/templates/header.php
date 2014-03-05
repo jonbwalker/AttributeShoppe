@@ -18,11 +18,11 @@
             <a href="login.php"> <input id="login" type="button" value="Login"></a>
             <a href="registration.php"> <input id="register" type="button" value="Register"></a>
             <ul class="nav navbar-nav">
-                <li><a href="index.php">Home</a>
+                <li><a href="<?php echo BASE_URL; ?>/index.php">Home</a>
                 </li>
-                <li><a href="products.php">Products</a>
+                <li><a href="<?php echo BASE_URL; ?>/products.php">Products</a>
                 </li>
-                <li><a href="about.php">About</a>
+                <li><a href="<?php echo BASE_URL; ?>/about.php">About</a>
                 </li>
 <!--                <li><a href="blog.php">Blog</a>-->
 <!--                </li>-->
