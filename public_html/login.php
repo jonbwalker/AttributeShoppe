@@ -29,11 +29,44 @@
 require_once("../resources/config.php");
 // include header navigation bar
 require_once(TEMPLATES_PATH . "/header.php");
+
+include("../resources/library/phpscripts/process-login.php")
 ?>
 
 <div class="container">
+    <div class="row">
+        <div class="box">
+            <div class="col-lg-12">
+                <hr>
+                <h2 class="intro-text text-center">Login <strong>form</strong>
+                </h2>
+                <hr>
+                <form role="form" id="registration-form" method="POST"
+                      action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
+                    <div class="row">
 
-</div>
+                        <div class="form-group col-lg-4">
+                            <label>UserName</label>*
+                            <input type="text" class="form-control" id="username" name="username"
+                                   placeholder="User Name">
+                            <span class="error"></span>
+
+                            <label>Password</label>*
+                            <input type="password" class="form-control" id="password" name="password"
+                                   placeholder="Password">
+                            <span class="error"></span>
+                        </div>
+
+                        <div class="form-group col-lg-12">
+                            <input type="hidden" name="save" value="login">
+                            <button type="submit" class="btn btn-default">Submit</button>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
 <!-- /.container -->
 
 <?php
