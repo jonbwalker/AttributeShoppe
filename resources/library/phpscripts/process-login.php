@@ -1,6 +1,6 @@
 <?php
 // Create connection
-$con=mysqli_connect("127.0.0.1","root","Blackrock13","attribute_shoppe");
+$con=mysqli_connect("127.0.0.1","attrib","password","attribute_shoppe");
 
 // Check connection
 if (mysqli_connect_errno())

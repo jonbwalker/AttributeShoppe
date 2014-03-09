@@ -29,7 +29,7 @@
 require_once("../resources/config.php");
 // include header navigation bar
 require_once(TEMPLATES_PATH . "/header.php");
-
+// include the login processing logic
 include("../resources/library/phpscripts/process-login.php")
 ?>
 
@@ -41,7 +41,7 @@ include("../resources/library/phpscripts/process-login.php")
                 <h2 class="intro-text text-center">Login <strong>form</strong>
                 </h2>
                 <hr>
-                <form role="form" id="registration-form" method="POST"
+                <form role="form" id="process-login" method="POST"
                       action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
                     <div class="row">
 
@@ -81,3 +81,4 @@ require_once(TEMPLATES_PATH . "/footer.php");
 </body>
 
 </html>
+GRANT ALL ON attribute_shoppe.* TO attrib@localhost IDENTIFIED BY 'password';
