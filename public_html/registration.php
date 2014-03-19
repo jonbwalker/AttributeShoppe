@@ -31,7 +31,9 @@ require_once("../resources/config.php");
 // include header navigation bar
 require_once(TEMPLATES_PATH . "/header.php");
 // include form processing
-include("../resources/library/phpscripts/registration-form.php")
+include("../resources/library/phpscripts/registration-form.php");
+
+
 ?>
 
 <div class="container" ng-app="">
@@ -84,7 +86,7 @@ include("../resources/library/phpscripts/registration-form.php")
                                 <input type="radio" name="gender" value="<?php echo $gender;?>"> Female
                             </fieldset>
                             <span class="error"><?php echo $genderErr;?></span>
-                            <label  for="gender" class="error"></label>
+                            <label for="gender" class="error"></label>
                         </div>
 
 <!--                        <div class="form-group col-lg-4">-->

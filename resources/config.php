@@ -2,18 +2,10 @@
 
 $config = array(
     "db" => array(
-        "db1" => array(
-            "dbname" => "database1",
-            "username" => "dbUser",
-            "password" => "pa$$",
-            "host" => "localhost"
-        ),
-        "db2" => array(
-            "dbname" => "database2",
-            "username" => "dbUser",
-            "password" => "pa$$",
-            "host" => "localhost"
-        )
+        "dbname" => "attribute_shoppe",
+        "username" => "attrib",
+        "password" => "password",
+        "host" => "localhost"
     ),
     "urls" => array(
         "baseUrl" => "http://localhost:8080/AttributeShoppe/index.php"
