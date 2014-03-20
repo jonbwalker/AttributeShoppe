@@ -82,8 +82,8 @@ include("../resources/library/phpscripts/registration-form.php");
                         <div class="form-group col-lg-4">
                             <label>Gender</label><br>
                             <fieldset>
-                                <input type="radio" name="gender" value="<?php echo $gender;?>"> Male<br>
-                                <input type="radio" name="gender" value="<?php echo $gender;?>"> Female
+                                <input type="radio" name="gender" value="male"> Male<br>
+                                <input type="radio" name="gender" value="female"> Female
                             </fieldset>
                             <span class="error"><?php echo $genderErr;?></span>
                             <label for="gender" class="error"></label>

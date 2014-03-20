@@ -30,7 +30,7 @@ require_once("../resources/config.php");
 // include header navigation bar
 require_once(TEMPLATES_PATH . "/header.php");
 // include the login processing logic
-include("../resources/library/phpscripts/process-login.php")
+include("../resources/library/phpscripts/proccess-login.php")
 ?>
 
 <div class="container">

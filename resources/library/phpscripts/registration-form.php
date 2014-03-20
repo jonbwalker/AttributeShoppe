@@ -86,7 +86,7 @@ function sanitize($input)
 }
 
 function saveUser(){
-    $dbConNum = new mysqli('localhost', 'attrib', 'password', 'attribute_shoppe');
+    $conn = new mysqli('localhost', 'attrib', 'password', 'attribute_shoppe');
 
     if (mysqli_connect_errno()) {
         header("Location: index.php");
@@ -110,14 +110,14 @@ function saveUser(){
     $sql = "INSERT INTO USER (FIRST_NAME,LAST_NAME,EMAIL_ADDRESS,ADDRESS_ID,USERNAME,PASSWORD,IS_ADMIN,GENDER,DOB,PHONE)
     VALUES ('$firstname', '$lastname', '$email',NULL ,'$username', '$password','$isadmin', '$gender', '$dob', '$phone')";
 
-    $result = $dbConNum->query($sql);
+    $result = $conn->query($sql);
 
     if ($result) {
-        echo("" . $dbConNum->affected_rows . " news items inserted");
+        echo("" . $conn->affected_rows . " news items inserted");
     } else {
         echo("Error inserting Data");
     }
-    $dbConNum->close();
+    $conn->close();
 }
 
 

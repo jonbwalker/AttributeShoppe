@@ -15,7 +15,7 @@
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
-            <a href="login.php"> <input id="login" type="button" value="Login"></a>
+            <a href="<?php echo BASE_URL; ?>/login.php"> <input id="login" type="button" value="Login"></a>
             <a href="registration.php"> <input id="register" type="button" value="Register"></a>
             <ul class="nav navbar-nav">
                 <li><a href="<?php echo BASE_URL; ?>/index.php">Home</a>
@@ -28,6 +28,7 @@
 <!--                </li>-->
                 <li><a href="contact.php">Contact</a>
                 </li>
+
             </ul>
         </div>
 
