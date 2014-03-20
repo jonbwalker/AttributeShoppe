@@ -45,4 +45,24 @@ $(document).ready(function () {
         }
     });
 
+    $('#proccess-login').validate({
+        rules:{
+            username: {
+                minlength: 3,
+                required: true
+            },
+            password: {
+                minlength: 8,
+                required: true
+            }
+        },
+        highlight: function (element) {
+            $(element).closest('.form-group').removeClass('success').addClass('error').css('color', 'red');
+        },
+        success: function (element) {
+            element.text('OK!').addClass('valid')
+                .closest('.form-group').removeClass('error').addClass('success').css('color', 'green');
+        }
+    });
+
 });

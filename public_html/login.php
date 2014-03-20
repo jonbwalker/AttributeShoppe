@@ -41,7 +41,7 @@ include("../resources/library/phpscripts/proccess-login.php")
                 <h2 class="intro-text text-center">Login <strong>form</strong>
                 </h2>
                 <hr>
-                <form role="form" id="process-login" method="POST"
+                <form role="form" id="proccess-login" method="POST"
                       action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
                     <div class="row">
 
@@ -49,7 +49,7 @@ include("../resources/library/phpscripts/proccess-login.php")
                             <label>UserName</label>*
                             <input type="text" class="form-control" id="username" name="username"
                                    placeholder="User Name">
-                            <span class="error"></span>
+                            <span class="error"></span>  <br>
 
                             <label>Password</label>*
                             <input type="password" class="form-control" id="password" name="password"
@@ -62,7 +62,6 @@ include("../resources/library/phpscripts/proccess-login.php")
                             <button type="submit" class="btn btn-default">Submit</button>
                         </div>
                     </div>
-
                 </form>
             </div>
         </div>
@@ -77,6 +76,9 @@ require_once(TEMPLATES_PATH . "/footer.php");
 <!-- JavaScript -->
 <script src="../resources/library/js/jquery-1.10.2.js"></script>
 <script src="../resources/library/js/bootstrap.js"></script>
+<script src="../resources/library/js/form-validation.js"></script>
+<script src="../resources/library/js/jquery.validate.js"></script>
+<script src="../resources/library/js/additional-methods.js"></script>
 
 </body>
 
