@@ -45,12 +45,14 @@ include("../resources/library/phpscripts/proccess-login.php")
                       action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
                     <div class="row">
 
-                        <div class="form-group col-lg-4">
+                        <div class="form-group col-lg-3">
                             <label>UserName</label>*
                             <input type="text" class="form-control" id="username" name="username"
                                    placeholder="User Name">
                             <span class="error"></span>  <br>
+                        </div>
 
+                        <div class="form-group col-lg-3">
                             <label>Password</label>*
                             <input type="password" class="form-control" id="password" name="password"
                                    placeholder="Password">
