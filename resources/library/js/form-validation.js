@@ -45,7 +45,7 @@ $(document).ready(function () {
         }
     });
 
-    $('#proccess-login').validate({
+    $('#process-login').validate({
         rules:{
             username: {
                 minlength: 3,

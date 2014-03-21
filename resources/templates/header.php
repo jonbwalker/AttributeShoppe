@@ -15,6 +15,7 @@
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <a href="<?php echo BASE_URL; ?>/index.php"> <input id="logout" type="button" value="Logout"></a>
             <a href="<?php echo BASE_URL; ?>/login.php"> <input id="login" type="button" value="Login"></a>
             <a href="registration.php"> <input id="register" type="button" value="Register"></a>
             <ul class="nav navbar-nav">

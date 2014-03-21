@@ -190,3 +190,9 @@ footer p {
     z-index: 10;
     position: relative;
 }
+
+#logout{
+    float:right;
+    margin: 32px 7px;
+}
+

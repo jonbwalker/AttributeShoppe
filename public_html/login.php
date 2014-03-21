@@ -30,7 +30,7 @@ require_once("../resources/config.php");
 // include header navigation bar
 require_once(TEMPLATES_PATH . "/header.php");
 // include the login processing logic
-include("../resources/library/phpscripts/proccess-login.php")
+include("../resources/library/phpscripts/process-login.php")
 ?>
 
 <div class="container">
@@ -41,7 +41,7 @@ include("../resources/library/phpscripts/proccess-login.php")
                 <h2 class="intro-text text-center">Login <strong>form</strong>
                 </h2>
                 <hr>
-                <form role="form" id="proccess-login" method="POST"
+                <form role="form" id="process-login" method="POST"
                       action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
                     <div class="row">
 
