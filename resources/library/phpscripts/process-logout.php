@@ -1,7 +1,7 @@
 <?php
-    session_start();
-session_start();
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
 unset($_SESSION["loggedIn"]);  // where $_SESSION["nome"] is your own variable. if you do not have one use only this as follow **session_unset();**
-header("Location: home.php");
+header("Location: index.php");
+}
 ?>
 

@@ -15,6 +15,11 @@
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <?php
+            if(isset($_SESSION['username'])){
+                echo "Welcome: ", $_SESSION['username'];
+            }
+            ?>
             <a href="<?php echo BASE_URL; ?>/index.php"> <input id="logout" type="button" value="Logout"></a>
             <a href="<?php echo BASE_URL; ?>/login.php"> <input id="login" type="button" value="Login"></a>
             <a href="registration.php"> <input id="register" type="button" value="Register"></a>

@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -40,8 +43,7 @@ require_once(TEMPLATES_PATH . "/header.php");
             ?>
             <div class="col-lg-12">
                 <hr>
-                <h2 class="intro-text text-center">Products <strong>attribute shoppe</strong>
-                </h2>
+                    <h2 class="intro-text text-center">Products <strong>attribute shoppe</strong></h2>
                 <hr>
                 <div class="clearfix"></div>
             </div>

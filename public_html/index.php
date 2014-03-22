@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -29,6 +32,7 @@
 require_once("../resources/config.php");
 // include header navigation bar
 require_once(TEMPLATES_PATH . "/header.php");
+include("../resources/library/phpscripts/process-logout.php")
 ?>
 
 <div class="container">
@@ -56,7 +60,9 @@ require_once(TEMPLATES_PATH . "/header.php");
                             <img class="img-responsive img-full" src="../resources/library/img/slide-3.jpg" alt="">
                         </div>
                     </div>
-
+                    <?php
+                    print_r($_SESSION);
+                    ?>
                     <!-- Controls -->
                     <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
                         <span class="icon-prev"></span>

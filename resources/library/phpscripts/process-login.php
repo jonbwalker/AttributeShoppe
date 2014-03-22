@@ -22,6 +22,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         header("Location: ../public_html/index.php");
     } else {
         $_SESSION['loggedIn'] = "true";
+        $_SESSION['username'] = $username;
+
         $rows_returned = $result->num_rows;
         header("Location: ../public_html/products.php");
     }
