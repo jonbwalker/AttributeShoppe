@@ -181,6 +181,9 @@ footer p {
     z-index: 10;
     position: relative;
 }
+.login-error{
+    color:red;
+}
 
 #register{
     float: right;

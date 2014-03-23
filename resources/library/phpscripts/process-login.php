@@ -1,4 +1,5 @@
 <?php
+$loginError = "";
 
 session_start();
 
@@ -18,14 +19,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $row_cnt = $result->num_rows;
     if ($row_cnt === 0) {
         $_SESSION['loggedIn'] = "false";
-        trigger_error('Wrong SQL: ' . $sql . ' Error: ' . $conn->error, E_USER_ERROR);
-        header("Location: ../public_html/index.php");
+        unset($_SESSION["loggedIn"]);
+        unset($_SESSION["username"]);
+        //        trigger_error('Wrong SQL: ' . $sql . ' Error: ' . $conn->error, E_USER_ERROR);
+        $loginError = "We could not locate your account, please check your credentials and try again";
     } else {
         $_SESSION['loggedIn'] = "true";
         $_SESSION['username'] = $username;
 
         $rows_returned = $result->num_rows;
-        header("Location: ../public_html/products.php");
+        header("Location:" . BASE_URL . "/products.php");
     }
 }
 ?>

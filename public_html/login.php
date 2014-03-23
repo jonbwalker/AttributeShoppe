@@ -37,6 +37,7 @@ include("../resources/library/phpscripts/process-login.php")
     <div class="row">
         <div class="box">
             <div class="col-lg-12">
+                <span class="login-error"><?php echo $loginError;?></span>
                 <hr>
                 <h2 class="intro-text text-center">Login <strong>form</strong>
                 </h2>
@@ -44,6 +45,7 @@ include("../resources/library/phpscripts/process-login.php")
                 <form role="form" id="process-login" method="POST"
                       action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
                     <div class="row">
+
 
                         <div class="form-group col-lg-3">
                             <label>UserName</label>*
@@ -63,6 +65,7 @@ include("../resources/library/phpscripts/process-login.php")
                             <input type="hidden" name="save" value="login">
                             <button type="submit" class="btn btn-default">Submit</button>
                         </div>
+
                     </div>
                 </form>
             </div>
@@ -85,4 +88,3 @@ require_once(TEMPLATES_PATH . "/footer.php");
 </body>
 
 </html>
-GRANT ALL ON attribute_shoppe.* TO attrib@localhost IDENTIFIED BY 'password';
