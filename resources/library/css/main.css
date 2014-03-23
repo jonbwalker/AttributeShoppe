@@ -203,3 +203,8 @@ footer p {
    float: right;
     margin-right: 122px;
 }
+
+#create-account{
+    margin-left: 42%;
+    position:relative;
+}

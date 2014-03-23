@@ -40,7 +40,7 @@ include("../resources/library/phpscripts/process-login.php")
     <div class="row">
         <div class="box">
             <div class="col-lg-12">
-                <span class="login-error"><?php echo $loginError;?></span>
+                <span class="login-error"><?php echo $loginError; ?></span>
                 <hr>
                 <h2 class="intro-text text-center">Login <strong>form</strong>
                 </h2>
@@ -49,22 +49,21 @@ include("../resources/library/phpscripts/process-login.php")
                       action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
                     <div class="row">
 
-
-                        <div class="form-group col-lg-3">
+                        <div class="form-group col-lg-4 col-lg-offset-4">
                             <label>UserName</label>*
                             <input type="text" class="form-control" id="username" name="username"
                                    placeholder="User Name">
-                            <span class="error"></span>  <br>
+                            <span class="error"></span> <br>
                         </div>
 
-                        <div class="form-group col-lg-3">
+                        <div class="form-group col-lg-4 col-lg-offset-4">
                             <label>Password</label>*
                             <input type="password" class="form-control" id="password" name="password"
                                    placeholder="Password">
                             <span class="error"></span>
                         </div>
 
-                        <div class="form-group col-lg-12">
+                        <div class="form-group col-lg-12 col-lg-offset-4">
                             <input type="hidden" name="save" value="login">
                             <button type="submit" class="btn btn-default">Submit</button>
                         </div>
@@ -74,6 +73,19 @@ include("../resources/library/phpscripts/process-login.php")
             </div>
         </div>
     </div>
+
+    <div class="row">
+        <div class="box">
+            <hr>
+                <h2 class="intro-text text-center">New Customer <strong>Sign Up</strong></h2>
+            <hr>
+        <p class="text-center">New Here? Head over to the registration page and create an account </p>
+        <a class="text-center" href="<?php echo BASE_URL; ?>/registration.php"> <input id="create-account" type="button"value="Create New Account"></a>
+        <span class="error"></span> <br>
+        </div>
+    </div>
+</div>
+
 <!-- /.container -->
 
 <?php
