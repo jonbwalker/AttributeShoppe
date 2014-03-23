@@ -49,12 +49,12 @@ require_once(TEMPLATES_PATH . "/header.php");
             <div class="panel-heading text-center">
                 <?php
                 if (isset($_SESSION['username'])) {
-                echo  $_SESSION['username'];
+                echo  "Administrator: ", $_SESSION['username'];
                 }
                 ?>
             </div>
             <div class="list-group col-lg-4">
-                <p class="list-group-item active">User Info</p>
+                <p class="list-group-item active">Users</p>
                 <a href="<?php echo BASE_URL; ?>/users.php" class="list-group-item">View All Users</a>
                 <a href="#" class="list-group-item">Create New User</a>
             </div>

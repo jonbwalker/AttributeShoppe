@@ -15,8 +15,13 @@
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
-
             <a href="../resources/library/phpscripts/process-logout.php"> <input id="logout" type="button" value="Logout"></a>
+            <span id="session-welcome"> <?php
+                if (isset($_SESSION['username'])) {
+                    echo "Welcome: ", $_SESSION['username'];
+                }
+                ?>
+           </span>
             <ul class="nav navbar-nav">
                 <li><a href="<?php echo BASE_URL; ?>/index.php">Home</a></li>
                 <li><a href="<?php echo BASE_URL; ?>/products.php">Products</a></li>
@@ -38,12 +43,6 @@
                     </ul>
                 </li>
             </ul>
-            <span id="session-welcome"> <?php
-                if (isset($_SESSION['username'])) {
-                    echo "Welcome: ", $_SESSION['username'];
-                }
-                ?>
-           </span>
         </div>
         <!-- /.navbar-collapse -->
     </div>
