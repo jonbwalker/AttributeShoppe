@@ -30,7 +30,7 @@
                             echo "<li><a href=", BASE_URL, "/login.php>Login</a></li>";
                             echo "<li><a href=", BASE_URL, "/registration.php>Register</a></li>";
                         }
-                        if(isset($_SESSION['username']) && $_SESSION['username'] == 'admin') {
+                        if(isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'] == 'true') {
 //                            echo "<li class='divider'></li>";
                             echo "<li><a href=", BASE_URL, "/users.php>Admin</a></li>";
                         }?>

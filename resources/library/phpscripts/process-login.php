@@ -32,6 +32,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($row['IS_ADMIN'] == 1) {
             header("Location:" . BASE_URL . "/users.php");
+            $_SESSION['isAdmin'] = "true";
+
         }else{
             header("Location:" . BASE_URL . "/products.php");
         }
