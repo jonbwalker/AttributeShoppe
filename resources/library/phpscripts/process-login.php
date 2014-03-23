@@ -1,8 +1,6 @@
 <?php
 $loginError = "";
 
-session_start();
-
 //Connect to server
 $conn = new mysqli('localhost', 'attrib', 'password', 'attribute_shoppe');
 

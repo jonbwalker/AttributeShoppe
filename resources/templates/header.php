@@ -17,33 +17,26 @@
         <div class="collapse navbar-collapse navbar-ex1-collapse">
 
             <a href="../resources/library/phpscripts/process-logout.php"> <input id="logout" type="button" value="Logout"></a>
-<!--            --><?php
-//            if (!isset($_SESSION['username'])) {
-//                echo "<a href=",BASE_URL,"/login.php> <input id='login' type='button' value='Login'></a>";
-//                echo "<a href='registration.php'> <input id='register' type='button' value='Register'></a>";
-//            }
-//            ?>
             <ul class="nav navbar-nav">
-                <li><a href="<?php echo BASE_URL; ?>/index.php">Home</a>
-                </li>
-                <li><a href="<?php echo BASE_URL; ?>/products.php">Products</a>
-                </li>
-                <li><a href="<?php echo BASE_URL; ?>/about.php">About</a>
-                </li>
-<!--                <li><a href="blog.php">Blog</a>-->
-<!--                </li>-->
-                <li><a href="contact.php">Contact</a>
-                </li>
+                <li><a href="<?php echo BASE_URL; ?>/index.php">Home</a></li>
+                <li><a href="<?php echo BASE_URL; ?>/products.php">Products</a></li>
+                <li><a href="<?php echo BASE_URL; ?>/about.php">About</a></li>
+                <li><a href="<?php echo BASE_URL; ?>/contact.php">Contact</a></li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Login <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <?php
                         if (!isset($_SESSION['username'])) {
-                            echo "<li><a href=", BASE_URL, "/login.php> Login</a></li>";
+                            echo "<li><a href=", BASE_URL, "/login.php>Login</a></li>";
                             echo "<li><a href=", BASE_URL, "/registration.php>Register</a></li>";
-                            echo "<li class='divider'></li>";
+
                         }?>
-                        <li><a href="#">Admin</a></li>
+
+                        <?php
+                        if(isset($_SESSION['username']) && $_SESSION['username'] == 'admin') {
+//                            echo "<li class='divider'></li>";
+                            echo "<li><a href=", BASE_URL, "/login.php>Admin</a></li>";
+                        }?>
                     </ul>
                 </li>
             </ul>
