@@ -79,7 +79,7 @@ include("../resources/library/phpscripts/process-login.php")
             <hr>
                 <h2 class="intro-text text-center">New Customer <strong>Sign Up</strong></h2>
             <hr>
-        <p class="text-center">New Here? Head over to the registration page and create an account </p>
+        <p class="text-center">New Here? Head over to the registration page and create an account!</p>
         <a class="text-center" href="<?php echo BASE_URL; ?>/registration.php"> <input id="create-account" type="button"value="Create New Account"></a>
         <span class="error"></span> <br>
         </div>

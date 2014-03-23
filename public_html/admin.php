@@ -2,7 +2,7 @@
 require_once("../resources/config.php");
 if (!session_id()) session_start();
 if (!$_SESSION['isAdmin']){
-    header("Location:" . BASE_URL . "/index.php");
+    header("Location:" . BASE_URL . "/login.php");
     die();
 }
 ?>
@@ -42,11 +42,33 @@ require_once(TEMPLATES_PATH . "/header.php");
         <div class="box">
             <div class="col-lg-12">
                 <hr>
-                <h2 class="intro-text text-center">Admin <strong>attribute shoppe</strong>
+                <h2 class="intro-text text-center">Admin
                 </h2>
                 <hr>
             </div>
+            <div class="panel-heading text-center">
+                <?php
+                if (isset($_SESSION['username'])) {
+                echo  $_SESSION['username'];
+                }
+                ?>
+            </div>
+            <div class="list-group col-lg-4">
+                <p class="list-group-item active">User Info</p>
+                <a href="<?php echo BASE_URL; ?>/users.php" class="list-group-item">View All Users</a>
+                <a href="#" class="list-group-item">Create New User</a>
+            </div>
+            <div class="list-group col-lg-4">
+                <p class="list-group-item active">Content</p>
+                <a href="#" class="list-group-item">View All Content Items</a>
+                <a href="#" class="list-group-item">Add New Content Item</a>
+            </div>
 
+            <div class="list-group col-lg-4">
+                <p class="list-group-item active">Account</p>
+                <a href="#" class="list-group-item">View Your Account Info</a>
+                <a href="#" class="list-group-item">Delete This Account</a>
+            </div>
             <div class="clearfix"></div>
         </div>
     </div>

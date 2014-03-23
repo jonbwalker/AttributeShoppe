@@ -2,7 +2,7 @@
 require_once("../resources/config.php");
 if (!session_id()) session_start();
 if (!$_SESSION['isAdmin']){
-    header("Location:" . BASE_URL . "/index.php");
+    header("Location:" . BASE_URL . "/login.php");
     die();
 }
 ?>
