@@ -35,14 +35,14 @@
                 <li><a href="contact.php">Contact</a>
                 </li>
                 <li class="dropdown">
-                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin <b class="caret"></b></a>
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Login <b class="caret"></b></a>
                     <ul class="dropdown-menu">
                         <?php
                         if (!isset($_SESSION['username'])) {
                             echo "<li><a href=", BASE_URL, "/login.php> Login</a></li>";
                             echo "<li><a href=", BASE_URL, "/registration.php>Register</a></li>";
+                            echo "<li class='divider'></li>";
                         }?>
-                        <li class="divider"></li>
                         <li><a href="#">Admin</a></li>
                     </ul>
                 </li>

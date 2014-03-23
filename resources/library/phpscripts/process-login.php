@@ -19,9 +19,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $row_cnt = $result->num_rows;
     if ($row_cnt === 0) {
         $_SESSION['loggedIn'] = "false";
-        unset($_SESSION["loggedIn"]);
-        unset($_SESSION["username"]);
-        //        trigger_error('Wrong SQL: ' . $sql . ' Error: ' . $conn->error, E_USER_ERROR);
+        unset($_SESSION['loggedIn']);
+        unset($_SESSION['username']);
         $loginError = "We could not locate your account, please check your credentials and try again";
     } else {
         $_SESSION['loggedIn'] = "true";
