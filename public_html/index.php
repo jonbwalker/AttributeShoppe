@@ -32,7 +32,7 @@ session_start();
 require_once("../resources/config.php");
 // include header navigation bar
 require_once(TEMPLATES_PATH . "/header.php");
-include("../resources/library/phpscripts/process-logout.php")
+//include("../resources/library/phpscripts/process-logout.php")
 ?>
 
 <div class="container">

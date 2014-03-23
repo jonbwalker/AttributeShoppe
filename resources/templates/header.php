@@ -15,14 +15,14 @@
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
-            <?php
-            if(isset($_SESSION['username'])){
-                echo "Welcome: ", $_SESSION['username'];
-            }
-            ?>
-            <a href="<?php echo BASE_URL; ?>/index.php"> <input id="logout" type="button" value="Logout"></a>
-            <a href="<?php echo BASE_URL; ?>/login.php"> <input id="login" type="button" value="Login"></a>
-            <a href="registration.php"> <input id="register" type="button" value="Register"></a>
+
+            <a href="../resources/library/phpscripts/process-logout.php"> <input id="logout" type="button" value="Logout"></a>
+<!--            --><?php
+//            if (!isset($_SESSION['username'])) {
+//                echo "<a href=",BASE_URL,"/login.php> <input id='login' type='button' value='Login'></a>";
+//                echo "<a href='registration.php'> <input id='register' type='button' value='Register'></a>";
+//            }
+//            ?>
             <ul class="nav navbar-nav">
                 <li><a href="<?php echo BASE_URL; ?>/index.php">Home</a>
                 </li>
@@ -37,18 +37,24 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admin <b class="caret"></b></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#">Action</a></li>
-                        <li><a href="#">Another action</a></li>
-                        <li><a href="#">Something else here</a></li>
+                        <?php
+                        if (!isset($_SESSION['username'])) {
+                            echo "<li><a href=", BASE_URL, "/login.php> Login</a></li>";
+                            echo "<li><a href=", BASE_URL, "/registration.php>Register</a></li>";
+                        }
+                        ?>
                         <li class="divider"></li>
-                        <li><a href="#">Separated link</a></li>
-                        <li class="divider"></li>
-                        <li><a href="#">One more separated link</a></li>
+                        <li><a href="#">Admin</a></li>
                     </ul>
                 </li>
             </ul>
+            <span id="session-welcome"> <?php
+                if (isset($_SESSION['username'])) {
+                    echo "Welcome: ", $_SESSION['username'];
+                }
+                ?>
+           </span>
         </div>
-
         <!-- /.navbar-collapse -->
     </div>
     <!-- /.container -->

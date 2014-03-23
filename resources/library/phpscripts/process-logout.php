@@ -1,7 +1,11 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-unset($_SESSION["loggedIn"]);  // where $_SESSION["nome"] is your own variable. if you do not have one use only this as follow **session_unset();**
-header("Location: index.php");
+include_once"../../config.php";
+if (isset($_SESSION['username'])) {
+    unset($_SESSION["loggedIn"]);
+    session_destroy();
+    header("Location:" . BASE_URL . "/index.php");
+}else{
+    header("Location:" . BASE_URL . "/login.php");
 }
 ?>
 
