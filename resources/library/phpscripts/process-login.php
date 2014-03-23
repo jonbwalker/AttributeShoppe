@@ -1,5 +1,5 @@
 <?php
-$loginError = "";
+$loginError = $row = "";
 
 //Connect to server
 $conn = new mysqli('localhost', 'attrib', 'password', 'attribute_shoppe');
@@ -10,9 +10,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = mysql_real_escape_string($_POST['username']);
     $password = mysql_real_escape_string($_POST['password']);
 
-// Check the users input against the DB.
-    $sql = "SELECT USERNAME, PASSWORD FROM USER WHERE USERNAME = '$username' AND PASSWORD = '$password'";
+    /* check the users credentials against the DB.*/
+    $sql = "SELECT USERNAME, PASSWORD, IS_ADMIN FROM USER WHERE USERNAME = '$username' AND PASSWORD = '$password'";
     $result = $conn->query($sql);
+
+    /* associative array */
+    $row = $result->fetch_array(MYSQLI_ASSOC);
 
     $row_cnt = $result->num_rows;
     if ($row_cnt === 0) {
@@ -23,9 +26,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         $_SESSION['loggedIn'] = "true";
         $_SESSION['username'] = $username;
+        $_SESSION['row'] = $row;
 
         $rows_returned = $result->num_rows;
-        header("Location:" . BASE_URL . "/products.php");
+
+        if ($row['IS_ADMIN'] == 1) {
+            header("Location:" . BASE_URL . "/users.php");
+        }else{
+            header("Location:" . BASE_URL . "/products.php");
+        }
     }
 }
 ?>

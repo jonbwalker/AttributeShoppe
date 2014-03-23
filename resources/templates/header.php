@@ -29,13 +29,10 @@
                         if (!isset($_SESSION['username'])) {
                             echo "<li><a href=", BASE_URL, "/login.php>Login</a></li>";
                             echo "<li><a href=", BASE_URL, "/registration.php>Register</a></li>";
-
-                        }?>
-
-                        <?php
+                        }
                         if(isset($_SESSION['username']) && $_SESSION['username'] == 'admin') {
 //                            echo "<li class='divider'></li>";
-                            echo "<li><a href=", BASE_URL, "/login.php>Admin</a></li>";
+                            echo "<li><a href=", BASE_URL, "/users.php>Admin</a></li>";
                         }?>
                     </ul>
                 </li>
