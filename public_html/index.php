@@ -12,7 +12,7 @@ session_start();
 
     <title>Attribute Shoppe</title>
 
-     <!-- Bootstrap core CSS -->
+    <!-- Bootstrap core CSS -->
     <link href="../resources/library/css/bootstrap.css" rel="stylesheet">
 
     <!-- Add custom CSS here -->
@@ -36,9 +36,20 @@ require_once(TEMPLATES_PATH . "/header.php");
 ?>
 
 <div class="container">
-
     <div class="row">
         <div class="box">
+            <span id="login-success">
+                <?php
+                    if (isset($_GET['status'])) {
+                        $status = $_GET['status'];
+                        if ($status == 0) {
+                            echo "Logout Success";
+                        } else if ($status == 0) {
+                            echo "Unable to send message";
+                        }
+                    }?>
+            </span>
+
             <div class="col-lg-12 text-center">
                 <div id="carousel-example-generic" class="carousel slide">
                     <!-- Indicators -->
