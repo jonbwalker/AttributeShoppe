@@ -39,13 +39,30 @@ require_once(TEMPLATES_PATH . "/header.php");
 ?>
 
 <div class="container">
+
     <div class="row">
+        <ol class="breadcrumb">
+            <li><a href="<?php echo BASE_URL; ?>/admin.php">Admin</a></li>
+            <li class="active">Users</li>
+        </ol>
         <div class="box">
             <div class="col-lg-12">
+                <div><span id="login-success"><?php
+                        if (isset($_GET['status'])) {
+                            $status = $_GET['status'];
+                            if ($status == 1) {
+                                echo "Login Success";
+                            } else if ($status == 0) {
+                                echo "Unable to send message";
+                            }
+                        }
+                        ?> </span>
+                </div>
                 <hr>
                 <h2 class="intro-text text-center">Users
                 </h2>
                 <hr>
+
                 <?php
                 $file = fopen('/Users/jon/Desktop/registration.txt', "r") or exit("Unable to open file!");
                 //Output a line of the file until the end is reached

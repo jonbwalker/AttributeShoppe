@@ -37,6 +37,16 @@ require_once(TEMPLATES_PATH . "/header.php");
 <div class="container">
     <div class="row">
         <div class="box">
+            <span id="login-success"><?php
+                if (isset($_GET['status'])) {
+                    $status = $_GET['status'];
+                    if ($status == 1) {
+                        echo "Login Success";
+                    } else if ($status == 0) {
+                        echo "Unable to send message";
+                    }
+                }
+                ?> </span>
             <?php
             // include header navigation bar
             require_once(TEMPLATES_PATH . "/categories.php");

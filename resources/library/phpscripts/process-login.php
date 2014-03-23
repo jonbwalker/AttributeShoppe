@@ -1,5 +1,5 @@
 <?php
-$loginError = $row = "";
+$loginError = $row = $loginSuccess = "";
 
 //Connect to server
 $conn = new mysqli('localhost', 'attrib', 'password', 'attribute_shoppe');
@@ -27,15 +27,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['loggedIn'] = "true";
         $_SESSION['username'] = $username;
         $_SESSION['row'] = $row;
-
         $rows_returned = $result->num_rows;
 
+
         if ($row['IS_ADMIN'] == 1) {
-            header("Location:" . BASE_URL . "/users.php");
             $_SESSION['isAdmin'] = "true";
+            header("Location:" . BASE_URL . "/users.php?status=1");
 
         }else{
-            header("Location:" . BASE_URL . "/products.php");
+            header("Location:" . BASE_URL . "/products.php?status=1");
+
         }
     }
 }
