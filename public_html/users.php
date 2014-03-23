@@ -1,5 +1,10 @@
 <?php
-session_start();
+require_once("../resources/config.php");
+if (!session_id()) session_start();
+if (!$_SESSION['isAdmin']){
+    header("Location:" . BASE_URL . "/index.php");
+    die();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">

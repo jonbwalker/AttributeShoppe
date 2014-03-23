@@ -1,5 +1,10 @@
 <?php
-session_start();
+require_once("../resources/config.php");
+if (!session_id()) session_start();
+if (!$_SESSION['isAdmin']){
+    header("Location:" . BASE_URL . "/index.php");
+    die();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -28,8 +33,6 @@ session_start();
 
 <body>
 <?php
-// load config file
-require_once("../resources/config.php");
 // include header navigation bar
 require_once(TEMPLATES_PATH . "/header.php");
 ?>
