@@ -47,7 +47,9 @@ require_once(TEMPLATES_PATH . "/header.php");
                         <li data-target="#carousel-example-generic" data-slide-to="1"></li>
                         <li data-target="#carousel-example-generic" data-slide-to="2"></li>
                     </ol>
-
+                    <?php
+                    print_r($_SESSION);
+                    ?>
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner">
                         <div class="item active">
@@ -60,9 +62,6 @@ require_once(TEMPLATES_PATH . "/header.php");
                             <img class="img-responsive img-full" src="../resources/library/img/slide-3.jpg" alt="">
                         </div>
                     </div>
-                    <?php
-                    print_r($_SESSION);
-                    ?>
                     <!-- Controls -->
                     <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev">
                         <span class="icon-prev"></span>

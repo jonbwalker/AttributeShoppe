@@ -35,7 +35,18 @@ require_once(TEMPLATES_PATH . "/header.php");
 ?>
 
 <div class="container">
+    <div class="row">
+        <div class="box">
+            <div class="col-lg-12">
+                <hr>
+                <h2 class="intro-text text-center">Admin <strong>attribute shoppe</strong>
+                </h2>
+                <hr>
+            </div>
 
+            <div class="clearfix"></div>
+        </div>
+    </div>
 </div>
 <!-- /.container -->
 

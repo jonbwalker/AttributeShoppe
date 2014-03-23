@@ -25,6 +25,7 @@
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account <b class="caret"></b></a>
                     <ul class="dropdown-menu">
+                        <li><a href="#">My Account</a></li>
                         <?php
                         if (!isset($_SESSION['username'])) {
                             echo "<li><a href=", BASE_URL, "/login.php>Login</a></li>";
@@ -32,7 +33,7 @@
                         }
                         if(isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'] == 'true') {
 //                            echo "<li class='divider'></li>";
-                            echo "<li><a href=", BASE_URL, "/users.php>Admin</a></li>";
+                            echo "<li><a href=", BASE_URL, "/admin.php>Admin</a></li>";
                         }?>
                     </ul>
                 </li>
