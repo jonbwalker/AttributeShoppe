@@ -210,21 +210,43 @@ footer p {
     position:relative;
 }
 
-
 #login-success{
-    margin-top: 25px;
-    font-size: 21px;
+    font-size: 60px;
     text-align: center;
-    color:green;
-    margin-left: 42%;
-    position: relative;
+    color:#006680;
+    margin-left: 27%;
+    position: fixed;
+    z-index: 1;
 
-    /*-webkit-animation: fadein 4s; *//* Safari and Chrome */
-    /*-moz-animation: fadein 4s; *//* Firefox */
-    /*-ms-animation: fadein 4s; *//* Internet Explorer */
-    /*-o-animation: fadein 4s; *//* Opera */
-    /*animation: fadein 4s;*/
+    -webkit-animation: pulsate 3s ease-out;
+    -webkit-animation-iteration-count: 1;
+    opacity: 0.0
+}
 
+#login-success-users{
+    padding-bottom: -100px;
+    margin-top:-30px;
+    font-size: 60px;
+    text-align: center;
+    color:#006680;
+    margin-left: 27%;
+    position: fixed;
+    z-index: 1;
+
+    -webkit-animation: pulsate 3s ease-out;
+    -webkit-animation-iteration-count: 1;
+    opacity: 0.0
+}
+
+#logout-success{
+    padding-bottom: -100px;
+    margin-top:-12px;
+    font-size: 60px;
+    text-align: center;
+    color:#006680;
+    margin-left: 27%;
+    position: fixed;
+    z-index: 1;
 
     -webkit-animation: pulsate 3s ease-out;
     -webkit-animation-iteration-count: 1;
@@ -235,21 +257,4 @@ footer p {
     0% {-webkit-transform: scale(0.1, 0.1); opacity: 0.0;}
     50% {opacity: 1.5;}
     100% {-webkit-transform: scale(1.2, 1.2); opacity: 0.0;}
-}
-
-@keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
-
-/* Firefox */
-@-moz-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-}
-
-/* Safari and Chrome */
-@-webkit-keyframes fadein {
-    from { opacity: 0; }
-    to   { opacity: 1; }
 }

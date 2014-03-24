@@ -15,7 +15,10 @@
 
         <!-- Collect the nav links, forms, and other content for toggling -->
         <div class="collapse navbar-collapse navbar-ex1-collapse">
-            <a href="../resources/library/phpscripts/process-logout.php"> <input id="logout" type="button" value="Logout"></a>
+            <?php
+            if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == 'true') {
+                echo "<a href='../resources/library/phpscripts/process-logout.php'> <input id='logout' type='button' value='Logout'></a>";
+            }?>
             <span id="session-welcome"> <?php
                 if (isset($_SESSION['username'])) {
                     echo "Welcome: ", $_SESSION['username'];
