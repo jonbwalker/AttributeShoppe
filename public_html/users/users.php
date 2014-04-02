@@ -67,9 +67,11 @@ require_once(TEMPLATES_PATH . "/header.php");
                         <th class="intro-text text-left">ID</th>    
                         <th class="intro-text text-left" >User Name</th>
                         <th class="intro-text text-left" >Email</th>
+                        <th class="intro-text text-left" >Action</th>
+
                     </tr>                
                     </thead>
-                    <tbody>
+                    <tbody class="">
                     <?php
                     $conn = new mysqli('localhost', 'attrib', 'password', 'attribute_shoppe');
                     $sql = "SELECT ID, USERNAME, EMAIL_ADDRESS, IS_ADMIN FROM USER";
@@ -77,9 +79,15 @@ require_once(TEMPLATES_PATH . "/header.php");
                     foreach($conn->query($sql) as $row) {
                         echo '<tr>';
                         echo '<td><a class="btn" href="show.php?id='.$row['ID'].'">'.$row['ID'].'</a></td>';
-//                        echo '<td><a class="btn" href="read.php?id='.$row['ID'].'">'.$row['ID'].'</a></td>';
                         echo '<td>' . $row['USERNAME'] . '</td>';
                         echo '<td>' . $row['EMAIL_ADDRESS'] . '</td>';
+                        echo '<td width=250>';
+                        echo '<a class="btn btn-info" href="show.php?id='.$row['ID'].'">Read</a>';
+                        echo ' ';
+                        echo '<a class="btn btn-success" href="update.php?id='.$row['ID'].'">Update</a>';
+                        echo ' ';
+                        echo '<a class="btn btn-danger" href="delete.php?id='.$row['ID'].'">Delete</a>';
+                        echo '</td>';
                         echo '</tr>';
                     }?>               
                     </tbody>            
