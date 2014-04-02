@@ -1,5 +1,5 @@
 <?php
-require_once("../resources/config.php");
+require_once("../../resources/config.php");
 if (!session_id()) session_start();
 if (!$_SESSION['isAdmin']){
     header("Location:" . BASE_URL . "/login.php");
@@ -17,10 +17,10 @@ if (!$_SESSION['isAdmin']){
 
     <title>Attribute Shoppe</title>
     <!-- Bootstrap core CSS -->
-    <link href="../resources/library/css/bootstrap.css" rel="stylesheet">
+    <link href="../../resources/library/css/bootstrap.css" rel="stylesheet">
 
     <!-- Add custom CSS here -->
-    <link href="../resources/library/css/main.css" rel="stylesheet">
+    <link href="../../resources/library/css/main.css" rel="stylesheet">
 
     <!-- Google web fonts -->
     <link href='http://fonts.googleapis.com/css?family=Revalia' rel='stylesheet' type='text/css'>
@@ -33,7 +33,7 @@ if (!$_SESSION['isAdmin']){
 <body>
 <?php
 // load config file
-require_once("../resources/config.php");
+require_once("../../resources/config.php");
 // include header navigation bar
 require_once(TEMPLATES_PATH . "/header.php");
 ?>
@@ -57,22 +57,32 @@ require_once(TEMPLATES_PATH . "/header.php");
                     }
                     ?> </span>
             </div>
+            <p>
+                <a href="create.php" class="btn btn-success">Create</a>
+            </p>
             <div class="col-lg-12">
-
-                <hr>
-                <h2 class="intro-text text-center">Users
-                </h2>
-                <hr>
-
-                <?php
-                $file = fopen('/Users/jon/Desktop/registration.txt', "r") or exit("Unable to open file!");
-                //Output a line of the file until the end is reached
-                while (!feof($file)) {
-                    echo fgets($file) .  "<br>";
-                }
-                fclose($file);
-
-                ?>
+                <table class="table table-striped table-bordered">                 
+                    <thead>                    
+                    <tr>                   
+                        <th class="intro-text text-left">ID</th>    
+                        <th class="intro-text text-left" >User Name</th>
+                        <th class="intro-text text-left" >Email</th>
+                    </tr>                
+                    </thead>
+                    <tbody>
+                    <?php
+                    $conn = new mysqli('localhost', 'attrib', 'password', 'attribute_shoppe');
+                    $sql = "SELECT ID, USERNAME, EMAIL_ADDRESS, IS_ADMIN FROM USER";
+                    $result = $conn->query($sql);
+                    foreach($conn->query($sql) as $row) {
+                        echo '<tr>';
+                        echo '<td><a class="btn" href="read.php?id='.$row['ID'].'">'.$row['ID'].'</a></td>';
+                        echo '<td>' . $row['USERNAME'] . '</td>';
+                        echo '<td>' . $row['EMAIL_ADDRESS'] . '</td>';
+                        echo '</tr>';
+                    }?>               
+                    </tbody>            
+                </table>
             </div>
         </div>
     </div>
@@ -85,8 +95,8 @@ require_once(TEMPLATES_PATH . "/footer.php");
 ?>
 
 <!-- JavaScript -->
-<script src="../resources/library/js/jquery-1.10.2.js"></script>
-<script src="../resources/library/js/bootstrap.js"></script>
+<script src="../../resources/library/js/jquery-1.10.2.js"></script>
+<script src="../../resources/library/js/bootstrap.js"></script>
 
 </body>
 
