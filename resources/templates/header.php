@@ -36,8 +36,8 @@
                         <li><a href="#">My Account</a></li>
                         <?php
                         if (!isset($_SESSION['username'])) {
-                            echo "<li><a href=", BASE_URL, "/login.php>Login</a></li>";
-                            echo "<li><a href=", BASE_URL, "/registration.php>Register</a></li>";
+                            echo "<li><a href=", BASE_URL, "/account/login.php>Login</a></li>";
+                            echo "<li><a href=", BASE_URL, "/account/registration.php>Register</a></li>";
                         }
                         if(isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'] == 'true') {
 //                            echo "<li class='divider'></li>";
