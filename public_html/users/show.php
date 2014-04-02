@@ -1,13 +1,18 @@
 <?php
-require_once("../../resources/config.php");
-if (!session_id()) session_start();
-if (!$_SESSION['isAdmin']){
-    header("Location:" . BASE_URL . "/account/login.php");
-    die();
+$id = null;
+if (!empty($_GET['id'])) {
+    $id = $_REQUEST['id'];
+}
+
+if (null == $id) {
+    header("Location: index.php");
+} else {
+    $conn = new mysqli('localhost', 'attrib', 'password', 'attribute_shoppe');
+    $sql = "SELECT * FROM USER WHERE ID = $id";
+    $result = $conn->query($sql);
+    $row = $result->fetch_array(MYSQLI_ASSOC);
 }
 ?>
-<!DOCTYPE html>
-<html lang="en">
 
 <head>
     <meta charset="utf-8">
@@ -16,6 +21,7 @@ if (!$_SESSION['isAdmin']){
     <meta name="author" content="">
 
     <title>Attribute Shoppe</title>
+
     <!-- Bootstrap core CSS -->
     <link href="../../resources/library/css/bootstrap.css" rel="stylesheet">
 
@@ -43,7 +49,8 @@ require_once(TEMPLATES_PATH . "/header.php");
     <div class="row">
         <ol class="breadcrumb">
             <li><a href="<?php echo BASE_URL; ?>/admin.php">Admin</a></li>
-            <li class="active">Users</li>
+            <li><a href="<?php echo BASE_URL; ?>/users/users.php">Users</a></li>
+            <li class="active"><?php echo $id ?></li>
         </ol>
         <div class="box">
             <div><span id="login-success-users"><?php
@@ -57,33 +64,34 @@ require_once(TEMPLATES_PATH . "/header.php");
                     }
                     ?> </span>
             </div>
-            <p>
-                <a href="create.php" class="btn btn-success">Create</a>
-            </p>
-            <div class="col-lg-12">
-                <table class="table table-striped table-bordered">                 
-                    <thead>                    
-                    <tr>                   
-                        <th class="intro-text text-left">ID</th>    
-                        <th class="intro-text text-left" >User Name</th>
-                        <th class="intro-text text-left" >Email</th>
-                    </tr>                
-                    </thead>
-                    <tbody>
-                    <?php
-                    $conn = new mysqli('localhost', 'attrib', 'password', 'attribute_shoppe');
-                    $sql = "SELECT ID, USERNAME, EMAIL_ADDRESS, IS_ADMIN FROM USER";
-                    $result = $conn->query($sql);
-                    foreach($conn->query($sql) as $row) {
-                        echo '<tr>';
-                        echo '<td><a class="btn" href="show.php?id='.$row['ID'].'">'.$row['ID'].'</a></td>';
-//                        echo '<td><a class="btn" href="read.php?id='.$row['ID'].'">'.$row['ID'].'</a></td>';
-                        echo '<td>' . $row['USERNAME'] . '</td>';
-                        echo '<td>' . $row['EMAIL_ADDRESS'] . '</td>';
-                        echo '</tr>';
-                    }?>               
-                    </tbody>            
-                </table>
+            <div class="form-horizontal">
+                <div class="control-group">
+                    <label class="control-label">Name</label>
+
+                    <div class="controls">
+                        <label class="checkbox">
+                            <?php echo $row['FIRST_NAME']; ?>
+                        </label>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">Email Address</label>
+
+                    <div class="controls">
+                        <label class="checkbox">
+                            <?php echo $row['EMAIL_ADDRESS']; ?>
+                        </label>
+                    </div>
+                </div>
+                <div class="control-group">
+                    <label class="control-label">Password</label>
+
+                    <div class="controls">
+                        <label class="checkbox">
+                            <?php echo $row['PASSWORD']; ?>
+                        </label>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -96,8 +104,8 @@ require_once(TEMPLATES_PATH . "/footer.php");
 ?>
 
 <!-- JavaScript -->
-<script src="../../resources/library/js/jquery-1.10.2.js"></script>
-<script src="../../resources/library/js/bootstrap.js"></script>
+<script src="../resources/library/js/jquery-1.10.2.js"></script>
+<script src="../resources/library/js/bootstrap.js"></script>
 
 </body>
 
