@@ -46,6 +46,10 @@ require_once(TEMPLATES_PATH . "/header.php");
             <li class="active">Users</li>
         </ol>
         <div class="box">
+            <hr>
+            <h2 class="intro-text text-center">Users
+            </h2>
+            <hr>
             <div><span id="login-success-users"><?php
                     if (isset($_GET['status'])) {
                         $status = $_GET['status'];
@@ -57,9 +61,9 @@ require_once(TEMPLATES_PATH . "/header.php");
                     }
                     ?> </span>
             </div>
-            <p>
-                <a href="create.php" class="btn btn-success">Create</a>
-            </p>
+<!--            <p>-->
+<!--                <a href="create.php" class="btn btn-success">Create</a>-->
+<!--            </p>-->
             <div class="col-lg-12">
                 <table class="table table-striped table-bordered">                 
                     <thead>                    
