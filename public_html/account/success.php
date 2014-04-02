@@ -12,10 +12,10 @@ session_start();
 
     <title>Attribute Shoppe</title>
     <!-- Bootstrap core CSS -->
-    <link href="../resources/library/css/bootstrap.css" rel="stylesheet">
+    <link href="../../resources/library/css/bootstrap.css" rel="stylesheet">
 
     <!-- Add custom CSS here -->
-    <link href="../resources/library/css/main.css" rel="stylesheet">
+    <link href="../../resources/library/css/main.css" rel="stylesheet">
 
     <!-- Google web fonts -->
     <link href='http://fonts.googleapis.com/css?family=Revalia' rel='stylesheet' type='text/css'>
@@ -28,7 +28,7 @@ session_start();
 <body>
 <?php
 // load config file
-require_once("../resources/config.php");
+require_once("../../resources/config.php");
 // include header navigation bar
 require_once(TEMPLATES_PATH . "/header.php");
 ?>
@@ -39,7 +39,7 @@ require_once(TEMPLATES_PATH . "/header.php");
             <div class="col-lg-12">
                 <h1 class="text-center">Registration Success!<br></h1>
                 <div class="text-center">
-                    <h3> Now Browse <a href="products.php"> Products</a></h3>
+                    <h3> Now Browse <a href="../products.php"> Products</a></h3>
                 </div>
             </div>
         </div>
@@ -53,8 +53,8 @@ require_once(TEMPLATES_PATH . "/footer.php");
 ?>
 
 <!-- JavaScript -->
-<script src="../resources/library/js/jquery-1.10.2.js"></script>
-<script src="../resources/library/js/bootstrap.js"></script>
+<script src="../../resources/library/js/jquery-1.10.2.js"></script>
+<script src="../../resources/library/js/bootstrap.js"></script>
 
 </body>
 
