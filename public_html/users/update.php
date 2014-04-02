@@ -30,13 +30,20 @@ if (!empty($_POST)) {
     $mobileError =  null;
 
     // keep track post values
-    $name = $_POST['name'];
+    $firstname = $_POST['firstname'];
+    $lastname = $_POST['lastname'];
     $email = $_POST['email'];
+    $address = null;
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+    $admin = $_POST['admin'];
+    $gender = $_POST['gender'];
+    $dob = $_POST['dob'];
     $phone = $_POST['phone'];
 
     // validate input
     $valid = true;
-    if (empty($name)) {
+    if (empty($firstname)) {
         $nameError = 'Please enter Name';
         $valid = false;
     }
@@ -57,7 +64,17 @@ if (!empty($_POST)) {
     // update data
     if ($valid) {
         $conn = new mysqli('localhost', 'attrib', 'password', 'attribute_shoppe');
-        $sql = "UPDATE USER SET FIRST_NAME = '$name', EMAIL_ADDRESS = '$email', PHONE = '$phone' WHERE ID = '$id'";
+        $sql = "UPDATE USER SET
+         FIRST_NAME = '$firstname',
+         LAST_NAME = '$lastname',
+         EMAIL_ADDRESS = '$email',
+         USERNAME = '$username',
+         PASSWORD = '$password',
+         IS_ADMIN = '$admin',
+         GENDER = '$gender',
+         DOB = '$dob',
+         PHONE = '$phone'
+         WHERE ID = '$id'";
         $result = $conn->query($sql);
         header("Location:" . BASE_URL . "/users/users.php");
     }
@@ -66,8 +83,15 @@ if (!empty($_POST)) {
     $sql = "SELECT * FROM USER WHERE ID = $id";
     $result = $conn->query($sql);
     $row = $result->fetch_array(MYSQLI_ASSOC);
-    $name = $row['FIRST_NAME'];
+    $firstname = $row['FIRST_NAME'];
+    $lastname = $row['LAST_NAME'];
     $email = $row['EMAIL_ADDRESS'];
+//    $address = null;
+    $username = $row['USERNAME'];
+    $password = $row['PASSWORD'];
+    $admin = $row['IS_ADMIN'];
+    $gender = $row['GENDER'];
+    $dob = $row['DOB'];
     $phone = $row['PHONE'];
 }
 ?>
@@ -128,8 +152,13 @@ require_once(TEMPLATES_PATH . "/header.php");
                 <form role="form" id="form-horizontal" action="update.php?id=<?php echo $id ?>" method="post">
                     <div class="row">
                             <div class="form-group col-lg-4">
-                                <label>Name</label>
-                                <input name="name" type="text" class="form-control" placeholder="Name"value="<?php echo !empty($name) ? $name : ''; ?>">
+                                <label>First Name</label>
+                                <input name="firstname" type="text" class="form-control" placeholder="First Name"value="<?php echo !empty($firstname) ? $firstname : ''; ?>">
+                                <span class="error"><?php echo $nameError; ?></span>
+                            </div>
+                            <div class="form-group col-lg-4">
+                                <label>Last Name</label>
+                                <input name="lastname" type="text" class="form-control" placeholder="Last Name"value="<?php echo !empty($lastname) ? $lastname : ''; ?>">
                                 <span class="error"><?php echo $nameError; ?></span>
                             </div>
                             <div class="form-group col-lg-4">
@@ -138,7 +167,32 @@ require_once(TEMPLATES_PATH . "/header.php");
                                 <span class="help-inline"><?php echo $emailError; ?></span>
                             </div>
                             <div class="form-group col-lg-4">
-                                <label>Mobile Number</label>
+                                <label>User Name</label>
+                                <input name="username" type="text" class="form-control" placeholder="User Name" value="<?php echo !empty($username) ? $username : ''; ?>">
+                                <span class="help-inline"><?php echo $mobileError; ?></span>
+                            </div>
+                            <div class="form-group col-lg-4">
+                                <label>Password</label>
+                                <input name="password" type="text" class="form-control" placeholder="Password" value="<?php echo !empty($password) ? $password : ''; ?>">
+                                <span class="help-inline"><?php echo $mobileError; ?></span>
+                            </div>
+                            <div class="form-group col-lg-4">
+                                <label>Admin</label>
+                                <input name="admin" type="text" class="form-control" placeholder="Admin" value="<?php echo !empty($admin) ? $admin : ''; ?>">
+                                <span class="help-inline"><?php echo $mobileError; ?></span>
+                            </div>
+                            <div class="form-group col-lg-4">
+                                <label>Gender</label>
+                                <input name="gender" type="text" class="form-control" placeholder="Gender" value="<?php echo !empty($gender) ? $gender : ''; ?>">
+                                <span class="help-inline"><?php echo $mobileError; ?></span>
+                            </div>
+                            <div class="form-group col-lg-4">
+                                <label>DOB</label>
+                                <input name="dob" type="text" class="form-control" placeholder="DOB" value="<?php echo !empty($dob) ? $dob : ''; ?>">
+                                <span class="help-inline"><?php echo $mobileError; ?></span>
+                            </div>
+                            <div class="form-group col-lg-4">
+                                <label>Phone Number</label>
                                 <input name="phone" type="text" class="form-control" placeholder="Mobile Number" value="<?php echo !empty($phone) ? $phone : ''; ?>">
                                 <span class="help-inline"><?php echo $mobileError; ?></span>
                             </div>

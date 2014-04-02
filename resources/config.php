@@ -32,6 +32,9 @@ or define("TEMPLATES_PATH", realpath(dirname(__FILE__) . '/templates'));
 defined("IMAGES_PATH")
 or define("IMAGES_PATH", realpath(dirname(__FILE__) . '/resources/img'));
 
+defined("RESOURCE_PATH")
+or define("RESOURCE_PATH", realpath(dirname(__FILE__) . '/resources'));
+
 defined("BASE_URL")
 or define('BASE_URL', 'http://localhost:8085/AttributeShoppe/public_html');
 

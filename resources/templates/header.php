@@ -17,7 +17,7 @@
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <?php
             if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == 'true') {
-                echo "<a href='../../resources/library/phpscripts/process-logout.php'> <input id='logout' type='button' value='Logout'></a>";
+                echo "<a href='../resources/library/phpscripts/process-logout.php'> <input id='logout' type='button' value='Logout'></a>";
             }?>
             <span id="session-welcome"> <?php
                 if (isset($_SESSION['username'])) {
