@@ -71,7 +71,7 @@ require_once(TEMPLATES_PATH . "/header.php");
                         <th class="intro-text text-left">ID</th>    
                         <th class="intro-text text-left" >User Name</th>
                         <th class="intro-text text-left" >Email</th>
-                        <th class="intro-text text-left" >Action</th>
+                        <th class="intro-text text-left" >Interact</th>
 
                     </tr>                
                     </thead>

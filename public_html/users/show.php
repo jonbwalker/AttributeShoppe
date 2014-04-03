@@ -72,33 +72,80 @@ require_once(TEMPLATES_PATH . "/header.php");
                     ?> </span>
             </div>
             <div class="form-horizontal">
-                <div class="control-group">
-                    <label class="control-label">Name</label>
 
-                    <div class="controls">
-                        <label class="checkbox">
-                            <?php echo $row['FIRST_NAME']; ?>
-                        </label>
+                <div class="control-group">
+                    <p class="user">First Name: </p>
+
+                    <div class="user-data">
+                        <?php echo $row['FIRST_NAME']; ?>
                     </div>
                 </div>
-                <div class="control-group">
-                    <label class="control-label">Email Address</label>
 
-                    <div class="controls">
-                        <label class="checkbox">
-                            <?php echo $row['EMAIL_ADDRESS']; ?>
-                        </label>
-                    </div>
+                </label>
+                <div class="control-group">
+                    <p class="user">Last Name:</p>
+
+                    <label class="user-data">
+                        <?php echo $row['LAST_NAME']; ?>
+                    </label>
                 </div>
-                <div class="control-group">
-                    <label class="control-label">Password</label>
 
-                    <div class="controls">
-                        <label class="checkbox">
+                <div class="control-group">
+                    <p class="user">Email Address:</p>
+
+                    <label class="user-data">
+                    <?php echo $row['EMAIL_ADDRESS']; ?>
+
+                </div>
+
+                <div class="control-group">
+                    <p class="user">Username:</p>
+
+                        <label class="user-data">
+                            <?php echo $row['USERNAME']; ?>
+                        </label>
+                </div>
+
+                <div class="control-group">
+                    <p class="user">Password:</p>
+
+                        <label class="user-data">
                             <?php echo $row['PASSWORD']; ?>
                         </label>
-                    </div>
                 </div>
+
+                <div class="control-group">
+                    <p class="user">Admin:</p>
+
+                        <label class="user-data">
+                            <?php echo $row['IS_ADMIN']; ?>
+                        </label>
+                </div>
+
+                <div class="control-group">
+                    <p class="user">Gender:</p>
+
+                        <label class="user-data">
+                            <?php echo $row['GENDER']; ?>
+                        </label>
+                </div>
+
+                <div class="control-group">
+                    <p class="user">DOB:</p>
+
+                        <label class="user-data">
+                            <?php echo $row['DOB']; ?>
+                        </label>
+                </div>
+
+                <div class="control-group">
+                    <p class="user">Phone:</p>
+
+                        <label class="user-data">
+                            <?php echo $row['PHONE']; ?>
+                        </label>
+                </div>
+
             </div>
         </div>
     </div>

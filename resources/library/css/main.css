@@ -273,3 +273,20 @@ footer p {
     background-color: #5A7D8F;
     border-color: #5A7D8F;
 }
+
+.user-div{
+    margin-right: 12px;
+}
+
+.user {
+    color: #73A0B8;
+    float: left;
+    margin-right: 12px;
+    margin-bottom: 0px;
+
+}
+
+.user-data {
+    padding-top: 4px;
+    padding-bottom: 5px;
+}
