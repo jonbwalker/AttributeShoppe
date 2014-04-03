@@ -197,8 +197,8 @@ require_once(TEMPLATES_PATH . "/header.php");
                                 <span class="help-inline"><?php echo $mobileError; ?></span>
                             </div>
                         <div class="form-group col-lg-12">
-                            <button type="submit" class="btn btn-success">Update</button>
-                            <a class="btn btn-primary" href="<?php echo BASE_URL; ?>/users/users.php">Back</a>
+                            <button type="submit" class="btn btn-default">Update</button>
+                            <a class="btn btn-default" href="<?php echo BASE_URL; ?>/users/users.php">Back</a>
                         </div>
                     </div>
                 </form>
