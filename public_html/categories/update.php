@@ -1,7 +1,7 @@
 <?php
 session_start();
 // include the create category processing logic
-include("../../resources/library/phpscripts/categories/create.php")
+include("../../resources/library/phpscripts/categories/update.php")
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,14 +38,15 @@ require_once(TEMPLATES_PATH . "/header.php");
     <div class="row">
         <ol class="breadcrumb">
             <li><a href="<?php echo BASE_URL; ?>/admin.php">Admin</a></li>
-            <li class="active">Create</li>
+            <li><a href="<?php echo BASE_URL; ?>/categories/categories.php">Categories</a></li>
+            <li class="active"><?php echo $id ?></li>
         </ol>
         <div class="box">
             <hr>
-            <h2 class="intro-text text-center">Create <strong>Category</strong>
+            <h2 class="intro-text text-center">Update <strong>Category</strong>
             </h2>
             <hr>
-            <form role="form" id="form-horizontal" action="create.php" method="post">
+            <form role="form" id="form-horizontal" action="update.php?id=<?php echo $id ?>" method="post">
                 <div class="row">
                     <div class="form-group col-lg-4">
                         <label>Name</label>
@@ -72,16 +73,3 @@ require_once(TEMPLATES_PATH . "/header.php");
     </div>
 </div>
 <!-- /.container -->
-
-<?php
-// include header navigation bar
-require_once(TEMPLATES_PATH . "/footer.php");
-?>
-
-<!-- JavaScript -->
-<script src="../../resources/library/js/jquery-1.10.2.js"></script>
-<script src="../../resources/library/js/bootstrap.js"></script>
-
-</body>
-
-</html>

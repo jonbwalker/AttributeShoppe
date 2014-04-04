@@ -43,11 +43,11 @@ require_once(TEMPLATES_PATH . "/header.php");
     <div class="row">
         <ol class="breadcrumb">
             <li><a href="<?php echo BASE_URL; ?>/admin.php">Admin</a></li>
-            <li class="active">Users</li>
+            <li class="active">Categories</li>
         </ol>
         <div class="box">
             <hr>
-            <h2 class="intro-text text-center">Users
+            <h2 class="intro-text text-center">Categories
             </h2>
             <hr>
             <div><span id="login-success-users"><?php
