@@ -278,7 +278,7 @@ footer p {
     margin-right: 12px;
 }
 
-.user {
+.show {
     color: #73A0B8;
     float: left;
     margin-right: 12px;
@@ -286,7 +286,7 @@ footer p {
 
 }
 
-.user-data {
+.show-data {
     padding-top: 4px;
     padding-bottom: 5px;
 }

@@ -74,74 +74,74 @@ require_once(TEMPLATES_PATH . "/header.php");
             <div class="form-horizontal">
 
                 <div class="control-group">
-                    <p class="user">First Name: </p>
+                    <p class="show">First Name: </p>
 
-                    <div class="user-data">
+                    <div class="show-data">
                         <?php echo $row['FIRST_NAME']; ?>
                     </div>
                 </div>
 
                 </label>
                 <div class="control-group">
-                    <p class="user">Last Name:</p>
+                    <p class="show">Last Name:</p>
 
-                    <label class="user-data">
+                    <label class="show-data">
                         <?php echo $row['LAST_NAME']; ?>
                     </label>
                 </div>
 
                 <div class="control-group">
-                    <p class="user">Email Address:</p>
+                    <p class="show">Email Address:</p>
 
-                    <label class="user-data">
+                    <label class="show-data">
                     <?php echo $row['EMAIL_ADDRESS']; ?>
 
                 </div>
 
                 <div class="control-group">
-                    <p class="user">Username:</p>
+                    <p class="show">Username:</p>
 
-                        <label class="user-data">
+                        <label class="show-data">
                             <?php echo $row['USERNAME']; ?>
                         </label>
                 </div>
 
                 <div class="control-group">
-                    <p class="user">Password:</p>
+                    <p class="show">Password:</p>
 
-                        <label class="user-data">
+                        <label class="show-data">
                             <?php echo $row['PASSWORD']; ?>
                         </label>
                 </div>
 
                 <div class="control-group">
-                    <p class="user">Admin:</p>
+                    <p class="show">Admin:</p>
 
-                        <label class="user-data">
+                        <label class="show-data">
                             <?php echo $row['IS_ADMIN']; ?>
                         </label>
                 </div>
 
                 <div class="control-group">
-                    <p class="user">Gender:</p>
+                    <p class="show">Gender:</p>
 
-                        <label class="user-data">
+                        <label class="show-data">
                             <?php echo $row['GENDER']; ?>
                         </label>
                 </div>
 
                 <div class="control-group">
-                    <p class="user">DOB:</p>
+                    <p class="show">DOB:</p>
 
-                        <label class="user-data">
+                        <label class="show-data">
                             <?php echo $row['DOB']; ?>
                         </label>
                 </div>
 
                 <div class="control-group">
-                    <p class="user">Phone:</p>
+                    <p class="show">Phone:</p>
 
-                        <label class="user-data">
+                        <label class="show-data">
                             <?php echo $row['PHONE']; ?>
                         </label>
                 </div>
