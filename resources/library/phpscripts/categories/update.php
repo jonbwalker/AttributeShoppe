@@ -54,7 +54,7 @@ if (!empty($_POST)) {
          ACTIVE = '$active'
          WHERE ID = '$id'";
         $result = $conn->query($sql);
-        header("Location:" . BASE_URL . "/categories/categories.php");
+        header("Location:" . BASE_URL . "/categories/list.php");
     }
 } else {
     $conn = new mysqli('localhost', 'attrib', 'password', 'attribute_shoppe');

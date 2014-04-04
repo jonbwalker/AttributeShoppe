@@ -38,7 +38,7 @@ require_once(TEMPLATES_PATH . "/header.php");
     <div class="row">
         <ol class="breadcrumb">
             <li><a href="<?php echo BASE_URL; ?>/admin.php">Admin</a></li>
-            <li><a href="<?php echo BASE_URL; ?>/categories/categories.php">Categories</a></li>
+            <li><a href="<?php echo BASE_URL; ?>/categories/list.php">Categories</a></li>
             <li class="active"><?php echo $id ?></li>
         </ol>
         <div class="box">
