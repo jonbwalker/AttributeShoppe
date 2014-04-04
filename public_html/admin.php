@@ -61,7 +61,7 @@ require_once(TEMPLATES_PATH . "/header.php");
             <div class="list-group col-lg-4">
                 <p class="list-group-item active">Content</p>
                 <a href="<?php echo BASE_URL; ?>/categories/categories.php" class="list-group-item">View All Categories Items</a>
-                <a href="#" class="list-group-item">Add New Category</a>
+                <a href="<?php echo BASE_URL; ?>/categories/create.php" class="list-group-item">Add New Category</a>
             </div>
 
             <div class="list-group col-lg-4">
