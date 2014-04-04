@@ -32,7 +32,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         if ($row['IS_ADMIN'] == 1) {
             $_SESSION['isAdmin'] = "true";
-            header("Location:" . BASE_URL . "/users/users.php?status=1");
+            header("Location:" . BASE_URL . "/users/list.php?status=1");
 
         }else{
             header("Location:" . BASE_URL . "/products.php?status=1");

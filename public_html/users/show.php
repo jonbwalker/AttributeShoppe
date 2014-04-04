@@ -1,26 +1,6 @@
 <?php
-require_once("../../resources/config.php");
-if (!session_id()) session_start();
-if (!$_SESSION['isAdmin']){
-    header("Location:" . BASE_URL . "/account/login.php");
-    die();
-}
-
-$id = null;
-if (!empty($_GET['id'])) {
-    $id = $_REQUEST['id'];
-}
-
-if (null == $id) {
-    header("Location: index.php");
-} else {
-    $conn = new mysqli('localhost', 'attrib', 'password', 'attribute_shoppe');
-    $sql = "SELECT * FROM USER WHERE ID = $id";
-    $result = $conn->query($sql);
-    $row = $result->fetch_array(MYSQLI_ASSOC);
-}
+include("../../resources/library/phpscripts/users/show.php")
 ?>
-
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -56,7 +36,7 @@ require_once(TEMPLATES_PATH . "/header.php");
     <div class="row">
         <ol class="breadcrumb">
             <li><a href="<?php echo BASE_URL; ?>/admin.php">Admin</a></li>
-            <li><a href="<?php echo BASE_URL; ?>/users/users.php">Users</a></li>
+            <li><a href="<?php echo BASE_URL; ?>/users/list.php">Users</a></li>
             <li class="active"><?php echo $id ?></li>
         </ol>
         <div class="box">
@@ -157,10 +137,4 @@ require_once(TEMPLATES_PATH . "/header.php");
 require_once(TEMPLATES_PATH . "/footer.php");
 ?>
 
-<!-- JavaScript -->
-<script src="../resources/library/js/jquery-1.10.2.js"></script>
-<script src="../resources/library/js/bootstrap.js"></script>
-
 </body>
-
-</html>
