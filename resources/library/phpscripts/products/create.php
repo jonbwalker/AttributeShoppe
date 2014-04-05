@@ -6,17 +6,26 @@ if (!$_SESSION['isAdmin']) {
     die();
 }
 
-$nameError = $descriptionError = $activeError = '';
+$nameError = $descriptionError = $priceError = $categoryError = $activeError = '';
+
+// populate category list
+$conn = new mysqli('localhost', 'attrib', 'password', 'attribute_shoppe');
+$sql = "SELECT ID, NAME, ACTIVE FROM CATEGORY";
+$categoryList = $conn->query($sql);
 
 if (!empty($_POST)) {
     // keep track validation errors
     $nameError = null;
     $descriptionError = null;
+    $priceError = null;
+    $categoryError = null;
     $activeError = null;
 
     // keep track post values
     $name = $_POST['name'];
     $description = $_POST['description'];
+    $price = $_POST['price'];
+    $category = $_POST['category'];
     $active = $_POST['active'];
 
     // validate input
@@ -39,13 +48,16 @@ if (!empty($_POST)) {
     // update data
     if ($valid) {
         $conn = new mysqli('localhost', 'attrib', 'password', 'attribute_shoppe');
-        $sql = "INSERT INTO CATEGORY VALUES(
+        $sql1 = "INSERT INTO PRODUCT VALUES(
           DEFAULT,
          '$name',
          '$description',
+         '$price',
+         '$category',
          '$active')";
-        $result = $conn->query($sql);
+        $result1 = $conn->query($sql1);
         header("Location:" . BASE_URL . "/admin.php");
     }
 }
+
 ?>
