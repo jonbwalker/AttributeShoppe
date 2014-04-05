@@ -15,7 +15,7 @@ if (null == $id) {
     header("Location: index.php");
 } else {
     $conn = new mysqli('localhost', 'attrib', 'password', 'attribute_shoppe');
-    $sql = "SELECT * FROM PRODUCTS WHERE ID = $id";
+    $sql = "SELECT * FROM PRODUCT WHERE ID = $id";
     $result = $conn->query($sql);
     $row = $result->fetch_array(MYSQLI_ASSOC);
 }

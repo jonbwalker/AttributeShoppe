@@ -43,33 +43,19 @@ require_once(TEMPLATES_PATH . "/header.php");
     <div class="row">
         <ol class="breadcrumb">
             <li><a href="<?php echo BASE_URL; ?>/admin.php">Admin</a></li>
-            <li class="active">Categories</li>
+            <li class="active">Products</li>
         </ol>
         <div class="box">
             <hr>
-            <h2 class="intro-text text-center">Categories
+            <h2 class="intro-text text-center">Products
             </h2>
             <hr>
-            <div><span id="login-success-users"><?php
-                    if (isset($_GET['status'])) {
-                        $status = $_GET['status'];
-                        if ($status == 1) {
-                            echo "Login Success";
-                        } else if ($status == 0) {
-                            echo "Unable to send message";
-                        }
-                    }
-                    ?> </span>
-            </div>
-            <!--            <p>-->
-            <!--                <a href="create.php" class="btn btn-success">Create</a>-->
-            <!--            </p>-->
             <div class="col-lg-12">
                 <table class="table table-striped table-bordered">                 
                     <thead>                    
                     <tr>                   
                         <th class="intro-text text-left">ID</th>    
-                        <th class="intro-text text-left" >Category</th>
+                        <th class="intro-text text-left" >Name</th>
                         <th class="intro-text text-left" >Active</th>
                         <th class="intro-text text-left" >Interact</th>
 
@@ -77,7 +63,7 @@ require_once(TEMPLATES_PATH . "/header.php");
                     </thead>
                     <tbody class="">
                     <?php
-                    include("../../resources/library/phpscripts/categories/list.php");?>
+                    include("../../resources/library/phpscripts/products/list.php");?>
                     </tbody>            
                 </table>
             </div>

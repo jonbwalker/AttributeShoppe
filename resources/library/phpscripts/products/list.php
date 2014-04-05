@@ -1,6 +1,6 @@
 <?php
 $conn = new mysqli('localhost', 'attrib', 'password', 'attribute_shoppe');
-$sql = "SELECT ID, NAME, ACTIVE FROM CATEGORY";
+$sql = "SELECT ID, NAME, ACTIVE FROM PRODUCT";
 $result = $conn->query($sql);
 foreach($conn->query($sql) as $row) {
     echo '<tr>';

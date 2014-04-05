@@ -1,7 +1,7 @@
 <?php
 session_start();
 // include the create category processing logic
-include("../../resources/library/phpscripts/categories/show.php")
+include("../../resources/library/phpscripts/products/show.php")
 ?>
 <head>
     <meta charset="utf-8">
@@ -38,7 +38,7 @@ require_once(TEMPLATES_PATH . "/header.php");
     <div class="row">
         <ol class="breadcrumb">
             <li><a href="<?php echo BASE_URL; ?>/admin.php">Admin</a></li>
-            <li><a href="<?php echo BASE_URL; ?>/categories/list.php">Categories</a></li>
+            <li><a href="<?php echo BASE_URL; ?>/products/list.php">Products</a></li>
             <li class="active"><?php echo $id ?></li>
         </ol>
         <div class="box">
@@ -52,7 +52,7 @@ require_once(TEMPLATES_PATH . "/header.php");
                     </div>
                 </div>
 
-                </label>
+
                 <div class="control-group">
                     <p class="show">Description:</p>
 
@@ -62,11 +62,19 @@ require_once(TEMPLATES_PATH . "/header.php");
                 </div>
 
                 <div class="control-group">
+                    <p class="show">Category:</p>
+
+                    <label class="show-data">
+                        <?php echo $row['CATEGORY_ID']; ?>
+                    </label>
+                </div>
+
+                <div class="control-group">
                     <p class="show">Active</p>
 
                     <label class="show-data">
-                    <?php echo $row['ACTIVE']; ?>
-
+                        <?php echo $row['ACTIVE']; ?>
+                    </label>
                 </div>
 
             </div>
