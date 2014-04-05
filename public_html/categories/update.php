@@ -65,7 +65,7 @@ require_once(TEMPLATES_PATH . "/header.php");
                     </div>
                     <div class="form-group col-lg-12">
                         <button type="submit" class="btn crud-btn">Create</button>
-                        <a class="btn btn-default" href="<?php echo BASE_URL; ?>../admin.php">Back</a>
+                        <a class="btn btn-default" href="<?php echo BASE_URL; ?>/categories/list.php">Back</a>
                     </div>
                 </div>
             </form>
