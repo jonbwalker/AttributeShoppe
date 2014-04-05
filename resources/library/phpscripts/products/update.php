@@ -6,7 +6,12 @@ if (!$_SESSION['isAdmin']){
     die();
 }
 
-$nameError = $descriptionError = $activeError = '';
+$nameError = $descriptionError = $priceError = $categoryError = $activeError = '';
+
+// populate category list
+$conn = new mysqli('localhost', 'attrib', 'password', 'attribute_shoppe');
+$sql = "SELECT ID, NAME, ACTIVE FROM CATEGORY";
+$categoryList = $conn->query($sql);
 
 $id = null;
 if (!empty($_GET['id'])) {
@@ -21,11 +26,15 @@ if (!empty($_POST)) {
     // keep track validation errors
     $nameError = null;
     $descriptionError = null;
+    $priceError = null;
+    $categoryError = null;
     $activeError = null;
 
     // keep track post values
     $name = $_POST['name'];
     $description = $_POST['description'];
+    $price = $_POST['price'];
+    $category = $_POST['category'];
     $active = $_POST['active'];
 
     // validate input
@@ -48,21 +57,25 @@ if (!empty($_POST)) {
     // update data
     if ($valid) {
         $conn = new mysqli('localhost', 'attrib', 'password', 'attribute_shoppe');
-        $sql = "UPDATE CATEGORY SET
+        $sql = "UPDATE PRODUCT SET
          NAME = '$name',
          DESCRIPTION = '$description',
+         PRICE = '$price',
+         CATEGORY_ID = '$category',
          ACTIVE = '$active'
          WHERE ID = '$id'";
         $result = $conn->query($sql);
-        header("Location:" . BASE_URL . "/categories/list.php");
+        header("Location:" . BASE_URL . "/products/list.php");
     }
 } else {
     $conn = new mysqli('localhost', 'attrib', 'password', 'attribute_shoppe');
-    $sql = "SELECT * FROM CATEGORY WHERE ID = $id";
+    $sql = "SELECT * FROM PRODUCT WHERE ID = $id";
     $result = $conn->query($sql);
     $row = $result->fetch_array(MYSQLI_ASSOC);
     $name = $row['NAME'];
     $description = $row['DESCRIPTION'];
+    $price = $row['PRICE'];
+    $category = $row['CATEGORY_ID'];
     $active = $row['ACTIVE'];
 }
 ?>

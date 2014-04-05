@@ -1,7 +1,7 @@
 <?php
 session_start();
-// include the create category processing logic
-include("../../resources/library/phpscripts/categories/update.php")
+// include the create product processing logic
+include("../../resources/library/phpscripts/products/update.php")
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -38,19 +38,19 @@ require_once(TEMPLATES_PATH . "/header.php");
     <div class="row">
         <ol class="breadcrumb">
             <li><a href="<?php echo BASE_URL; ?>/admin.php">Admin</a></li>
-            <li><a href="<?php echo BASE_URL; ?>/categories/list.php">Categories</a></li>
+            <li><a href="<?php echo BASE_URL; ?>/products/list.php">Products</a></li>
             <li class="active"><?php echo $id ?></li>
         </ol>
         <div class="box">
             <hr>
-            <h2 class="intro-text text-center">Update <strong>Category</strong>
+            <h2 class="intro-text text-center">Update <strong>Products</strong>
             </h2>
             <hr>
             <form role="form" id="form-horizontal" action="update.php?id=<?php echo $id ?>" method="post">
                 <div class="row">
                     <div class="form-group col-lg-4">
                         <label>Name</label>
-                        <input name="name" type="text" class="form-control" placeholder="Category Name"value="<?php echo !empty($name) ? $name : ''; ?>">
+                        <input name="name" type="text" class="form-control" placeholder="Product Name"value="<?php echo !empty($name) ? $name : ''; ?>">
                         <span class="error"><?php echo $nameError; ?></span>
                     </div>
                     <div class="form-group col-lg-4">
@@ -59,13 +59,30 @@ require_once(TEMPLATES_PATH . "/header.php");
                         <span class="error"><?php echo $descriptionError; ?></span>
                     </div>
                     <div class="form-group col-lg-4">
+                        <label>Price</label>
+                        <input name="price" type="text" class="form-control" placeholder="Price" value="<?php echo !empty($price) ? $price : ''; ?>">
+                        <span class="help-inline"><?php echo $priceError; ?></span>
+                    </div>
+                    <div class="form-group col-lg-4">
+                        <label>Category</label>     <br />
+                        <select name="category">
+                            <option value="">Select Category</option>
+                            <?
+                            while ($row = $categoryList->fetch_array(MYSQLI_ASSOC)) {
+                                echo "<option value=" . $row['ID'] . ">" . $row['NAME'] . "</option>";
+                            }
+                            ?>
+                        </select>
+                        <span class="help-inline"><?php echo $categoryError; ?></span>
+                    </div>
+                    <div class="form-group col-lg-4">
                         <label>Active</label>
                         <input name="active" type="text" class="form-control" placeholder="Active" value="<?php echo !empty($active) ? $active : ''; ?>">
                         <span class="help-inline"><?php echo $activeError; ?></span>
                     </div>
                     <div class="form-group col-lg-12">
-                        <button type="submit" class="btn crud-btn">Create</button>
-                        <a class="btn btn-default" href="<?php echo BASE_URL; ?>/products/list.php">Back</a>
+                        <button type="submit" class="btn crud-btn">Update</button>
+                        <a class="btn btn-default" href="<?php echo BASE_URL; ?>../admin.php">Back</a>
                     </div>
                 </div>
             </form>
