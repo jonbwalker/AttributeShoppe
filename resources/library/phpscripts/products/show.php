@@ -1,10 +1,5 @@
 <?php
 require_once("../../resources/config.php");
-if (!session_id()) session_start();
-if (!$_SESSION['isAdmin']){
-    header("Location:" . BASE_URL . "/account/login.php");
-    die();
-}
 
 $id = null;
 if (!empty($_GET['id'])) {

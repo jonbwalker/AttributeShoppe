@@ -1,4 +1,9 @@
 <?php
+if (!session_id()) session_start();
+if (!$_SESSION['isAdmin']){
+    header("Location:" . BASE_URL . "/account/login.php");
+    die();
+}
 $conn = new mysqli('localhost', 'attrib', 'password', 'attribute_shoppe');
 $sql = "SELECT ID, NAME, ACTIVE FROM CATEGORY";
 $result = $conn->query($sql);

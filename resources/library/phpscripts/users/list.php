@@ -1,4 +1,10 @@
 <?php
+require_once("../../resources/config.php");
+if (!session_id()) session_start();
+if (!$_SESSION['isAdmin']){
+    header("Location:" . BASE_URL . "/account/login.php");
+    die();
+}
 $conn = new mysqli('localhost', 'attrib', 'password', 'attribute_shoppe');
 $sql = "SELECT ID, USERNAME, EMAIL_ADDRESS, IS_ADMIN FROM USER";
 $result = $conn->query($sql);
