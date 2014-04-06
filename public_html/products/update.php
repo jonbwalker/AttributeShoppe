@@ -1,7 +1,9 @@
 <?php
 session_start();
 // include the create product processing logic
-include("../../resources/library/phpscripts/products/update.php")
+include("../../resources/library/phpscripts/products/update.php");
+$uploadError = false;
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -46,22 +48,29 @@ require_once(TEMPLATES_PATH . "/header.php");
             <h2 class="intro-text text-center">Update <strong>Products</strong>
             </h2>
             <hr>
+            <div><span id="login-success-users"><?php
+                    if($uploadError = false){
+                    echo "Upload Success";
+                    }?>
+
+                </span>
+            </div>
             <form role="form" id="form-horizontal" action="update.php?id=<?php echo $id ?>" method="post">
                 <div class="row">
                     <div class="form-group col-lg-4">
                         <label>Name</label>
                         <input name="name" type="text" class="form-control" placeholder="Product Name"value="<?php echo !empty($name) ? $name : ''; ?>">
-                        <span class="error"><?php echo $nameError; ?></span>
+                        <span class="help-block form-error"><?php echo $nameError; ?></span>
                     </div>
                     <div class="form-group col-lg-4">
                         <label>Description</label>
                         <input name="description" type="text" class="form-control" placeholder="Description"value="<?php echo !empty($description) ? $description : ''; ?>">
-                        <span class="error"><?php echo $descriptionError; ?></span>
+                        <span class="help-block form-error"><?php echo $descriptionError; ?></span>
                     </div>
                     <div class="form-group col-lg-4">
                         <label>Price</label>
                         <input name="price" type="text" class="form-control" placeholder="Price" value="<?php echo !empty($price) ? $price : ''; ?>">
-                        <span class="help-inline"><?php echo $priceError; ?></span>
+                        <span class="help-block form-error"><?php echo $priceError; ?></span>
                     </div>
                     <div class="form-group col-lg-4">
                         <label>Category</label>     <br />
@@ -73,7 +82,7 @@ require_once(TEMPLATES_PATH . "/header.php");
                             }
                             ?>
                         </select>
-                        <span class="help-inline"><?php echo $categoryError; ?></span>
+                        <span class="help-block form-error"><?php echo $categoryError; ?></span>
                     </div>
                     <div class="form-group col-lg-4">
                         <label>Active</label>
@@ -81,11 +90,19 @@ require_once(TEMPLATES_PATH . "/header.php");
                         <span class="help-inline"><?php echo $activeError; ?></span>
                     </div>
                     <div class="form-group col-lg-12">
-                        <button type="submit" class="btn crud-btn">Update</button>
-                        <a class="btn btn-default" href="<?php echo BASE_URL; ?>../admin.php">Back</a>
+                        <input type="submit" class="btn crud-btn" name="product-submit" value="Update">
+                        <a class="btn btn-default" href="<?php echo BASE_URL; ?>/products/list.php">Back</a>
                     </div>
                 </div>
             </form>
+
+            <form role="form" method ="post" action="update.php?id=<?php echo $id ?>" enctype="multipart/form-data">
+                <input type="hidden" name="MAX_FILE_SIZE" value="2000000">
+                <input type="hidden" value="<?echo $id ?>">
+                <input type="file"  name="aFile" size="40">
+                <input type="submit" name="upload-submit" value="Upload">
+            </form>
+
         </div>
     </div>
 </div>

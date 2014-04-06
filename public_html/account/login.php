@@ -40,7 +40,7 @@ include("../../resources/library/phpscripts/process-login.php")
     <div class="row">
         <div class="box">
             <div class="col-lg-12">
-                <span id="login-error"><?php echo $loginError; ?></span>
+                <span class="form-error"><?php echo $loginError; ?></span>
                 <hr>
                 <h2 class="intro-text text-center">Login <strong>form</strong>
                 </h2>

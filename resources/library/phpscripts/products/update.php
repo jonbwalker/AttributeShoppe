@@ -7,6 +7,7 @@ if (!$_SESSION['isAdmin']){
 }
 
 $nameError = $descriptionError = $priceError = $categoryError = $activeError = '';
+$uploadSuccess = false;
 
 // populate category list
 $conn = new mysqli('localhost', 'attrib', 'password', 'attribute_shoppe');
@@ -22,7 +23,7 @@ if (null == $id) {
     header("Location: index.php");
 }
 
-if (!empty($_POST)) {
+if (!empty($_POST['product-submit'])) {
     // keep track validation errors
     $nameError = null;
     $descriptionError = null;
@@ -46,6 +47,16 @@ if (!empty($_POST)) {
 
     if (empty($description)) {
         $descriptionError = 'Please enter a description';
+        $valid = false;
+    }
+
+    if (empty($price)) {
+        $priceError = 'Please enter a price';
+        $valid = false;
+    }
+
+    if (empty($category)) {
+        $categoryError = 'Please choose a category';
         $valid = false;
     }
 
@@ -77,5 +88,50 @@ if (!empty($_POST)) {
     $price = $row['PRICE'];
     $category = $row['CATEGORY_ID'];
     $active = $row['ACTIVE'];
+}
+
+if (!empty($_POST['upload-submit'])) {
+    $uploadSuccess = false;
+    $id = null;
+    if (!empty($_GET['id'])) {
+        $id = $_REQUEST['id'];
+    }
+
+    if (null == $id) {
+        header("Location: index.php");
+    }
+
+    if (is_uploaded_file ($_FILES['aFile']['tmp_name'])) {
+        $realName = $_FILES['aFile']['name'];
+        move_uploaded_file ($_FILES['aFile']['tmp_name'], "/usr/local/zend/apache2/htdocs/AttributeShoppe/resources/library/img/".$realName );
+        $uploadSuccess = true;
+
+        if (!$conn = new mysqli('localhost', 'attrib', 'password', 'attribute_shoppe')) {
+            echo "Error connecting to DB";
+            exit();
+        }
+
+        $conn = new mysqli('localhost', 'attrib', 'password', 'attribute_shoppe');
+        $sql = "UPDATE PRODUCT SET
+         NAME = '$name',
+         DESCRIPTION = '$description',
+         PRICE = '$price',
+         CATEGORY_ID = '$category',
+         ACTIVE = '$active',
+         IMAGE_NAME = '$realName'
+         WHERE ID = '$id'";
+        $result = $conn->query($sql);
+
+        if (!$result)  {
+            echo "Error in query";
+            exit();
+        }
+        mysqli_close($conn);
+
+    } else {
+        echo "Error uploading";
+        $uploadSuccess = false;
+        exit();
+    }
 }
 ?>

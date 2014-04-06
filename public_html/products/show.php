@@ -70,6 +70,14 @@ require_once(TEMPLATES_PATH . "/header.php");
                 </div>
 
                 <div class="control-group">
+                    <p class="show">Price:</p>
+
+                    <label class="show-data">
+                        <?php echo $row['PRICE']; ?>
+                    </label>
+                </div>
+
+                <div class="control-group">
                     <p class="show">Active</p>
 
                     <label class="show-data">

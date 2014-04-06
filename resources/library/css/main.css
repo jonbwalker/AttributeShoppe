@@ -182,7 +182,7 @@ footer p {
     position: relative;
 }
 
-#login-error{
+.form-error{
     color:red;
 }
 
