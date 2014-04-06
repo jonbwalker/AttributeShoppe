@@ -45,7 +45,7 @@ require_once(TEMPLATES_PATH . "/header.php");
         </ol>
         <div class="box">
             <hr>
-            <h2 class="intro-text text-center">Update <strong>Products</strong>
+            <h2 class="intro-text text-center">Update <strong><?php echo !empty($row) ? $row['NAME'] : 'Product'; ?></strong>
             </h2>
             <hr>
             <div><span id="login-success-users"><?php

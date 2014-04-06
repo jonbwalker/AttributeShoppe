@@ -20,7 +20,7 @@ foreach($conn->query($sql) as $row) {
     echo '</a>';
     echo '<div class="caption">';
     echo '<h5 class="ellipsis">';
-    echo '<a href="show.php?id='.$row['ID'].'" itemprop="url" title="Courage">';
+    echo '<a href="public_html/products/show.php?id='.$row['ID'].'" itemprop="url" title="Courage">';
     echo '<span itemprop="brand">' .$row['NAME'].'</span>';
     echo '<span itemprop="name"></span>';
     echo '</a>';
