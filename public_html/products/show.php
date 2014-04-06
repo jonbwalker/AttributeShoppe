@@ -44,46 +44,53 @@ require_once(TEMPLATES_PATH . "/header.php");
         <div class="box">
             <div class="form-horizontal">
 
-                <div class="control-group">
-                    <p class="show">Name: </p>
-
-                    <div class="show-data">
-                        <?php echo $row['NAME']; ?>
-                    </div>
-                </div>
-
-
-                <div class="control-group">
-                    <p class="show">Description:</p>
-
-                    <label class="show-data">
-                        <?php echo $row['DESCRIPTION']; ?>
-                    </label>
-                </div>
-
-                <div class="control-group">
-                    <p class="show">Category:</p>
-
-                    <label class="show-data">
-                        <?php echo $row['CATEGORY_ID']; ?>
-                    </label>
-                </div>
-
-                <div class="control-group">
-                    <p class="show">Price:</p>
-
-                    <label class="show-data">
-                        <?php echo $row['PRICE']; ?>
-                    </label>
-                </div>
-
-                <div class="control-group">
-                    <p class="show">Active</p>
-
-                    <label class="show-data">
-                        <?php echo $row['ACTIVE']; ?>
-                    </label>
-                </div>
+                <div class="clearfix"></div>
+                <img class="img-responsive img-full" alt="courage" itemprop="image"
+                     src="../../resources/library/img/<?php echo$row['IMAGE_NAME']; ?>">
+                <p>Item:  <?php echo $row['NAME']; ?></p>
+                <p>Price: <?php echo $row['PRICE']; ?></p>
+                <p>Description:   <?php echo $row['DESCRIPTION']; ?></p>
+<!--                -->
+<!--                <div class="control-group">-->
+<!--                    <p class="show">Name: </p>-->
+<!---->
+<!--                    <div class="show-data">-->
+<!--                        --><?php //echo $row['NAME']; ?>
+<!--                    </div>-->
+<!--                </div>-->
+<!---->
+<!---->
+<!--                <div class="control-group">-->
+<!--                    <p class="show">Description:</p>-->
+<!---->
+<!--                    <label class="show-data">-->
+<!--                        --><?php //echo $row['DESCRIPTION']; ?>
+<!--                    </label>-->
+<!--                </div>-->
+<!---->
+<!--                <div class="control-group">-->
+<!--                    <p class="show">Category:</p>-->
+<!---->
+<!--                    <label class="show-data">-->
+<!--                        --><?php //echo $row['CATEGORY_ID']; ?>
+<!--                    </label>-->
+<!--                </div>-->
+<!---->
+<!--                <div class="control-group">-->
+<!--                    <p class="show">Price:</p>-->
+<!---->
+<!--                    <label class="show-data">-->
+<!--                        --><?php //echo $row['PRICE']; ?>
+<!--                    </label>-->
+<!--                </div>-->
+<!---->
+<!--                <div class="control-group">-->
+<!--                    <p class="show">Active</p>-->
+<!---->
+<!--                    <label class="show-data">-->
+<!--                        --><?php //echo $row['ACTIVE']; ?>
+<!--                    </label>-->
+<!--                </div>-->
 
             </div>
         </div>
