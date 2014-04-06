@@ -28,7 +28,7 @@
             <ul class="nav navbar-nav">
                 <li><a href="<?php echo BASE_URL; ?>/index.php">Home</a></li>
                 <li><a href="<?php echo BASE_URL; ?>/products.php">Products</a></li>
-                <li><a href="<?php echo BASE_URL; ?>/about.php">About</a></li>
+                <li><a href="<?php echo BASE_URL; ?>/main/about.php">About</a></li>
                 <li><a href="<?php echo BASE_URL; ?>/contact.php">Contact</a></li>
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle" data-toggle="dropdown">Account <b class="caret"></b></a>

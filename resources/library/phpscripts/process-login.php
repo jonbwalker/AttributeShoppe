@@ -27,7 +27,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         $_SESSION['loggedIn'] = "true";
         $_SESSION['username'] = $username;
-        $_SESSION['row'] = $row;
+        $_SESSION['password'] = $password;
+//        $_SESSION['row'] = $row;
         $rows_returned = $result->num_rows;
 
 

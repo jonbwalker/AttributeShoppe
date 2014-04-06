@@ -14,10 +14,10 @@ session_start();
     <title>About | Attribute Shoppe</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../resources/library/css/bootstrap.css" rel="stylesheet">
+    <link href="../../resources/library/css/bootstrap.css" rel="stylesheet">
 
     <!-- Add custom CSS here -->
-    <link href="../resources/library/css/main.css" rel="stylesheet">
+    <link href="../../resources/library/css/main.css" rel="stylesheet">
 
     <!-- Google web fonts -->
     <link href='http://fonts.googleapis.com/css?family=Revalia' rel='stylesheet' type='text/css'>
@@ -30,7 +30,7 @@ session_start();
 <body>
 <?php
 // load config file
-require_once("../resources/config.php");
+require_once("../../resources/config.php");
 // include header navigation bar
 require_once(TEMPLATES_PATH . "/header.php");
 ?>
@@ -46,7 +46,7 @@ require_once(TEMPLATES_PATH . "/header.php");
                 <hr>
             </div>
             <div class="col-md-6">
-                <img class="img-responsive img-border-left" src="../resources/library/img/Attributes900x350.png" alt="">
+                <img class="img-responsive img-border-left" src="../../resources/library/img/Attributes900x350.png" alt="">
             </div>
             <div class="col-md-6">
                 <p>The Attribute Shoppe project is a prototype that sells units of attributes that will
@@ -108,8 +108,8 @@ require_once(TEMPLATES_PATH . "/footer.php");
 ?>
 
 <!-- JavaScript -->
-<script src="../resources/library/js/jquery-1.10.2.js"></script>
-<script src="../resources/library/js/bootstrap.js"></script>
+<script src="../../resources/library/js/jquery-1.10.2.js"></script>
+<script src="../../resources/library/js/bootstrap.js"></script>
 
 </body>
 
