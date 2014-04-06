@@ -96,11 +96,12 @@ require_once(TEMPLATES_PATH . "/header.php");
                 </div>
             </form>
 
+            <label>Upload Image</label>
             <form role="form" method ="post" action="update.php?id=<?php echo $id ?>" enctype="multipart/form-data">
                 <input type="hidden" name="MAX_FILE_SIZE" value="2000000">
                 <input type="hidden" value="<?echo $id ?>">
-                <input type="file"  name="aFile" size="40">
-                <input type="submit" name="upload-submit" value="Upload">
+                <input type="file"  name="aFile" size="40">  <br />
+                <input type="submit" class="btn crud-btn" name="upload-submit" value="Upload">
             </form>
 
         </div>
