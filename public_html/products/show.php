@@ -36,11 +36,14 @@ require_once(TEMPLATES_PATH . "/header.php");
 <div class="container">
 
     <div class="row">
-        <ol class="breadcrumb">
-            <li><a href="<?php echo BASE_URL; ?>/admin.php">Admin</a></li>
-            <li><a href="<?php echo BASE_URL; ?>/products/list.php">Products</a></li>
-            <li class="active"><?php echo $id ?></li>
-        </ol>
+        <?
+        if (isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'] == 'true') {
+            echo '<ol class="breadcrumb">';
+            echo    '<li><a href="<?php echo BASE_URL; ?>/admin.php">Admin</a></li>';
+            echo    '<li><a href="<?php echo BASE_URL; ?>/products/list.php">Products</a></li>';
+            echo    '<li class="active">' . $id . '</li>';
+            echo '</ol>';
+        }?>
         <div class="box">
             <div class="form-horizontal">
 
