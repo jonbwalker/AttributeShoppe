@@ -7,7 +7,10 @@ if (!$_SESSION['isAdmin']){
 $conn = new mysqli('localhost', 'attrib', 'password', 'attribute_shoppe');
 $sql = "SELECT ID, NAME, ACTIVE FROM PRODUCT";
 $result = $conn->query($sql);
+
 foreach($conn->query($sql) as $row) {
+
+
     echo '<tr>';
     echo '<td>' . $row['ID'] .'</td>';
     echo '<td>' . $row['NAME'] . '</td>';

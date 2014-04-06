@@ -8,7 +8,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 // Secure the login credentials
     $username = mysql_real_escape_string($_POST['username']);
-    $password = mysql_real_escape_string($_POST['password']);
+    $password = md5(mysql_real_escape_string($_POST['password']));
+
 
     /* check the users credentials against the DB.*/
     $sql = "SELECT USERNAME, PASSWORD, IS_ADMIN FROM USER WHERE USERNAME = '$username' AND PASSWORD = '$password'";

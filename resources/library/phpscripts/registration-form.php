@@ -99,7 +99,7 @@ function saveUser(){
     $email = $_POST['email'];
     $address = null;
     $username = $_POST['username'];
-    $password = $_POST['password'];
+    $password = md5($_POST['password']);
     $isadmin = false;
     $gender = $_POST['gender'];
     $dob = $_POST['dob'];
