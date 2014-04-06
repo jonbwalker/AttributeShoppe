@@ -57,7 +57,7 @@ $result = $conn->query($sql);
                     echo '<div class="col col-lg-4 col-sm-6">';
                         echo '<div class="thumbnail">';
                              echo '<a href="/resources/library/phpscripts/products/show.php?id='.$row['ID'].'" title="courage">';
-                                 echo '<img alt="courage" itemprop="image" src="resources/library/img/COURAGE.png">';
+                                 echo '<img alt="courage" itemprop="image" src="resources/library/img/'.$row['IMAGE_NAME'].'">';
                              echo '</a>';
                              echo '<div class="caption">';
                                  echo '<h5 class="ellipsis">';

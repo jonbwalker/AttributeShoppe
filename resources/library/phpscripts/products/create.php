@@ -40,12 +40,17 @@ if (!empty($_POST)) {
         $valid = false;
     }
 
+    if (empty($category)) {
+        $categoryError = 'Please choose a category';
+        $valid = false;
+    }
+
     if (empty($active)) {
         $activeError = 'Please show active indicator';
         $valid = false;
     }
 
-    // update data
+    // insert data
     if ($valid) {
         $conn = new mysqli('localhost', 'attrib', 'password', 'attribute_shoppe');
         $sql1 = "INSERT INTO PRODUCT VALUES(
