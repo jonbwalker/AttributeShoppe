@@ -26,6 +26,7 @@ if (!empty($_POST)) {
     $description = $_POST['description'];
     $price = $_POST['price'];
     $category = $_POST['category'];
+    $image = null;
     $active = $_POST['active'];
 
     // validate input
@@ -59,7 +60,9 @@ if (!empty($_POST)) {
          '$description',
          '$price',
          '$category',
-         '$active')";
+         '$active',
+         '$image')";
+
         $result1 = $conn->query($sql1);
         header("Location:" . BASE_URL . "/admin.php");
     }

@@ -19,7 +19,7 @@ $result = $conn->query($category);
             $result = $conn->query($product);
             $count = $result->fetch_row();
 
-            echo '<a class="list-group-item" href="' . BASE_URL . '/categories/'.$row['NAME'].'.php">';
+            echo '<a class="list-group-item" href="' . BASE_URL . '/products/product.php?id='.$id.'">';
             echo '<span class="badge">'.$count[0].'</span>';
             echo $row['NAME'];
             echo '</a>';
