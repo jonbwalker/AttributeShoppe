@@ -21,4 +21,23 @@ foreach($conn->query($sql) as $row) {
     echo '<a class="btn btn-danger" data-toggle="modal" data-target=".bs-example-modal-sm">Delete</a>';
     echo '</td>';
     echo '</tr>';
-}?>
+}
+echo '<div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">';
+echo '<div class="modal-dialog modal-sm">';
+echo '<div class="modal-content">';
+echo '<div class="modal-header">';
+echo '<a class="close" data-dismiss="modal">×</a>';
+echo '<h4 >Delete</h4>';
+echo '</div>';
+echo '<div class="modal-body">';
+echo '<p>Are You Sure You Want to Delete This User</p>';
+echo '</div>';
+echo '<div class="modal-footer">';
+echo '<a href="/AttributeShoppe/resources/library/phpscripts/users/delete.php?id=' . $row['ID'] . '" class="btn btn-danger"  >Delete</a>';
+echo '<a href="#" class="btn btn-default" data-dismiss="modal">Close</a>';
+echo '</div>';
+echo '</div>';
+echo '</div>';
+echo '</div>';
+echo '</div>';
+?>

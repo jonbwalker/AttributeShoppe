@@ -6,8 +6,8 @@ if ( !empty($_GET['id'])) {
 
     // delete data
     $conn = new mysqli('localhost', 'attrib', 'password', 'attribute_shoppe');
-    $sql = "DELETE FROM PRODUCT WHERE id = '$id'";
+    $sql = "DELETE FROM USER WHERE id = '$id'";
     $result = $conn->query($sql);
-    header("Location:" . BASE_URL . "/products/list.php");
+    header("Location:" . BASE_URL . "/users/list.php");
 
 ?>
