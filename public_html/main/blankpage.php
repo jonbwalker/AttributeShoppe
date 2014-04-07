@@ -10,10 +10,10 @@
     <title>Attribute Shoppe</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../resources/library/css/bootstrap.css" rel="stylesheet">
+    <link href="../../resources/library/css/bootstrap.css" rel="stylesheet">
 
     <!-- Add custom CSS here -->
-    <link href="../resources/library/css/main.css" rel="stylesheet">
+    <link href="../../resources/library/css/main.css" rel="stylesheet">
 
     <!-- Google web fonts -->
     <link href='http://fonts.googleapis.com/css?family=Revalia' rel='stylesheet' type='text/css'>
@@ -42,8 +42,8 @@ require_once(TEMPLATES_PATH . "/footer.php");
 ?>
 
 <!-- JavaScript -->
-<script src="../resources/library/js/jquery-1.10.2.js"></script>
-<script src="../resources/library/js/bootstrap.js"></script>
+<script src="../../resources/library/js/jquery-1.10.2.js"></script>
+<script src="../../resources/library/js/bootstrap.js"></script>
 
 </body>
 
