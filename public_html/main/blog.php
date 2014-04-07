@@ -10,10 +10,10 @@
     <title>Blog | Attribute Shoppe</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="../resources/library/css/bootstrap.css" rel="stylesheet">
+    <link href="../../resources/library/css/bootstrap.css" rel="stylesheet">
 
     <!-- Add custom CSS here -->
-    <link href="../resources/library/css/main.css" rel="stylesheet">
+    <link href="../../resources/library/css/main.css" rel="stylesheet">
 </head>
 
 <body>
@@ -35,7 +35,7 @@ require_once(TEMPLATES_PATH . "/header.php");
                 <hr>
             </div>
             <div class="col-lg-12 text-center">
-                <img class="img-responsive img-border img-full" src="../resources/library/img/slide-1.jpg" alt="">
+                <img class="img-responsive img-border img-full" src="../../resources/library/img/slide-1.jpg" alt="">
                 <h2>Post Title
                     <br>
                     <small>October 13, 2013</small>
@@ -45,7 +45,7 @@ require_once(TEMPLATES_PATH . "/header.php");
                 <hr>
             </div>
             <div class="col-lg-12 text-center">
-                <img class="img-responsive img-border img-full" src="../resources/library/img/slide-2.jpg" alt="">
+                <img class="img-responsive img-border img-full" src="../../resources/library/img/slide-2.jpg" alt="">
                 <h2>Post Title
                     <br>
                     <small>October 13, 2013</small>
@@ -55,7 +55,7 @@ require_once(TEMPLATES_PATH . "/header.php");
                 <hr>
             </div>
             <div class="col-lg-12 text-center">
-                <img class="img-responsive img-border img-full" src="../resources/library/img/slide-3.jpg" alt="">
+                <img class="img-responsive img-border img-full" src="../../resources/library/img/slide-3.jpg" alt="">
                 <h2>Post Title
                     <br>
                     <small>October 13, 2013</small>
@@ -89,8 +89,8 @@ require_once(TEMPLATES_PATH . "/header.php");
 </footer>
 
 <!-- JavaScript -->
-<script src="../resources/library/js/jquery-1.10.2.js"></script>
-<script src="../resources/library/js/bootstrap.js"></script>
+<script src="../../resources/library/js/jquery-1.10.2.js"></script>
+<script src="../../resources/library/js/bootstrap.js"></script>
 
 </body>
 

@@ -37,7 +37,7 @@ require_once(TEMPLATES_PATH . "/header.php");
 
     <div class="row">
         <ol class="breadcrumb">
-            <li><a href="<?php echo BASE_URL; ?>/admin.php">Admin</a></li>
+            <li><a href="<?php echo BASE_URL; ?>/account/admin.php">Admin</a></li>
             <li class="active">Create</li>
         </ol>
         <div class="box">

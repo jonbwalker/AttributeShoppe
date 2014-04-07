@@ -39,8 +39,8 @@ require_once(TEMPLATES_PATH . "/header.php");
         <?
         if (isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'] == 'true') {
             echo '<ol class="breadcrumb">';
-            echo    '<li><a href="<?php echo BASE_URL; ?>/admin.php">Admin</a></li>';
-            echo    '<li><a href="<?php echo BASE_URL; ?>/products/list.php">Products</a></li>';
+            echo    '<li><a href="'.BASE_URL.'/account/admin.php">Admin</a></li>';
+            echo    '<li><a href="'.BASE_URL.'/products/list.php">Products</a></li>';
             echo    '<li class="active">' . $id . '</li>';
             echo '</ol>';
         }?>

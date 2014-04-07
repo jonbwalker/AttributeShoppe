@@ -45,7 +45,7 @@ if (!empty($_POST)) {
          '$description',
          '$active')";
         $result = $conn->query($sql);
-        header("Location:" . BASE_URL . "/admin.php");
+        header("Location:" . BASE_URL . "/account/admin.php");
     }
 }
 ?>

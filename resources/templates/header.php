@@ -41,7 +41,7 @@
                         }
                         if(isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'] == 'true') {
 //                            echo "<li class='divider'></li>";
-                            echo "<li><a href=", BASE_URL, "/admin.php>Admin</a></li>";
+                            echo "<li><a href=", BASE_URL, "/account/admin.php>Admin</a></li>";
                         }?>
                     </ul>
                 </li>

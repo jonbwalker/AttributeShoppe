@@ -64,7 +64,7 @@ if (!empty($_POST)) {
          '$image')";
 
         $result1 = $conn->query($sql1);
-        header("Location:" . BASE_URL . "/admin.php");
+        header("Location:" . BASE_URL . "/account/admin.php");
     }
 }
 
