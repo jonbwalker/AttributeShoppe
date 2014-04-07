@@ -52,26 +52,6 @@ require_once(TEMPLATES_PATH . "/header.php");
             <hr>
             <div class="col-lg-12">
 
-                <!-- Delete modal -->
-                <div class="modal fade bs-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-                    <div class="modal-dialog modal-sm">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <a class="close" data-dismiss="modal">×</a>
-                                <h4 >Delete</h4>
-                            </div>
-                            <div class="modal-body">
-                                <p>Are You Sure You Want to Delete This Product</p>
-                            </div>
-                            <div class="modal-footer">
-                                <a href="#" class="btn btn-danger">Delete</a>
-                                <a href="#" class="btn btn-default" data-dismiss="modal">Close</a>
-                            </div>
-                        </div>
-                        </div>
-                    </div>
-                </div>
-
                 <table class="table table-striped table-bordered">                 
                     <thead>                    
                     <tr>                   
