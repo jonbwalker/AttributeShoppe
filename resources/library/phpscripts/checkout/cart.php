@@ -2,7 +2,7 @@
 
 function get_product_name($pid){
     $conn = new mysqli('localhost', 'attrib', 'password', 'attribute_shoppe');
-    $sql = "select NAME from product where id=$pid";
+    $sql = "select NAME from PRODUCT where id='$pid'";
     $result = $conn->query($sql);
     $row = $result->fetch_array(MYSQLI_ASSOC);
     return $row['NAME'];
@@ -10,10 +10,10 @@ function get_product_name($pid){
 
 function get_price($pid){
     $conn = new mysqli('localhost', 'attrib', 'password', 'attribute_shoppe');
-    $sql = "select price from product where id=$pid";
+    $sql = "select PRICE from PRODUCT where id='$pid'";
     $result = $conn->query($sql);
     $row = $result->fetch_array(MYSQLI_ASSOC);
-    return $row['price'];
+    return $row['PRICE'];
 }
 
 function get_order_total(){
