@@ -27,6 +27,7 @@ foreach($conn->query($sql) as $row) {
     echo '</h5>';
     echo '<div itemprop="offers" itemscope itemtype="http://schema.org/Offer">';
     echo '<span class="label label-danger" itemprop="price">' .$row['PRICE'].'</span>';
+    echo '<input class="btn btn-default add-to-cart" type="button" value="Add to Cart" onclick="" />';
     echo '</div>';
     echo '</div>';
     echo '</div>';
