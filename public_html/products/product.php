@@ -1,12 +1,14 @@
 <?php
 if (!session_id()) session_start();
 include("../../resources/library/phpscripts/checkout/cart.php");
+// load config file
+require_once("../../resources/config.php");
 
 if (isset($_REQUEST['command'])) {
     if ($_REQUEST['command'] == 'add' && $_REQUEST['productid'] > 0) {
         $pid = $_REQUEST['productid'];
         addtocart($pid, 1);
-        header("Location:" . BASE_URL . "/chcekout/cart.php");
+        header("Location:" . BASE_URL . "/checkout/cart.php");
         exit();
     }
 }
@@ -43,8 +45,6 @@ if (isset($_REQUEST['command'])) {
     <link href='http://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Offside' rel='stylesheet' type='text/css'>
     <?php
-    // load config file
-    require_once("../../resources/config.php");
     // include header navigation bar
     require_once(TEMPLATES_PATH . "/header.php");
     ?>

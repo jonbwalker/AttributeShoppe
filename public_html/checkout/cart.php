@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 include("../../resources/library/phpscripts/checkout/cart.php");
 
 $msg='';
@@ -74,7 +74,7 @@ require_once(TEMPLATES_PATH . "/header.php");
                     <div style="margin:0px auto; width:600px;" >
                         <div style="padding-bottom:10px">
                             <h1 align="center">Your Shopping Cart</h1>
-                            <input type="button" value="Continue Shopping" onclick="window.location='products.php'" />
+                            <input type="button" value="Continue Shopping" onclick="window.location='<?php echo BASE_URL?>/products.php'" />
                         </div>
                         <div style="color:#F00"><?=$msg?></div>
                         <table border="0" cellpadding="5px" cellspacing="1px" style="font-family:Verdana, Geneva, sans-serif; font-size:11px; background-color:#E1E1E1" width="100%">

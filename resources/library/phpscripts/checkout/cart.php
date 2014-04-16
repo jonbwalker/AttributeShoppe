@@ -5,7 +5,7 @@ function get_product_name($pid){
     $sql = "select NAME from product where id=$pid";
     $result = $conn->query($sql);
     $row = $result->fetch_array(MYSQLI_ASSOC);
-    return $row['name'];
+    return $row['NAME'];
 }
 
 function get_price($pid){
