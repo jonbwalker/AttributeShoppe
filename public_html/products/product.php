@@ -1,14 +1,15 @@
 <?php
 if (!session_id()) session_start();
-include("../../resources/library/phpscripts/cart/cart.php");
+include("../../resources/library/phpscripts/checkout/cart.php");
 
-if($_REQUEST['command']=='add' && $_REQUEST['productid']>0){
-    $pid=$_REQUEST['productid'];
-    addtocart($pid,1);
-    header("location:shoppingcart.php");
-    exit();
+if (isset($_REQUEST['command'])) {
+    if ($_REQUEST['command'] == 'add' && $_REQUEST['productid'] > 0) {
+        $pid = $_REQUEST['productid'];
+        addtocart($pid, 1);
+        header("Location:" . BASE_URL . "/chcekout/cart.php");
+        exit();
+    }
 }
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -20,6 +21,14 @@ if($_REQUEST['command']=='add' && $_REQUEST['productid']>0){
     <meta name="author" content="">
 
     <title>Products | Attribute Shoppe</title>
+
+    <script language="javascript">
+        function addtocart(pid){
+            document.form1.productid.value=pid;
+            document.form1.command.value='add';
+            document.form1.submit();
+        }
+    </script>
 
     <!-- Bootstrap core CSS -->
     <link href="../../resources/library/css/bootstrap.css" rel="stylesheet">
@@ -44,6 +53,11 @@ if($_REQUEST['command']=='add' && $_REQUEST['productid']>0){
 
 <body>
 
+<form name="form1">
+    <input type="hidden" name="productid" />
+    <input type="hidden" name="command" />
+</form>
+
 <div class="container">
     <div class="row">
         <div class="box">
@@ -52,10 +66,6 @@ if($_REQUEST['command']=='add' && $_REQUEST['productid']>0){
             require_once(TEMPLATES_PATH . "/categories.php");
             ?>
             <div class="col-lg-12">
-                <form name="form1">
-                    <input type="hidden" name="productid" />
-                    <input type="hidden" name="command" />
-                </form>
                 <hr>
                 <h2 class="intro-text text-center"> <strong>attribute shoppe</strong>
                 </h2>
@@ -79,13 +89,7 @@ require_once(TEMPLATES_PATH . "/footer.php");
 <!-- JavaScript -->
 <script src="../../resources/library/js/jquery-1.10.2.js"></script>
 <script src="../../resources/library/js/bootstrap.js"></script>
-<script language="javascript">
-    function addtocart(pid){
-        document.form1.productid.value=pid;
-        document.form1.command.value='add';
-        document.form1.submit();
-    }
-</script>
+
 
 </body>
 

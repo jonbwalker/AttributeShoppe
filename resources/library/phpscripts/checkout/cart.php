@@ -1,4 +1,5 @@
 <?
+
 function get_product_name($pid){
     $conn = new mysqli('localhost', 'attrib', 'password', 'attribute_shoppe');
     $sql = "select NAME from product where id=$pid";
