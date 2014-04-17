@@ -18,11 +18,8 @@ session_start();
     <link href="../../resources/library/css/main.css" rel="stylesheet">
 
     <!-- Google web fonts -->
-    <link href='http://fonts.googleapis.com/css?family=Revalia' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Audiowide' rel='stylesheet' type='text/css'
-    <link href='http://fonts.googleapis.com/css?family=Duru+Sans' rel='stylesheet' type='text/css'>
-    <link href='http://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Offside' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Cinzel' rel='stylesheet' type='text/css'>
 </head>
 
 <body>

@@ -292,6 +292,11 @@ footer p {
 }
 
 .add-to-cart {
+    font-family: 'Raleway', sans-serif;
     float: right;
-    margin: 25em 0em 1em;
+    margin: 19em 4em 0em;
+    width: 10em;
+    height: 4em;
+    font-size: larger;
+    background-color: #c0c0c0;
 }
