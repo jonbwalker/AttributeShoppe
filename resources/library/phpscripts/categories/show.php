@@ -12,7 +12,7 @@ if (!empty($_GET['id'])) {
 }
 
 if (null == $id) {
-    header("Location: index.php");
+    header("Location:" . BASE_URL . "/index.php");
 } else {
     $conn = new mysqli('localhost', 'attrib', 'password', 'attribute_shoppe');
     $sql = "SELECT * FROM CATEGORY WHERE ID = $id";

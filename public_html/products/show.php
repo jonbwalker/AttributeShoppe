@@ -1,7 +1,19 @@
 <?php
-session_start();
+if (!session_id()) session_start();
 // include the create category processing logic
-include("../../resources/library/phpscripts/products/show.php")
+include("../../resources/library/phpscripts/products/show.php");
+include("../../resources/library/phpscripts/checkout/cart.php");
+// load config file
+require_once("../../resources/config.php");
+
+if (isset($_REQUEST['command'])) {
+    if ($_REQUEST['command'] == 'add' && $_REQUEST['productid'] > 0) {
+        $pid = $_REQUEST['productid'];
+        addtocart($pid, 1);
+        header("Location:" . BASE_URL . "/checkout/cart.php");
+        exit();
+    }
+}
 ?>
 <head>
     <meta charset="utf-8">
@@ -16,6 +28,15 @@ include("../../resources/library/phpscripts/products/show.php")
 
     <!-- Add custom CSS here -->
     <link href="../../resources/library/css/main.css" rel="stylesheet">
+
+    <script language="javascript">
+        function addtocart(pid){
+            document.form1.productid.value=pid;
+            document.form1.command.value='add';
+            document.form1.submit();
+        }
+    </script>
+
 
     <!-- Google web fonts -->
     <link href='http://fonts.googleapis.com/css?family=Revalia' rel='stylesheet' type='text/css'>
@@ -33,6 +54,11 @@ require_once("../../resources/config.php");
 require_once(TEMPLATES_PATH . "/header.php");
 ?>
 
+<form name="form1">
+    <input type="hidden" name="productid" />
+    <input type="hidden" name="command" />
+</form>
+
 <div class="container">
 
     <div class="row">
@@ -48,12 +74,13 @@ require_once(TEMPLATES_PATH . "/header.php");
             <div class="form-horizontal">
 
                 <div class="clearfix"></div>
-                <img class="img-responsive img-full" alt="courage" itemprop="image"
+                <img class="img-responsive img-left" alt="courage" itemprop="image"
                      src="../../resources/library/img/<?php echo$row['IMAGE_NAME']; ?>">
                 <p>Item:  <?php echo $row['NAME']; ?></p>
                 <p>Price: <?php echo $row['PRICE']; ?></p>
                 <p>Description:   <?php echo $row['DESCRIPTION']; ?></p>
 
+                <input class="btn btn-default add-to-cart" type="button" value="Add to Cart" onclick="addtocart('<?php echo $row['ID']; ?>')" />
             </div>
         </div>
     </div>

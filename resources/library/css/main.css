@@ -292,5 +292,6 @@ footer p {
 }
 
 .add-to-cart {
-    margin-left: 120px;
+    float: right;
+    margin: 25em 0em 1em;
 }

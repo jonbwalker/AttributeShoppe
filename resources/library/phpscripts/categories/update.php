@@ -14,7 +14,7 @@ if (!empty($_GET['id'])) {
 }
 
 if (null == $id) {
-    header("Location: index.php");
+    header("Location:" . BASE_URL . "/index.php");
 }
 
 if (!empty($_POST)) {
