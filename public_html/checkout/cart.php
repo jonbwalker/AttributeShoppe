@@ -117,12 +117,10 @@ require_once(TEMPLATES_PATH . "/footer.php");
 </html>
 
 <script language="javascript">
-    function del(pid){
-        if(confirm('Do you really mean to delete this item')){
-            document.form1.pid.value=pid;
-            document.form1.command.value='delete';
-            document.form1.submit();
-        }
+    function delete_item(pid) {
+        document.form1.pid.value = pid;
+        document.form1.command.value = 'delete';
+        document.form1.submit();
     }
     function clear_cart(){
         if(confirm('This will empty your shopping cart, continue?')){

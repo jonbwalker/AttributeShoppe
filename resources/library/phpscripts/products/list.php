@@ -20,7 +20,7 @@ foreach($conn->query($sql) as $row) {
     echo ' ';
     echo '<a class="btn btn-default crud-btn" href="update.php?id='.$row['ID'].'">Update</a>';
     echo ' ';
-    echo '<a class="btn btn-danger" data-toggle="modal" data-target=".bs-example-modal-sm" >Delete</a>';
+    echo '<a class="btn btn-default" data-toggle="modal" data-target=".bs-example-modal-sm" >Delete</a>';
     echo '</td>';
     echo '</tr>';
 
