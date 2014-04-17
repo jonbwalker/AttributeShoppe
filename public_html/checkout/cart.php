@@ -41,6 +41,7 @@ if (isset($_REQUEST['command'])) {
     <!-- Google web fonts -->
     <link href='http://fonts.googleapis.com/css?family=Offside' rel='stylesheet' type='text/css'>
     <link href='http://fonts.googleapis.com/css?family=Cinzel' rel='stylesheet' type='text/css'>
+    <link href='http://fonts.googleapis.com/css?family=Raleway:400,100' rel='stylesheet' type='text/css'>
 </head>
 
 <body>
@@ -68,16 +69,13 @@ require_once(TEMPLATES_PATH . "/header.php");
                 <form name="form1" method="post">
                     <input type="hidden" name="pid" />
                     <input type="hidden" name="command" />
-                    <div style="margin:0px auto; width:600px;" >
-                        <div style="padding-bottom:10px">
-                            <input class="btn btn-default" type="button" value="Continue Shopping" onclick="window.location='<?php echo BASE_URL?>/products.php'" />
-                        </div>
+                    <div style="margin:0px auto; width:800px;" >
                         <div style="color:#F00"><?=$msg?></div>
 
                         <table class="table table-striped table-bordered">                 
                             <thead>                    
                             <tr>                   
-                                <th class="intro-text text-left">ID</th>    
+
                                 <th class="intro-text text-left" >Name</th>
                                 <th class="intro-text text-left" >Price</th>
                                 <th class="intro-text text-left" >Qty</th>
@@ -91,6 +89,9 @@ require_once(TEMPLATES_PATH . "/header.php");
                             include("../../resources/library/phpscripts/checkout/list.php");?>               
                             </tbody>            
                         </table>
+                        <div style="padding-bottom:10px">
+                            <input class="btn btn-default back-to-shopping" type="button" value="Back to Shopping" onclick="window.location='<?php echo BASE_URL?>/products.php'" />
+                        </div>
                     </div>
                 </form>
 

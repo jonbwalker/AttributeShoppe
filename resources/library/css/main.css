@@ -300,3 +300,17 @@ footer p {
     font-size: larger;
     background-color: #c0c0c0;
 }
+
+.checkout {
+    font-family: 'Raleway', sans-serif;
+    width: 8em;
+    height: 3em;
+    font-size: larger;
+    background-color: #c0c0c0;
+}
+
+.remove {
+    width: 6em;
+    height: 2em;
+    font-size: larger;
+}
