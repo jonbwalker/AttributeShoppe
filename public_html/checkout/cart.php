@@ -89,9 +89,9 @@ require_once(TEMPLATES_PATH . "/header.php");
                             include("../../resources/library/phpscripts/checkout/list.php");?>               
                             </tbody>            
                         </table>
-                        <div style="padding-bottom:10px">
-                            <input class="btn btn-default back-to-shopping" type="button" value="Back to Shopping" onclick="window.location='<?php echo BASE_URL?>/products.php'" />
-                        </div>
+                    </div>
+                    <div style="padding-bottom:10px">
+                        <input class="btn btn-default back-to-shopping" id="back-to-shopping" type="button" value="Back to Shopping" onclick="window.location='<?php echo BASE_URL?>/products.php'" />
                     </div>
                 </form>
 
