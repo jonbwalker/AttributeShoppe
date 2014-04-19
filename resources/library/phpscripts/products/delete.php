@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once("../../../config.php");
 if ( !empty($_GET['id'])) {
     $id = $_REQUEST['id'];

@@ -1,5 +1,6 @@
 <?php
 if (!session_id()) session_start();
+
 $id = null;
 if (!empty($_GET['id'])) {
     $id = $_REQUEST['id'];

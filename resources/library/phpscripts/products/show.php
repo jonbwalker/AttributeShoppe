@@ -1,4 +1,5 @@
 <?php
+if (!session_id()) session_start();
 require_once("../../resources/config.php");
 
 $id = null;

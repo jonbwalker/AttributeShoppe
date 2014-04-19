@@ -1,18 +1,9 @@
 <?php
-if (!session_id()) session_start();
+session_start();
 include("../../resources/library/phpscripts/checkout/cart.php");
 // load config file
 require_once("../../resources/config.php");
-
-//if (isset($_REQUEST['command'])) {
-//    if ($_REQUEST['command'] == 'add' && $_REQUEST['productid'] > 0) {
-//        $pid = $_REQUEST['productid'];
-//        addtocart($pid, 1);
-//        header("Location:" . BASE_URL . "/checxkout/cart.php");
-//        exit();
-//    }
-//}
-//?>
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,14 +14,6 @@ require_once("../../resources/config.php");
     <meta name="author" content="">
 
     <title>Products | Attribute Shoppe</title>
-<!---->
-<!--    <script language="javascript">-->
-<!--        function addtocart(pid){-->
-<!--            document.form1.productid.value=pid;-->
-<!--            document.form1.command.value='add';-->
-<!--            document.form1.submit();-->
-<!--        }-->
-<!--    </script>-->
 
     <!-- Bootstrap core CSS -->
     <link href="../../resources/library/css/bootstrap.css" rel="stylesheet">
