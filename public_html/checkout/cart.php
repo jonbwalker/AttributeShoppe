@@ -1,6 +1,12 @@
 <?php
-session_start();
 include("../../resources/library/phpscripts/checkout/cart.php");
+include("../../resources/config.php");
+
+if (!session_id()) session_start();
+if (!$_SESSION['loggedIn']){
+    header("Location:" . BASE_URL . "/account/login.php");
+    die();
+}
 
 $msg='';
 if (isset($_REQUEST['command'])) {
