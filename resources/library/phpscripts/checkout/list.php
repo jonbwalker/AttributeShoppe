@@ -1,18 +1,18 @@
 <?php
-$pid = '';
+$productId = '';
 if(isset($_SESSION['cart'])) {
-    $max = count($_SESSION['cart']);
-    for ($i = 0; $i < $max; $i++) {
-        $pid = $_SESSION['cart'][$i]['productid'];
-        $q = $_SESSION['cart'][$i]['qty'];
-        $pname = get_product_name($pid);
-        if ($q == 0) continue;
+    $lineItem = count($_SESSION['cart']);
+    for ($i = 0; $i < $lineItem; $i++) {
+        $productId = $_SESSION['cart'][$i]['productid'];
+        $quantity = $_SESSION['cart'][$i]['qty'];
+        $pname = get_product_name($productId);
+        if ($quantity == 0) continue;
 ?>
         <tr>
             <td><?= $pname ?></td>
-            <td>$<?= get_price($pid) ?></td>
-            <td><input type="text" name="product<?= $pid ?>" value="<?= $q ?>" maxlength="3" size="2"/></td>
-            <td>$<?= get_price($pid) * $q ?>.00</td>
+            <td>$<?= get_price($productId) ?></td>
+            <td><input type="text" name="product<?= $productId ?>" value="<?= $quantity ?>" maxlength="3" size="2"/></td>
+            <td>$<?= get_price($productId) * $quantity ?>.00</td>
             <td><a class="btn btn-default remove" data-toggle="modal" data-target=".bs-example-modal-sm">Remove</a></td>
         </tr>
     <? } ?>
@@ -30,7 +30,7 @@ if(isset($_SESSION['cart'])) {
                     <p>Are You Sure You Want to Remove This Product</p>
                 </div>
                 <div class="modal-footer">
-                    <a href="javascript:delete_item(<?= $pid ?>)" class="btn btn-danger">Delete</a>
+                    <a href="javascript:delete_item(<?= $productId ?>)" class="btn btn-danger">Delete</a>
                     <a href="#" class="btn btn-default" data-dismiss="modal">Close</a>
                 </div>
             </div>
@@ -42,7 +42,7 @@ if(isset($_SESSION['cart'])) {
         <td colspan="5" align="right"><input class="btn btn-default checkout" type="button" value="Clear Cart"
                                              onclick="clear_cart()"><input class="btn btn-default checkout" type="button"
                                                                            value="Update Cart" onclick="update_cart()"><input
-                class="btn btn-default checkout" type="button" value="Place Order" onclick="window.location='billing.php'"></td>
+                class="btn btn-default checkout" type="button" value="Review Order" onclick="window.location='review.php'"></td>
     </tr>
 <?
 } else {

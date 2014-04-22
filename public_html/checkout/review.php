@@ -7,26 +7,6 @@ if (!$_SESSION['loggedIn']){
     header("Location:" . BASE_URL . "/account/login.php");
     die();
 }
-
-$msg='';
-if (isset($_REQUEST['command'])) {
-    if ($_REQUEST['command'] == 'delete' && $_REQUEST['pid'] > 0) {
-        remove_product($_REQUEST['pid']);
-    } else if ($_REQUEST['command'] == 'clear') {
-        unset($_SESSION['cart']);
-    } else if ($_REQUEST['command'] == 'update') {
-        $lineItem = count($_SESSION['cart']);
-        for ($i = 0; $i < $lineItem; $i++) {
-            $pid = $_SESSION['cart'][$i]['productid'];
-            $q = intval($_REQUEST['product' . $pid]);
-            if ($q > 0 && $q <= 999) {
-                $_SESSION['cart'][$i]['qty'] = $q;
-            } else {
-                $msg = 'Some proudcts not updated!, quantity must be a number between 1 and 999';
-            }
-        }
-    }
-}
 ?>
 
 <html lang="en">
@@ -51,9 +31,7 @@ if (isset($_REQUEST['command'])) {
 </head>
 
 <body>
-<?php
-// load config file
-require_once("../../resources/config.php");
+<?
 // include header navigation bar
 require_once(TEMPLATES_PATH . "/header.php");
 ?>
@@ -62,7 +40,7 @@ require_once(TEMPLATES_PATH . "/header.php");
 
     <div class="row">
         <ol class="breadcrumb">
-            <li><a href="<?php echo BASE_URL; ?>/account/admin.php">Admin</a></li>
+            <li><a href="<? echo BASE_URL; ?>/account/admin.php">Admin</a></li>
             <li class="active">Products</li>
         </ol>
         <div class="box">
@@ -91,8 +69,8 @@ require_once(TEMPLATES_PATH . "/header.php");
                             </tr>                
                             </thead>
                             <tbody class="">
-                            <?php
-                            include("../../resources/library/phpscripts/checkout/list.php");?>               
+                            <?
+                            include("../../resources/library/phpscripts/checkout/review.php");?>               
                             </tbody>            
                         </table>
                     </div>
@@ -107,7 +85,7 @@ require_once(TEMPLATES_PATH . "/header.php");
 </div>
 <!-- /.container -->
 
-<?php
+<?
 // include header navigation bar
 require_once(TEMPLATES_PATH . "/footer.php");
 ?>
@@ -119,23 +97,3 @@ require_once(TEMPLATES_PATH . "/footer.php");
 </body>
 
 </html>
-
-<script language="javascript">
-    function delete_item(pid) {
-        document.form1.pid.value = pid;
-        document.form1.command.value = 'delete';
-        document.form1.submit();
-    }
-    function clear_cart(){
-        if(confirm('This will empty your shopping cart, continue?')){
-            document.form1.command.value='clear';
-            document.form1.submit();
-        }
-    }
-    function update_cart(){
-        document.form1.command.value='update';
-        document.form1.submit();
-    }
-
-
-</script>
