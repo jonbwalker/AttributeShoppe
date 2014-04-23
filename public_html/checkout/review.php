@@ -54,18 +54,17 @@ require_once(TEMPLATES_PATH . "/header.php");
                 <form name="form1" method="post">
                     <input type="hidden" name="pid" />
                     <input type="hidden" name="command" />
-                    <div style="margin:0px auto; width:800px;" >
+
+                    <div id="review-order">
                         <div style="color:#F00"><?=$msg?></div>
 
                         <table class="table table-striped table-bordered">                 
                             <thead>                    
                             <tr>                   
-
                                 <th class="intro-text text-left" >Name</th>
                                 <th class="intro-text text-left" >Price</th>
                                 <th class="intro-text text-left" >Amount</th>
                                 <th class="intro-text text-left" >Qty</th>
-
                             </tr>                
                             </thead>
                             <tbody class="">
@@ -74,7 +73,32 @@ require_once(TEMPLATES_PATH . "/header.php");
                             </tbody>            
                         </table>
                     </div>
-                    <div style="padding-bottom:10px">
+
+                    <div id="review-address">
+                        <div style="color:#F00"><?=$msg?></div>
+
+                        <table class="table table-striped table-bordered">                 
+                            <thead>                    
+                            <tr>                   
+                                <th class="intro-text text-left" >Name</th>
+                                <th class="intro-text text-left" >Price</th>
+                                <th class="intro-text text-left" >Amount</th>
+                                <th class="intro-text text-left" >Qty</th>
+                            </tr>                
+                            </thead>
+                            <tbody class="">
+                            <tr>
+                                <td><?=getUserAddress().['STREET']?></td>
+                                <td><??></td>
+                                <td><??></td>
+                                <td><??></td>
+                            </tr>
+                                           
+                            </tbody>            
+                        </table>
+                    </div>
+
+                    <div style="padding-bottom:10px;">
                         <input class="btn btn-default back-to-shopping" id="back-to-shopping" type="button" value="Back to Cart" onclick="window.location='<?php echo BASE_URL?>/checkout/cart.php'" />
                     </div>
                 </form>
