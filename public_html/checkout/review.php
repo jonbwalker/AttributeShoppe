@@ -1,5 +1,6 @@
 <?php
 include("../../resources/library/phpscripts/checkout/cart.php");
+include("../../resources/library/phpscripts/checkout/review.php");
 include("../../resources/config.php");
 
 if (!session_id()) session_start();
@@ -45,7 +46,7 @@ require_once(TEMPLATES_PATH . "/header.php");
         </ol>
         <div class="box">
             <hr>
-            <h2 class="intro-text text-center">Shopping Cart
+            <h2 class="intro-text text-center">Order Review
             </h2>
             <hr>
             <div class="col-lg-12">
@@ -62,9 +63,8 @@ require_once(TEMPLATES_PATH . "/header.php");
 
                                 <th class="intro-text text-left" >Name</th>
                                 <th class="intro-text text-left" >Price</th>
-                                <th class="intro-text text-left" >Qty</th>
                                 <th class="intro-text text-left" >Amount</th>
-                                <th class="intro-text text-left" >Options</th>
+                                <th class="intro-text text-left" >Qty</th>
 
                             </tr>                
                             </thead>
@@ -75,7 +75,7 @@ require_once(TEMPLATES_PATH . "/header.php");
                         </table>
                     </div>
                     <div style="padding-bottom:10px">
-                        <input class="btn btn-default back-to-shopping" id="back-to-shopping" type="button" value="Back to Shopping" onclick="window.location='<?php echo BASE_URL?>/products.php'" />
+                        <input class="btn btn-default back-to-shopping" id="back-to-shopping" type="button" value="Back to Cart" onclick="window.location='<?php echo BASE_URL?>/checkout/cart.php'" />
                     </div>
                 </form>
 

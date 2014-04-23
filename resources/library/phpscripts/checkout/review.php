@@ -11,10 +11,8 @@ if (isset($_SESSION['cart'])) {
         <tr>
             <td><?= $pname ?></td>
             <td>$<?= get_price($productId) ?></td>
-            <td><input type="text" name="product<?= $productId ?>" value="<?= $quantity ?>" maxlength="3" size="2"/>
-            </td>
             <td>$<?= get_price($productId) * $quantity ?>.00</td>
-            <td><a class="btn btn-default remove" data-toggle="modal" data-target=".bs-example-modal-sm">Remove</a></td>
+            <td><?= $quantity ?></td>
         </tr>
     <?
     }
