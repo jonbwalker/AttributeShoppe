@@ -80,18 +80,19 @@ require_once(TEMPLATES_PATH . "/header.php");
                         <table class="table table-striped table-bordered">                 
                             <thead>                    
                             <tr>                   
-                                <th class="intro-text text-left" >Name</th>
-                                <th class="intro-text text-left" >Price</th>
-                                <th class="intro-text text-left" >Amount</th>
-                                <th class="intro-text text-left" >Qty</th>
+                                <th class="intro-text text-left" >Street</th>
+                                <th class="intro-text text-left" >City</th>
+                                <th class="intro-text text-left" >Street</th>
+                                <th class="intro-text text-left" >Zip</th>
                             </tr>                
                             </thead>
                             <tbody class="">
+                            <?$addressArray = getUserAddress()?>
                             <tr>
-                                <td><?=getUserAddress().['STREET']?></td>
-                                <td><??></td>
-                                <td><??></td>
-                                <td><??></td>
+                                <td><?print_r($addressArray["street"])?></td>
+                                <td><?print_r($addressArray["city"])?></td>
+                                <td><?print_r($addressArray["state"])?></td>
+                                <td><?print_r($addressArray["zip"])?></td>
                             </tr>
                                            
                             </tbody>            

@@ -35,10 +35,13 @@ function getUserAddress(){
 
     $userId = $userResults['ADDRESS_ID'];
 
-    $address = "SELECT * FROM ADDRESS WHERE ID = '1' ";
+    $address = "SELECT * FROM ADDRESS WHERE ID = '$userId' ";
     $addressQuery = $conn->query($address);
     $addressResults = $addressQuery->fetch_array(MYSQLI_ASSOC);
-
-    return $addressResults;
+    $street = $addressResults['STREET'];
+    $city = $addressResults['CITY'];
+    $state = $addressResults['STATE'];
+    $zip = $addressResults['ZIPCODE'];
+    return compact("street", "city", "state", "zip");
 }
 ?>
