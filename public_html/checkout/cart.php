@@ -92,12 +92,23 @@ require_once(TEMPLATES_PATH . "/header.php");
                             </thead>
                             <tbody class="">
                             <?php
-                            include("../../resources/library/phpscripts/checkout/list.php");?>               
+                            include("../../resources/library/phpscripts/checkout/list.php");?> 
+                            <tr>
+                                <td><b>Total: $<?= get_order_total() ?></b></td>
+                            </tr>              
                             </tbody>            
                         </table>
                     </div>
+
+
+                        <div class="checkout-buttons">
+                            <input class="btn btn-default checkout" type="button" value="Clear Cart" onclick="clear_cart()">
+                            <input class="btn btn-default checkout" type="button" value="Update Cart" onclick=" update_cart()">
+                            <input class="btn btn-default checkout" type="button" value="Review Order" onclick="window.location='review.php'">
+                        </div>
+
                     <div style="padding-bottom:10px">
-                        <input class="btn btn-default back-to-shopping" id="back-to-shopping" type="button" value="Back to Shopping" onclick="window.location='<?php echo BASE_URL?>/products.php'" />
+                        <input class="btn btn-default checkout back-to-shopping" id="back-to-shopping" type="button" value="Back to Shopping" onclick="window.location='<?php echo BASE_URL?>/products.php'" />
                     </div>
                 </form>
 

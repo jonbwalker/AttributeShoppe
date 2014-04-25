@@ -315,29 +315,42 @@ footer p {
     font-size: larger;
 }
 
-#back-to-shopping{
+#back-to-shopping {
     height: 3em;
     margin-left: 11em;
+    width: 10em;
 }
 
 #review-order{
-    margin:0px auto;
     width:400px;
     float: left;
+    margin: 0px auto 0px 100px;
 }
 
 #review-address{
-    margin:0px auto;
     width:400px;
-    float: right;
+    display: inline-block;
+    margin-left: 150px;
+}
+
+#review-payment{
+    width: 80%;
+    display: inline-block;
+    margin-left: 100px;
+    margin-top: 30px;
 }
 
 #username {
     font-family: calibri;
     font-size: 1.3em;
 }
+
 #password {
     font-family: calibri;
     font-size: 1.3em;
 }
 
+.checkout-buttons{
+    float: right;
+    margin-right: 14%;
+}

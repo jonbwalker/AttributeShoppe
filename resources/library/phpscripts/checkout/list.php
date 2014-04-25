@@ -36,14 +36,6 @@ if(isset($_SESSION['cart'])) {
             </div>
         </div>
     </div>
-
-    <tr>
-        <td><b>Total: $<?= get_order_total() ?></b></td>
-        <td colspan="5" align="right"><input class="btn btn-default checkout" type="button" value="Clear Cart"
-                                             onclick="clear_cart()"><input class="btn btn-default checkout" type="button"
-                                                                           value="Update Cart" onclick="update_cart()"><input
-                class="btn btn-default checkout" type="button" value="Review Order" onclick="window.location='review.php'"></td>
-    </tr>
 <?
 } else {
     echo "<tr bgColor='#FFFFFF'><p>There are no items in your shopping cart!</p>";
