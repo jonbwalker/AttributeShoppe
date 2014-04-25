@@ -81,13 +81,11 @@ require_once(TEMPLATES_PATH . "/header.php");
                         <table class="table table-striped table-bordered">                 
                             <thead>                    
                             <tr>                   
-
                                 <th class="intro-text text-left" >Name</th>
                                 <th class="intro-text text-left" >Price</th>
                                 <th class="intro-text text-left" >Qty</th>
                                 <th class="intro-text text-left" >Amount</th>
                                 <th class="intro-text text-left" >Options</th>
-
                             </tr>                
                             </thead>
                             <tbody class="">
