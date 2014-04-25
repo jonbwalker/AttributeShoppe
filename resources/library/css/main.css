@@ -301,6 +301,25 @@ footer p {
     background-color: #c0c0c0;
 }
 
+.remove {
+    width: 6em;
+    height: 2em;
+    font-size: larger;
+}
+
+#username {
+    font-family: calibri;
+    font-size: 1.3em;
+}
+
+#password {
+    font-family: calibri;
+    font-size: 1.3em;
+}
+
+/*#############################*/
+/*Checkout*/
+/*#############################*/
 .checkout {
     font-family: 'Raleway', sans-serif;
     width: 8em;
@@ -309,10 +328,9 @@ footer p {
     background-color: #c0c0c0;
 }
 
-.remove {
-    width: 6em;
-    height: 2em;
-    font-size: larger;
+.checkout-buttons{
+    float: right;
+    margin-right: 14%;
 }
 
 #back-to-shopping {
@@ -338,19 +356,4 @@ footer p {
     display: inline-block;
     margin-left: 100px;
     margin-top: 30px;
-}
-
-#username {
-    font-family: calibri;
-    font-size: 1.3em;
-}
-
-#password {
-    font-family: calibri;
-    font-size: 1.3em;
-}
-
-.checkout-buttons{
-    float: right;
-    margin-right: 14%;
 }

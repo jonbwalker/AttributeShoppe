@@ -125,6 +125,10 @@ require_once(TEMPLATES_PATH . "/header.php");
                             </div>
                         </div>
                     </div>
+
+                <div class="checkout-buttons">
+                    <input class="btn btn-default checkout" type="button" value="Place Order" onclick="window.location='review.php'">
+                </div>
             </form>
 
             <div style="padding-bottom:10px;">
