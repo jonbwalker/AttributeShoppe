@@ -1,6 +1,14 @@
 <?php
+require_once("../../resources/config.php");
 
-$productId = $msg = '';
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $_SESSION['cardnumber'] = $_POST['cardnumber'];
+    $_SESSION['expiration'] = $_POST['expiration'];
+    header("Location:" . BASE_URL . "/checkout/confirm.php");
+}
+
+$productId = $msg = $cardNumber = $expiration = '';
 if (isset($_SESSION['cart'])) {
     $lineItem = count($_SESSION['cart']);
     for ($i = 0; $i < $lineItem; $i++) {

@@ -46,7 +46,7 @@ require_once(TEMPLATES_PATH . "/header.php");
         </ol>
         <div class="box">
             <hr>
-            <h2 class="intro-text text-center">Order Review
+            <h2 class="intro-text text-center">Confirm Order
             </h2>
             <hr>
 
@@ -109,16 +109,12 @@ require_once(TEMPLATES_PATH . "/header.php");
                     <div class="row">
                         <div class="form-group col-lg-3">
                             <label>Card Number</label>*
-                            <input type="text" class="form-control" name="firstname" id="firstname" value="card" placeholder="First Name" disabled>
-                            <!--<span class="error">-->
-                            <?php //echo $firstnameErr;?><!--</span>-->
+                            <input type="text" class="form-control" name="cardnumber" id="cardnumber" value="<?echo $_SESSION['cardnumber']?>" placeholder="First Name" disabled>
 
                         </div>
                         <div class="form-group col-lg-3">
                             <label>Expiration Date</label>*
-                            <input type="text" class="form-control" name="lastname" id="lastname" value="expire" placeholder="Last Name" disabled>
-                            <!--<span class="error">-->
-                            <?php //echo $lastnameErr;?><!--</span>-->
+                            <input type="text" class="form-control" name="expiration" id="expiration" value="<?echo $_SESSION['expiration']?>" placeholder="Last Name" disabled>
                         </div>
                     </div>
                 </div>

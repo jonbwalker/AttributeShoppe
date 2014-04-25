@@ -50,7 +50,7 @@ require_once(TEMPLATES_PATH . "/header.php");
             </h2>
             <hr>
 
-            <form name="form1" method="post">
+            <form name="form1"method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
                 <input type="hidden" name="pid"/>
                 <input type="hidden" name="command"/>
 
@@ -112,22 +112,17 @@ require_once(TEMPLATES_PATH . "/header.php");
                         <div class="row">
                             <div class="form-group col-lg-3">
                                 <label>Card Number</label>*
-                                <input type="text" class="form-control" name="firstname" id="firstname" value="card" placeholder="First Name" ng-model="first">
-                                <!--<span class="error">-->
-                                <?php //echo $firstnameErr;?><!--</span>-->
-
+                                <input type="text" class="form-control" name="cardnumber" id="cardnumber"  placeholder="" ng-model="first">
                             </div>
                             <div class="form-group col-lg-3">
                                 <label>Expiration Date</label>*
-                                <input type="text" class="form-control" name="lastname" id="lastname" value="expire" placeholder="Last Name" ng-model="last">
-                                <!--<span class="error">-->
-                                <?php //echo $lastnameErr;?><!--</span>-->
+                                <input date type="text" class="form-control" name="expiration" id="expiration" placeholder="MM/YY" ng-model="last">
                             </div>
                         </div>
                     </div>
 
                 <div class="checkout-buttons">
-                    <input class="btn btn-default checkout" type="button" value="Confirm Order" onclick="window.location='confirm.php'">
+                    <input class="btn btn-default checkout" type="submit" value="Confirm Order">
                 </div>
             </form>
 
