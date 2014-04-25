@@ -1,3 +1,4 @@
+
 <?php
 // define variables and initialize with empty values
 $firstnameErr = $lastnameErr = $emailErr = $phoneErr = $dobErr = $genderErr =  $usernameErr = $passwordErr = "";
