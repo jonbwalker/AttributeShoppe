@@ -44,7 +44,7 @@ require_once(TEMPLATES_PATH . "/header.php");
     <div class="row">
         <div class="box">
             <div class="">
-            <div class="col-lg-12 jumbotron">
+            <div class="col-lg-12 jumbotron" style="box-shadow: 0px 5px 36px -1px grey">
                 <h1 class="alert alert-info animated fadeindown text-center order-placed">Order Placed<br></h1>
                 <div class="text-center">
                     <h3> You'll Recieve an Email Shortly With Your Download</h3>
@@ -132,6 +132,7 @@ require_once(TEMPLATES_PATH . "/header.php");
 <?
 // include header navigation bar
 require_once(TEMPLATES_PATH . "/footer.php");
+unset($_SESSION['cart']);
 ?>
 
 <!-- JavaScript -->

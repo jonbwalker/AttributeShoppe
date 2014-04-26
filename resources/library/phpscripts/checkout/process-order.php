@@ -11,13 +11,13 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $paymentId = 1;
 
     $conn = new mysqli('localhost', 'attrib', 'password', 'attribute_shoppe');
-//
-//    $order = "INSERT INTO ORDERS VALUES(
-//          DEFAULT,
-//          DEFAULT,
-//         '$user')";
-//    $conn->query($order);
-//    $orderId = $conn->insert_id;
+
+    $order = "INSERT INTO ORDERS VALUES(
+          DEFAULT,
+          DEFAULT,
+         '$user')";
+    $conn->query($order);
+    $orderId = $conn->insert_id;
 
 //    $payment = "INSERT INTO PAYMENT_METHOD VALUES(
 //          DEFAULT,
@@ -27,23 +27,22 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 //    $conn->query($payment);
 //    $paymentId = $conn->insert_id;
 
-//    $orderpayment = "INSERT INTO ORDER_PAYMENT VALUES(
-//           DEFAULT,
-//          '$orderId',
-//          '$ordertotal',
-//          '$paymentId')";
-//    $conn->query($orderpayment);
+    $orderpayment = "INSERT INTO ORDER_PAYMENT VALUES(
+           DEFAULT,
+          '$orderId',
+          '$ordertotal',
+          '$paymentId')";
+    $conn->query($orderpayment);
 
-//
-//    $statement = $conn->prepare("INSERT INTO ORDER_DETAIL VALUES (DEFAULT ,?,?,?)");
-//    var_dump($conn->error);
-//    $statement->bind_param('iii', $quantity, $orderId, $productid);
-//
-//    foreach($cart as $items) {
-//        $quantity = $items['qty'];
-//        $productid = $items['productid'];
-//        $statement->execute();
-//    }
 
+    $statement = $conn->prepare("INSERT INTO ORDER_DETAIL VALUES (DEFAULT ,?,?,?)");
+    var_dump($conn->error);
+    $statement->bind_param('iii', $quantity, $orderId, $productid);
+
+    foreach($cart as $items) {
+        $quantity = $items['qty'];
+        $productid = $items['productid'];
+        $statement->execute();
+    }
     header("Location:" . BASE_URL . "/checkout/confirmation.php");
 }
