@@ -12,7 +12,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 
     /* check the users credentials against the DB.*/
-    $sql = "SELECT USERNAME, PASSWORD, IS_ADMIN, FIRST_NAME, LAST_NAME FROM USER WHERE USERNAME = '$username' AND PASSWORD = '$password'";
+    $sql = "SELECT ID, USERNAME, PASSWORD, IS_ADMIN, FIRST_NAME, LAST_NAME FROM USER WHERE USERNAME = '$username' AND PASSWORD = '$password'";
     $result = $conn->query($sql);
 
     /* associative array */
@@ -30,6 +30,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $_SESSION['password'] = $password;
         $_SESSION['firstname'] = $row['FIRST_NAME'];
         $_SESSION['lastname' ]= $row['LAST_NAME'];
+        $_SESSION['userid' ]= $row['ID'];
 
 //        $_SESSION['row'] = $row;
         $rows_returned = $result->num_rows;

@@ -1,6 +1,8 @@
 <?php
+
 include("../../resources/library/phpscripts/checkout/cart.php");
-include("../../resources/library/phpscripts/checkout/review.php");
+include("../../resources/library/phpscripts/checkout/confirm.php");
+include("../../resources/library/phpscripts/checkout/process-order.php");
 include("../../resources/config.php");
 
 if (!session_id()) session_start();
@@ -50,7 +52,7 @@ require_once(TEMPLATES_PATH . "/header.php");
             </h2>
             <hr>
 
-            <form name="form1" method="post">
+            <form name="form1" method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
                 <input type="hidden" name="pid"/>
                 <input type="hidden" name="command"/>
 
@@ -70,7 +72,7 @@ require_once(TEMPLATES_PATH . "/header.php");
                         </thead>
                         <tbody class="">
                         <?
-                        include("../../resources/library/phpscripts/checkout/review.php");?>               
+                        include("../../resources/library/phpscripts/checkout/confirm.php");?>               
                         </tbody>
                                     
                     </table>
@@ -120,7 +122,7 @@ require_once(TEMPLATES_PATH . "/header.php");
                 </div>
 
                 <div class="checkout-buttons">
-                    <input class="btn btn-default checkout" type="button" value="Place Order" onclick="window.location='confirm.php'">
+                    <input class="btn btn-default checkout" type="submit" value="Place Order">
                 </div>
             </form>
 

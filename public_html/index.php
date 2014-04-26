@@ -56,7 +56,7 @@ require_once(TEMPLATES_PATH . "/header.php");
                         <li data-target="#carousel-example-generic" data-slide-to="2"></li>
                     </ol>
                     <?php
-                    print_r($_SESSION);
+                    print_r($_SESSION['cart']);
                     ?>
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner">

@@ -1,13 +1,5 @@
 <?php
-require_once("../../resources/config.php");
 
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $_SESSION['cardnumber'] = $_POST['cardnumber'];
-    $_SESSION['expiration'] = $_POST['expiration'];
-    $_SESSION['ordertotal'] = get_order_total();
-    header("Location:" . BASE_URL . "/checkout/confirm.php");
-}
 
 $productId = $msg = $cardNumber = $expiration = '';
 if (isset($_SESSION['cart'])) {
@@ -25,16 +17,17 @@ if (isset($_SESSION['cart'])) {
             <td><?= $quantity ?></td>
         </tr>
 
-    <?}?>
+    <? } ?>
     <tr>
-        <td ><b>Total: $<?= get_order_total() ?></b></td>
+        <td><b>Total: $<?= get_order_total() ?></b></td>
     </tr>
 <?
 } else {
     echo "<tr bgColor='#FFFFFF'><p>There are no items in your shopping cart!</p>";
 }
 
-function getUserAddress(){
+function getUserAddress()
+{
     $username = $_SESSION['username'];
 
     $conn = new mysqli('localhost', 'attrib', 'password', 'attribute_shoppe');
@@ -53,4 +46,5 @@ function getUserAddress(){
     $zip = $addressResults['ZIPCODE'];
     return compact("street", "city", "state", "zip");
 }
+
 ?>
