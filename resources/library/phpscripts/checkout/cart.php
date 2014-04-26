@@ -17,6 +17,7 @@ function get_price($productId){
 }
 
 function get_order_total(){
+    if(isset($_SESSION['cart'])){
     $lineItem=count($_SESSION['cart']);
     $sum=0;
     for($i=0;$i<$lineItem;$i++){
@@ -26,6 +27,7 @@ function get_order_total(){
         $sum+=$price*$quantity;
     }
     return $sum;
+    }
 }
 
 function addtocart($productId,$quantity){

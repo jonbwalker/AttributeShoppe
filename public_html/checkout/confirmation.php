@@ -49,6 +49,9 @@ require_once(TEMPLATES_PATH . "/header.php");
                 <div class="text-center">
                     <h3> You'll Recieve an Email Shortly With Your Download</h3>
                 </div>
+                <div class="text-center">
+                    <h3>Confirmation #: <?php echo mt_rand(100000, 999999);?></h3>
+                </div>
             </div>
             </div>
 
