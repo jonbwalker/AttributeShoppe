@@ -52,7 +52,7 @@ require_once(TEMPLATES_PATH . "/header.php");
             </div>
             <div class="list-group col-lg-6">
                 <p class="list-group-item active">Orders</p>
-                <a href="<?php echo BASE_URL; ?>/users/orders.php" class="list-group-item">View My Orders</a>
+                <a href="<?php echo BASE_URL; ?>/orders/list.php" class="list-group-item">View My Orders</a>
                 <a href="#" class="list-group-item">Cancel Order</a>
             </div>
             <div class="list-group col-lg-6">
