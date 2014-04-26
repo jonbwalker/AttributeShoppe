@@ -361,3 +361,7 @@ footer p {
 .order-placed{
     box-shadow: 0px 7px 25px 3px grey;
 }
+
+#order-placed{
+     margin-top: .8em;
+}

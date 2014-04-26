@@ -118,7 +118,7 @@ require_once(TEMPLATES_PATH . "/header.php");
                         </div>
                     </div>
 
-                <div class="checkout-buttons">
+                <div class="checkout-buttons" id="order-placed">
                     <input class="btn btn-default checkout" type="submit" value="Confirm Order">
                 </div>
             </form>
