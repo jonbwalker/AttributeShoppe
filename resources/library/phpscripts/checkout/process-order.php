@@ -1,11 +1,14 @@
 <?php
-session_start();
+require_once("../../resources/config.php");
+
+if (!session_id()) session_start();
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $user = $_SESSION['userid'];
     $creditcard = $_SESSION['cardnumber'];
     $expiration = $_SESSION['expiration'];
     $ordertotal = $_SESSION['ordertotal'];
     $cart = $_SESSION['cart'];
+    $paymentId = 1;
 
     $conn = new mysqli('localhost', 'attrib', 'password', 'attribute_shoppe');
 
@@ -24,17 +27,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $conn->query($payment);
     $paymentId = $conn->insert_id;
 
-    $orderpayment = "INSERT INTO ORDER_PAYMENT VALUES(
-           DEFAULT,
-          '$orderId',
-          '$ordertotal',
-          '$paymentId')";
-    $conn->query($orderpayment);
+//    $orderpayment = "INSERT INTO ORDER_PAYMENT VALUES(
+//           DEFAULT,
+//          '$orderId',
+//          '$ordertotal',
+//          '$paymentId')";
+//    $conn->query($orderpayment);
 
 
     $statement = $conn->prepare("INSERT INTO ORDER_DETAIL VALUES (DEFAULT ,?,?,?)");
     var_dump($conn->error);
-    $statement->bind_param('iii', $quantity, $orderId, $productid);   // bind $sample to the parameter
+    $statement->bind_param('iii', $quantity, $orderId, $productid);
 
     foreach($cart as $items) {
         $quantity = $items['qty'];

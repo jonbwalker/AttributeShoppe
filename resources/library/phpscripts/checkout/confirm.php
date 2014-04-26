@@ -1,6 +1,5 @@
 <?php
 
-
 $productId = $msg = $cardNumber = $expiration = '';
 if (isset($_SESSION['cart'])) {
     $lineItem = count($_SESSION['cart']);

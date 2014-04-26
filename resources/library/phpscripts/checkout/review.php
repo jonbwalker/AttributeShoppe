@@ -1,7 +1,6 @@
 <?php
 require_once("../../resources/config.php");
 
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $_SESSION['cardnumber'] = $_POST['cardnumber'];
     $_SESSION['expiration'] = $_POST['expiration'];

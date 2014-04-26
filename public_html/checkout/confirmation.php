@@ -1,11 +1,10 @@
 <?php
-
+if (!session_id()) session_start();
 include("../../resources/library/phpscripts/checkout/cart.php");
 include("../../resources/library/phpscripts/checkout/confirm.php");
 include("../../resources/library/phpscripts/checkout/process-order.php");
 include("../../resources/config.php");
 
-if (!session_id()) session_start();
 if (!$_SESSION['loggedIn']) {
     header("Location:" . BASE_URL . "/account/login.php");
     die();
@@ -26,6 +25,7 @@ if (!$_SESSION['loggedIn']) {
 
     <!-- Add custom CSS here -->
     <link href="../../resources/library/css/main.css" rel="stylesheet">
+    <link href="../../resources/library/css/animate.css" rel="stylesheet">
 
     <!-- Google web fonts -->
     <link href='http://fonts.googleapis.com/css?family=Offside' rel='stylesheet' type='text/css'>
@@ -47,10 +47,14 @@ require_once(TEMPLATES_PATH . "/header.php");
             <li class="active">Products</li>
         </ol>
         <div class="box">
-            <hr>
-            <h2 class="intro-text text-center">Confirm Order
-            </h2>
-            <hr>
+            <div class="">
+            <div class="col-lg-12 jumbotron">
+                <h1 class="alert alert-info animated fadeIn text-center">Order Placed<br></h1>
+                <div class="text-center">
+                    <h3> You'll Recieve an Email Shortly With Your Download</h3>
+                </div>
+            </div>
+            </div>
 
             <form name="form1" method="POST" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
                 <input type="hidden" name="pid"/>
@@ -120,16 +124,7 @@ require_once(TEMPLATES_PATH . "/header.php");
                         </div>
                     </div>
                 </div>
-
-                <div class="checkout-buttons">
-                    <input class="btn btn-default checkout" type="submit" value="Place Order">
-                </div>
             </form>
-
-            <div style="padding-bottom:10px;">
-                <input class="btn btn-default checkout back-to-shopping" id="back-to-shopping" type="button" value="Back to Review"
-                       onclick="window.location='<?php echo BASE_URL ?>/checkout/review.php'"/>
-            </div>
         </div>
     </div>
 </div>
