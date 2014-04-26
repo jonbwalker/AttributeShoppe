@@ -42,14 +42,10 @@ require_once(TEMPLATES_PATH . "/header.php");
 <div class="container">
 
     <div class="row">
-        <ol class="breadcrumb">
-            <li><a href="<? echo BASE_URL; ?>/account/admin.php">Admin</a></li>
-            <li class="active">Products</li>
-        </ol>
         <div class="box">
             <div class="">
             <div class="col-lg-12 jumbotron">
-                <h1 class="alert alert-info animated fadeIn text-center">Order Placed<br></h1>
+                <h1 class="alert alert-info animated fadeindown text-center order-placed">Order Placed<br></h1>
                 <div class="text-center">
                     <h3> You'll Recieve an Email Shortly With Your Download</h3>
                 </div>

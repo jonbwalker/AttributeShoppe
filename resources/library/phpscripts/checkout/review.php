@@ -52,4 +52,21 @@ function getUserAddress(){
     $zip = $addressResults['ZIPCODE'];
     return compact("street", "city", "state", "zip");
 }
+
+function getUserPaymentMethod(){
+    $userId = $_SESSION['userid'];
+
+    $conn = new mysqli('localhost', 'attrib', 'password', 'attribute_shoppe');
+    $payment = "SELECT * FROM PAYMENT_METHOD WHERE USER_ID = '$userId' ";
+    $paymentQuery = $conn->query($payment);
+    $paymentResults = $paymentQuery->fetch_array(MYSQL_ASSOC);
+
+    $cardnumber = $paymentResults['CARD_NUMBER'];
+    $expiredate = $paymentResults['EXPIRATION_DATE'];
+
+    return compact("cardnumber","expiredate");
+
+
+
+}
 ?>

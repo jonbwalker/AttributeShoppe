@@ -555,6 +555,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     -webkit-transform: translateY(-2000px);
     -ms-transform: translateY(-2000px);
     transform: translateY(-2000px);
+    -webkit-animation-duration:12s;
   }
 
   60% {
@@ -1017,6 +1018,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 .fadeIn {
   -webkit-animation-name: fadeIn;
   animation-name: fadeIn;
+  -webkit-animation-duration:4s;
 }
 
 @-webkit-keyframes fadeInDown {

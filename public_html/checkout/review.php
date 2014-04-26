@@ -40,10 +40,6 @@ require_once(TEMPLATES_PATH . "/header.php");
 <div class="container">
 
     <div class="row">
-        <ol class="breadcrumb">
-            <li><a href="<? echo BASE_URL; ?>/account/admin.php">Admin</a></li>
-            <li class="active">Products</li>
-        </ol>
         <div class="box">
             <hr>
             <h2 class="intro-text text-center">Order Review
@@ -109,14 +105,15 @@ require_once(TEMPLATES_PATH . "/header.php");
                         <div style="color:#F00"><?= $msg ?></div>
 
                         <h4>Payment Details</h4>
+                        <?$cardInfoArray = getUserPaymentMethod()?>
                         <div class="row">
                             <div class="form-group col-lg-3">
                                 <label>Card Number</label>*
-                                <input type="text" class="form-control" name="cardnumber" id="cardnumber"  placeholder="" ng-model="first">
+                                <input type="text" class="form-control" name="cardnumber" id="cardnumber" value="<?echo $cardInfoArray['cardnumber']; ?>" placeholder="" ng-model="first">
                             </div>
                             <div class="form-group col-lg-3">
                                 <label>Expiration Date</label>*
-                                <input date type="text" class="form-control" name="expiration" id="expiration" placeholder="MM/YY" ng-model="last">
+                                <input date type="text" class="form-control" name="expiration" id="expiration" value="<? echo $cardInfoArray['expiredate']; ?>" placeholder="MM/YY" ng-model="last">
                             </div>
                         </div>
                     </div>

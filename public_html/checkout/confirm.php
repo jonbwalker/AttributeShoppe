@@ -42,10 +42,6 @@ require_once(TEMPLATES_PATH . "/header.php");
 <div class="container">
 
     <div class="row">
-        <ol class="breadcrumb">
-            <li><a href="<? echo BASE_URL; ?>/account/admin.php">Admin</a></li>
-            <li class="active">Products</li>
-        </ol>
         <div class="box">
             <hr>
             <h2 class="intro-text text-center">Confirm Order
