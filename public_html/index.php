@@ -17,6 +17,7 @@ session_start();
 
     <!-- Add custom CSS here -->
     <link href="../resources/library/css/main.css" rel="stylesheet">
+<!--    <link href="../resources/library/css/animate.css" rel="stylesheet">-->
 
     <!-- Google web fonts -->
     <link href='http://fonts.googleapis.com/css?family=Offside' rel='stylesheet' type='text/css'>
@@ -35,7 +36,7 @@ require_once(TEMPLATES_PATH . "/header.php");
 <div class="container">
     <div class="row">
         <div class="box">
-            <span id="logout-success">
+            <span id="logout-success" class="animated">
                 <?php
                     if (isset($_GET['status'])) {
                         $status = $_GET['status'];
@@ -55,8 +56,9 @@ require_once(TEMPLATES_PATH . "/header.php");
                         <li data-target="#carousel-example-generic" data-slide-to="1"></li>
                         <li data-target="#carousel-example-generic" data-slide-to="2"></li>
                     </ol>
-                    <?php
+                    <?php if(isset($_SESSION['cart'])){
                     print_r($_SESSION['cart']);
+                    }
                     ?>
                     <!-- Wrapper for slides -->
                     <div class="carousel-inner">

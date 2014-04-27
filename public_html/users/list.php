@@ -43,21 +43,22 @@ require_once(TEMPLATES_PATH . "/header.php");
             <li class="active">Users</li>
         </ol>
         <div class="box">
+                       <span id="logout-success" class="animated"><?php
+                           if (isset($_GET['status'])) {
+                               $status = $_GET['status'];
+                               if ($status == 1) {
+                                   echo "Login Success";
+                               } else if ($status == 0) {
+                                   echo "Unable to send message";
+                               }
+                           }
+                           ?> </span>
             <hr>
             <h2 class="intro-text text-center">Users
             </h2>
             <hr>
-            <div><span id="login-success-users"><?php
-                    if (isset($_GET['status'])) {
-                        $status = $_GET['status'];
-                        if ($status == 1) {
-                            echo "Login Success";
-                        } else if ($status == 0) {
-                            echo "Unable to send message";
-                        }
-                    }
-                    ?> </span>
-            </div>
+
+
             <div class="col-lg-12">
 
                 <!-- Delete modal -->

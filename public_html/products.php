@@ -35,7 +35,7 @@ require_once(TEMPLATES_PATH . "/header.php");
 <div class="container">
     <div class="row">
         <div class="box">
-            <span id="login-success"><?php
+            <span id="logout-success" class="animated"><?php
                 if (isset($_GET['status'])) {
                     $status = $_GET['status'];
                     if ($status == 1) {

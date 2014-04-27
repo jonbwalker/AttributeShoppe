@@ -3,7 +3,11 @@ if (!session_id()) session_start();
 $userId = $_SESSION['userid'];
 
 $conn = new mysqli('localhost', 'attrib', 'password', 'attribute_shoppe');
+if(isset($_SESSION['isAdmin'])){
+    $sql = "SELECT * FROM ORDERS";
+}else{
 $sql = "SELECT * FROM ORDERS where USER_ID = '$userId'";
+}
 $result = $conn->query($sql);
 foreach($conn->query($sql) as $row) {
     echo '<tr>';

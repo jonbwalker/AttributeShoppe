@@ -240,17 +240,54 @@ footer p {
 
 #logout-success{
     padding-bottom: -100px;
+    background-color: #808080;
     margin-top:-12px;
-    font-size: 60px;
+    font-size: 40px;
     text-align: center;
-    color:#344a4b;
-    margin-left: 27%;
+    color:#000000;
+    margin-left: 32%;
     position: fixed;
     z-index: 1;
+    animation-name: fadeInLeft;
+    /*border-radius:25px;*/
+    padding-left:10px;
+    padding-right:10px;
+    -webkit-animation-delay:.5s;
 
-    -webkit-animation: pulsate 3s ease-out;
-    -webkit-animation-iteration-count: 1;
-    opacity: 0.0
+    -webkit-animation-name: fadeInLeft;
+}
+
+@-webkit-keyframes fadeInLeft {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateY(5px);
+    }
+    25% {
+        opacity: 1;
+        -webkit-transform: translateY(0px);
+    }
+    75% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: translateY(10px);
+    }
+}
+
+.animated{
+
+    -webkit-animation-fill-mode:both;
+    -moz-animation-fill-mode:both;
+    -ms-animation-fill-mode:both;
+    -o-animation-fill-mode:both;
+    animation-fill-mode:both;
+    -webkit-animation-duration:3s;
+    -moz-animation-duration:3s;
+    -ms-animation-duration:3s;
+    -o-animation-duration:3s;
+    animation-duration:3s;
 }
 
 @-webkit-keyframes pulsate {
