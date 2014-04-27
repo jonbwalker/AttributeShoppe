@@ -47,7 +47,7 @@ require_once(TEMPLATES_PATH . "/header.php");
                     </h2>
                     <hr>
                     <div id="review-order">
-                        <h4>Products</h4>
+                        <h4 style="display: inline;">Products</h4>
                         <table class="table table-striped table-bordered">                 
                             <thead>                    
                             <tr>                   

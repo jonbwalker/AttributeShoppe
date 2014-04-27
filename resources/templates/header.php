@@ -17,10 +17,10 @@
         <div class="collapse navbar-collapse navbar-ex1-collapse">
             <?php
             if(isset($_SESSION['loggedIn']) && $_SESSION['loggedIn'] == 'true') {
-                echo "<a href='" . BASE_URL. "/../resources/library/phpscripts/process-logout.php'> <input id='logout' type='button' value='Logout'></a>";
+                echo "<a href='" . BASE_URL. "/../resources/library/phpscripts/process-logout.php'> <input id='logout' class='btn btn-default' type='button' value='Logout'></a>";
             }?>
             <div>
-                <a href="<?php echo BASE_URL; ?>/checkout/cart.php"> <input id='logout' type='button' value='Cart'></a>
+                <a href="<?php echo BASE_URL; ?>/checkout/cart.php"> <input id='logout' class="btn btn-default checkout" type='button' value='Cart'></a>
             </div>
             <span id="session-welcome"> <?php
                 if (isset($_SESSION['username'])) {
