@@ -40,32 +40,44 @@ require_once(TEMPLATES_PATH . "/header.php");
 <!--        </ol>-->
         <div class="box">
             <div class="form-horizontal">
-                <div class="control-group">
-                    <p class="show">Order: </p>
 
-                    <div class="show-data">
-                        <?php echo $row['ORDER_ID']; ?>
+                <div class="col-lg-12">
+                    <hr>
+                    <h2 class="intro-text text-center">Order: <?php echo $orderdetails['ORDER_ID']; ?>
+                    </h2>
+                    <hr>
+                    <div id="review-order">
+                        <h4>Products</h4>
+                        <table class="table table-striped table-bordered">                 
+                            <thead>                    
+                            <tr>                   
+                                <th class="intro-text text-left">Name</th>
+                                <th class="intro-text text-left">Price</th>
+                                <th class="intro-text text-left">Qty</th>
+                            </tr>
+                                            
+                            </thead>
+                            <? foreach($conn->query($orderdetail) as $row){
+                            $productId = $row['PRODUCT_ID'];
+                            $product = "SELECT * FROM PRODUCT WHERE ID = $productId";
+                            $prductresults = $conn->query($product);
+                            $products = $prductresults->fetch_array(MYSQLI_ASSOC);
+                            ?>
+
+                            <tbody class="">
+                            <tr>
+                                <td> <?php echo $products['NAME']; ?></td>
+                                <td><?php echo $products['PRICE']; ?></td>
+                                <td><?php echo $row['QUANTITY']; ?></td>
+                            </tr>
+                            <?}?>
+                            <tr>
+                                <td><b>Total: $<?= $paymentdetails['AMOUNT'] ?></b></td>
+                            </tr>               
+                            </tbody>
+                                        
+                        </table>
                     </div>
-                </div>
-                <? foreach($conn->query($sql) as $row){?>
-
-                </label>
-                <div class="control-group">
-                    <p class="show">Quantity:</p>
-
-                    <label class="show-data">
-                        <?php echo $row['QUANTITY']; ?>
-                    </label>
-                </div>
-
-                <div class="control-group">
-                    <p class="show">Product</p>
-
-                    <label class="show-data">
-                        <?php echo $row['PRODUCT_ID']; ?>
-
-                </div>
-                <?}?>
             </div>
 
         </div>

@@ -45,9 +45,9 @@ require_once(TEMPLATES_PATH . "/header.php");
         <div class="box">
             <div class="">
             <div class="col-lg-12 jumbotron" style="box-shadow: 0px 5px 36px -1px grey">
-                <h1 class="alert alert-info animated fadeindown text-center order-placed">Order Placed<br></h1>
+                <h1 class="alert alert-info animated fadeInDown text-center order-placed">Order Placed<br></h1>
                 <div class="text-center">
-                    <h3> You'll Recieve an Email Shortly With Your Download</h3>
+                    <h3> You'll Receive an Email Shortly With Your Download</h3>
                 </div>
                 <div class="text-center">
                     <h3>Confirmation #: <?php echo mt_rand(100000, 999999);?></h3>
@@ -104,7 +104,7 @@ require_once(TEMPLATES_PATH . "/header.php");
                         </tr>               
                         </tbody>      
                     </table>
-                    <h5><?echo $_SESSION['firstname'] ." ".  $_SESSION['lastname']?></h5>
+                    <h5><?echo $_SESSION['firstname'] ." ". $_SESSION['lastname']?></h5>
                 </div>
 
                 <div id="review-payment">
