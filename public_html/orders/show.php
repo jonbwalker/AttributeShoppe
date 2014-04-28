@@ -43,7 +43,7 @@ require_once(TEMPLATES_PATH . "/header.php");
 
                 <div class="col-lg-12">
                     <hr>
-                    <h2 class="intro-text text-center">Order: <?php echo $orderdetails['ORDER_ID']; ?>
+                    <h2 class="intro-text text-center">Order: <?php echo $orders['CONFIRMATION']; ?><br>
                     </h2>
                     <hr>
                     <div id="review-order">

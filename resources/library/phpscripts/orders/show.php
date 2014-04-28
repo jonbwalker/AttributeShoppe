@@ -25,8 +25,9 @@ if (null == $id) {
     $paymentresult = $conn->query($orderpayment);
     $paymentdetails = $paymentresult->fetch_array(MYSQLI_ASSOC);
 
-
-
+    $order = "SELECT * FROM ORDERS WHERE ID = $id";
+    $orderresults = $conn->query($order);
+    $orders = $orderresults->fetch_array(MYSQLI_ASSOC);
 
 }
 ?>

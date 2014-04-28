@@ -22,7 +22,7 @@ foreach ($conn->query($sql) as $row) {
     if(isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'] == 'true')  {
     echo '<td>' . $userRow['USERNAME'] . '</td>';
     }
-    echo '<td>' . $row['ID'] . '</td>';
+    echo '<td>' . $row['CONFIRMATION'] . '</td>';
     echo '<td>' . $row['DATE'] . '</td>';
     echo '<td width=250>';
     echo '<a class="btn btn-default" href="show.php?id=' . $row['ID'] . '">View</a>';

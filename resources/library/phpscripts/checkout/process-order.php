@@ -9,13 +9,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $ordertotal = $_SESSION['ordertotal'];
     $cart = $_SESSION['cart'];
     $paymentId = 1;
+    $confirmation = mt_rand(100000, 999999);
+    $_SESSION['confirmation'] = $confirmation;
 
     $conn = new mysqli('localhost', 'attrib', 'password', 'attribute_shoppe');
 
     $order = "INSERT INTO ORDERS VALUES(
           DEFAULT,
           DEFAULT,
-         '$user')";
+         '$user',
+         '$confirmation')";
     $conn->query($order);
     $orderId = $conn->insert_id;
 
