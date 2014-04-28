@@ -74,6 +74,10 @@ require_once(TEMPLATES_PATH . "/header.php");
                     </tbody>            
                 </table>
             </div>
+            <div style="padding-bottom:10px;">
+                <input class="btn btn-default checkout back-to-shopping" id="back-to-shopping" type="button" value="Back to Account"
+                       onclick="window.location='<?php echo BASE_URL ?>/account/account.php'"/>
+            </div>
         </div>
     </div>
 </div>

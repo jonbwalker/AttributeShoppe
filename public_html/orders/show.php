@@ -1,6 +1,7 @@
 <?php
 session_start();
 // include the create category processing logic
+include("../../resources/library/phpscripts/checkout/cart.php");
 include("../../resources/library/phpscripts/orders/show.php")
 ?>
 <head>
@@ -78,8 +79,35 @@ require_once(TEMPLATES_PATH . "/header.php");
                                         
                         </table>
                     </div>
-            </div>
 
+                    <div id="review-address">
+                        <h4 class="inline">Billing Address</h4>
+                        <table class="table table-striped table-bordered">                 
+                            <thead>                    
+                            <tr>                   
+                                <th class="intro-text text-left">Street</th>
+                                <th class="intro-text text-left">City</th>
+                                <th class="intro-text text-left">Street</th>
+                                <th class="intro-text text-left">Zip</th>
+                            </tr>
+                                            
+                            </thead>
+                            <tbody class="">
+                            <? $addressArray = getUserAddress() ?>
+                            <tr>
+                                <td><? print_r($addressArray["street"]) ?></td>
+                                <td><? print_r($addressArray["city"]) ?></td>
+                                <td><? print_r($addressArray["state"]) ?></td>
+                                <td><? print_r($addressArray["zip"]) ?></td>
+                            </tr>               
+                            </tbody>      
+                        </table>
+                    </div>
+            </div>
+                <div style="padding-bottom:10px;">
+                    <input class="btn btn-default checkout back-to-shopping" id="back-to-shopping" type="button" value="Back to Orders"
+                           onclick="window.location='<?php echo BASE_URL ?>/orders/list.php'"/>
+                </div>
         </div>
     </div>
 </div>
