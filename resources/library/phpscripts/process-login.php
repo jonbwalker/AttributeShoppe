@@ -25,6 +25,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         unset($_SESSION['username']);
         $loginError = "We could not locate your account, please check your credentials and try again";
     } else {
+        $_SESSION['isAdmin'] = "false";
         $_SESSION['loggedIn'] = "true";
         $_SESSION['username'] = $username;
         $_SESSION['password'] = $password;

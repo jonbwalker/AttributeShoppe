@@ -55,7 +55,7 @@ require_once(TEMPLATES_PATH . "/header.php");
                 <div id="review-order">
                     <div style="color:#F00"><?= $msg ?></div>
 
-                    <h4>Products</h4>
+                    <h4 class="inline">Products</h4>
                     <table class="table table-striped table-bordered">                 
                         <thead>                    
                         <tr>                   
@@ -76,7 +76,7 @@ require_once(TEMPLATES_PATH . "/header.php");
 
                 <div id="review-address">
                     <div style="color:#F00"><?= $msg ?></div>
-                    <h4>Billing Address</h4>
+                    <h4 class="inline">Billing Address</h4>
                     <table class="table table-striped table-bordered">                 
                         <thead>                    
                         <tr>                   

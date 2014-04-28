@@ -50,21 +50,25 @@ require_once(TEMPLATES_PATH . "/header.php");
                 }
                 ?>
             </div>
-            <div class="list-group col-lg-4">
+            <div class="list-group col-lg-6">
                 <p class="list-group-item active">Users</p>
                 <a href="<?php echo BASE_URL; ?>/users/list.php" class="list-group-item">View All Users</a>
                 <a href="#" class="list-group-item">Create New User</a>
             </div>
-            <div class="list-group col-lg-4">
+            <div class="list-group col-lg-6">
                 <p class="list-group-item active">Categories</p>
                 <a href="<?php echo BASE_URL; ?>/categories/list.php" class="list-group-item">View All Categories</a>
                 <a href="<?php echo BASE_URL; ?>/categories/create.php" class="list-group-item">Create New Category</a>
             </div>
-
-            <div class="list-group col-lg-4">
+            <div class="list-group col-lg-6">
                 <p class="list-group-item active">Products</p>
                 <a href="<?php echo BASE_URL; ?>/products/list.php" class="list-group-item">View All Products</a>
                 <a href="<?php echo BASE_URL; ?>/products/create.php" class="list-group-item">Create New Product</a>
+            </div>
+            <div class="list-group col-lg-6">
+                <p class="list-group-item active">Orders</p>
+                <a href="<?php echo BASE_URL; ?>/orders/list.php" class="list-group-item">View All Orders</a>
+                <a href="#" class="list-group-item">Cancel Orders</a>
             </div>
             <div class="clearfix"></div>
         </div>

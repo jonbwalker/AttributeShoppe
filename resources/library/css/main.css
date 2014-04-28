@@ -409,3 +409,7 @@ footer p {
 #order-placed{
      margin-top: .8em;
 }
+
+.inline{
+    display: inline;
+}

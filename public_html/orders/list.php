@@ -58,9 +58,14 @@ require_once(TEMPLATES_PATH . "/header.php");
 
                 <table class="table table-striped table-bordered">                 
                     <thead>                    
-                    <tr>                   
+                    <tr>               
+                        <?if(isset($_SESSION['isAdmin']) && $_SESSION['isAdmin'] == 'true'){
+                            echo "<th class='intro-text text-left'>User</th>";
+                        }?>
+                            
                         <th class="intro-text text-left">ID</th>    
                         <th class="intro-text text-left" >Order #</th>
+                        <th class="intro-text text-left" >View</th>
                     </tr>                
                     </thead>
                     <tbody class="">
