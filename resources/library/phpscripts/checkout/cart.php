@@ -1,4 +1,5 @@
 <?
+if (!session_id()) session_start();
 
 function get_product_name($productId){
     $conn = new mysqli('localhost', 'attrib', 'password', 'attribute_shoppe');
