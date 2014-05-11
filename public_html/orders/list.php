@@ -63,8 +63,8 @@ require_once(TEMPLATES_PATH . "/header.php");
                             echo "<th class='intro-text text-left'>User</th>";
                         }?>
                             
-                        <th class="intro-text text-left">ID</th>    
-                        <th class="intro-text text-left" >Order #</th>
+                        <th class="intro-text text-left">Order #</th>    
+                        <th class="intro-text text-left" >Date</th>
                         <th class="intro-text text-left" >View</th>
                     </tr>                
                     </thead>
